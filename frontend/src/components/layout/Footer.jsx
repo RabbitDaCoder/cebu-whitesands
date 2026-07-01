@@ -71,13 +71,13 @@ export default function Footer({ social = {} }) {
   const facebookUrl = social.facebookUrl || brand.facebookPageUrl;
 
   return (
-    <footer className="relative overflow-hidden bg-[#111111] text-white">
+    <footer className="relative overflow-hidden bg-ocean text-white">
       {/* Decorative teal glow */}
-      <div className="pointer-events-none absolute -left-40 top-1/3 h-130 w-130 rounded-full bg-[#008c8c]/[0.04] blur-3xl" />
-      <div className="pointer-events-none absolute -right-40 -top-20 h-110 w-110 rounded-full bg-[#008c8c]/[0.03] blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-1/3 h-130 w-130 rounded-full bg-gold/[0.04] blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 -top-20 h-110 w-110 rounded-full bg-teal/[0.05] blur-3xl" />
 
       {/* Top teal hairline */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-[#008c8c]/60 to-transparent" />
+      <div className="h-px w-full bg-linear-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6 pb-12 pt-24 lg:px-10 lg:pb-14 lg:pt-28">
         {/* Brand + newsletter */}
@@ -96,8 +96,8 @@ export default function Footer({ social = {} }) {
               your perfect island escape in Davao del Norte.
             </p>
             <div className="mt-8 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#008c8c]" />
-              <p className="text-[10px] uppercase tracking-[0.42em] text-[#008c8c]/80">
+              <span className="h-px w-8 bg-gold" />
+              <p className="text-[10px] uppercase tracking-[0.42em] text-gold/70">
                 {brand.tagline}
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function Footer({ social = {} }) {
             </h6>
             <h3 className="mt-4 font-serif text-3xl leading-[1.15] sm:text-4xl">
               Letters from the{" "}
-              <em className="italic text-[#008c8c]">shoreline</em>.
+              <em className="italic text-gold">shoreline</em>.
             </h3>
             <p className="mt-4 max-w-md text-[14px] leading-[1.85] text-white/45">
               Quiet stories, seasonal offers, and member-only invitations —
@@ -118,7 +118,7 @@ export default function Footer({ social = {} }) {
 
             <form
               onSubmit={handleSubmit}
-              className="mt-8 flex max-w-lg items-end gap-4 border-b border-white/15 pb-2 transition-colors focus-within:border-[#008c8c]"
+              className="mt-8 flex max-w-lg items-end gap-4 border-b border-white/15 pb-2 transition-colors focus-within:border-gold"
             >
               <input
                 type="email"
@@ -130,7 +130,7 @@ export default function Footer({ social = {} }) {
               />
               <button
                 type="submit"
-                className="group flex items-center gap-3 pb-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#008c8c] transition-colors hover:text-white"
+                className="group flex items-center gap-3 pb-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-gold transition-colors hover:text-white"
               >
                 {submitted ? "Thank you" : "Subscribe"}
                 <ArrowRight
@@ -146,7 +146,7 @@ export default function Footer({ social = {} }) {
         <div className="grid grid-cols-2 gap-10 py-16 md:grid-cols-3 lg:gap-14">
           {NAV_COLUMNS.map((col) => (
             <div key={col.title}>
-              <h6 className="mb-7 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#008c8c]">
+              <h6 className="mb-7 text-[10px] font-semibold uppercase tracking-[0.42em] text-gold">
                 {col.title}
               </h6>
               <ul className="space-y-3.5 text-[13px]">
@@ -158,7 +158,7 @@ export default function Footer({ social = {} }) {
                     >
                       <span className="relative">
                         {l.label}
-                        <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#008c8c] transition-all duration-300 group-hover:w-full" />
+                        <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
                       </span>
                     </Link>
                   </li>
@@ -169,20 +169,20 @@ export default function Footer({ social = {} }) {
 
           {/* Contact column */}
           <div>
-            <h6 className="mb-7 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#008c8c]">
+            <h6 className="mb-7 text-[10px] font-semibold uppercase tracking-[0.42em] text-gold">
               Reach Us
             </h6>
             <ul className="space-y-5 text-[13px] text-white/50">
               <li className="flex items-start gap-3">
                 <MapPin
                   size={14}
-                  className="mt-0.5 shrink-0 text-[#008c8c]/70"
+                  className="mt-0.5 shrink-0 text-gold/70"
                 />
                 <span className="leading-relaxed">{brand.address}</span>
               </li>
               {phone && (
                 <li className="flex items-center gap-3">
-                  <Phone size={14} className="shrink-0 text-[#008c8c]/70" />
+                  <Phone size={14} className="shrink-0 text-gold/70" />
                   <a
                     href={`tel:${phone.replace(/\s/g, "")}`}
                     className="transition-colors hover:text-white"
@@ -192,7 +192,7 @@ export default function Footer({ social = {} }) {
                 </li>
               )}
               <li className="flex items-center gap-3">
-                <Mail size={14} className="shrink-0 text-[#008c8c]/70" />
+                <Mail size={14} className="shrink-0 text-gold/70" />
                 <a
                   href={`mailto:${contactEmail}`}
                   className="break-all transition-colors hover:text-white"
@@ -209,21 +209,23 @@ export default function Footer({ social = {} }) {
                   href={facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center border border-white/[0.12] text-white/45 transition-all duration-300 hover:border-[#008c8c] hover:text-[#008c8c]"
+                  className="flex h-10 w-10 items-center justify-center border border-white/[0.12] text-white/45 transition-all duration-300 hover:border-gold hover:text-gold"
                   aria-label="Facebook"
                 >
                   <FacebookIcon className="h-[14px] w-[14px]" />
                 </a>
               )}
-              <a
-                href="https://www.instagram.com/discoverysamalresort"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center border border-white/[0.12] text-white/45 transition-all duration-300 hover:border-[#008c8c] hover:text-[#008c8c]"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="h-[14px] w-[14px]" />
-              </a>
+              {brand.instagramUrl && (
+                <a
+                  href={brand.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center border border-white/[0.12] text-white/45 transition-all duration-300 hover:border-gold hover:text-gold"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon className="h-[14px] w-[14px]" />
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -249,7 +251,7 @@ export default function Footer({ social = {} }) {
             <button
               type="button"
               onClick={scrollToTop}
-              className="group inline-flex items-center gap-2 transition-colors hover:text-[#008c8c]"
+              className="group inline-flex items-center gap-2 transition-colors hover:text-gold"
               aria-label="Back to top"
             >
               <ArrowUp

@@ -39,7 +39,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.45em] text-[#008c8c]"
+          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.45em] text-teal"
         >
           {EVENTS_INTRO.preTitle}
         </motion.p>
@@ -67,10 +67,10 @@ function Intro() {
       <div className="mx-auto max-w-6xl px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-2">
           <motion.div {...fadeUp()}>
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal">
               {EVENTS_INTRO.preTitle}
             </p>
-            <h2 className="font-serif text-4xl uppercase leading-tight tracking-wide text-[#1a1a1a] lg:text-5xl">
+            <h2 className="font-serif text-4xl uppercase leading-tight tracking-wide text-charcoal lg:text-5xl">
               {EVENTS_INTRO.title}
             </h2>
           </motion.div>
@@ -80,7 +80,7 @@ function Intro() {
             </p>
             <a
               href="mailto:reservations@discoverysamal.com"
-              className="inline-flex w-fit items-center gap-2 bg-[#008c8c] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
+              className="inline-flex w-fit items-center gap-2 bg-teal px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
             >
               Request for Proposal
               <ArrowUpRight className="h-4 w-4" />
@@ -94,8 +94,8 @@ function Intro() {
           className="mt-14 grid grid-cols-2 gap-6 border-t border-[#e5e5e5] pt-12 sm:grid-cols-4"
         >
           {EVENTS_STATS.map((s) => (
-            <div key={s.label} className="border-l border-[#008c8c]/30 pl-5">
-              <p className="font-serif text-3xl text-[#008c8c]">{s.value}</p>
+            <div key={s.label} className="border-l border-teal/30 pl-5">
+              <p className="font-serif text-3xl text-teal">{s.value}</p>
               <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#777]">
                 {s.label}
               </p>
@@ -122,7 +122,7 @@ function VenueCard({ venue, index, onOpenLightbox }) {
   return (
     <section
       id="venues-collection"
-      className={`py-16 lg:py-24 ${isEven ? "bg-[#f7f7f5]" : "bg-white"}`}
+      className={`py-16 lg:py-24 ${isEven ? "bg-ivory" : "bg-white"}`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div
@@ -147,10 +147,10 @@ function VenueCard({ venue, index, onOpenLightbox }) {
 
           {/* Content */}
           <motion.div {...fadeUp(0.1)} className="lg:[direction:ltr]">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal">
               Venue 0{index + 1}
             </p>
-            <h2 className="font-serif text-4xl uppercase tracking-wide text-[#1a1a1a] lg:text-5xl">
+            <h2 className="font-serif text-4xl uppercase tracking-wide text-charcoal lg:text-5xl">
               {venue.name}
             </h2>
             <p className="mt-3 font-serif text-lg italic text-[#555]">
@@ -165,9 +165,9 @@ function VenueCard({ venue, index, onOpenLightbox }) {
               <div className="mt-6 grid grid-cols-2 gap-3 rounded border border-[#e5e5e5] p-4 sm:grid-cols-4">
                 {capacityRows.map((row) => (
                   <div key={row.key} className="text-center">
-                    <div className="flex items-center justify-center gap-1 text-[#008c8c]">
+                    <div className="flex items-center justify-center gap-1 text-teal">
                       <Users className="h-3.5 w-3.5" />
-                      <span className="font-semibold text-[#1a1a1a]">
+                      <span className="font-semibold text-charcoal">
                         {venue.capacity[row.key]}
                       </span>
                     </div>
@@ -182,14 +182,14 @@ function VenueCard({ venue, index, onOpenLightbox }) {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href="mailto:reservations@discoverysamal.com"
-                className="inline-flex items-center gap-2 bg-[#008c8c] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
+                className="inline-flex items-center gap-2 bg-teal px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
               >
                 Enquire Now
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 border border-[#008c8c] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#008c8c] transition-colors hover:bg-[#008c8c] hover:text-white"
+                className="inline-flex items-center gap-2 border border-teal px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-teal transition-colors hover:bg-teal hover:text-white"
               >
                 Contact Us
               </Link>
@@ -278,11 +278,11 @@ function Lightbox({ venue, startIndex, onClose }) {
 /* ================================================================== */
 function CTA() {
   return (
-    <section className="bg-[#1a1a1a] py-20">
+    <section className="bg-charcoal py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <motion.p
           {...fadeUp()}
-          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
         >
           Plan Your Event
         </motion.p>
@@ -307,7 +307,7 @@ function CTA() {
         >
           <a
             href="mailto:reservations@discoverysamal.com"
-            className="inline-flex items-center gap-2 bg-[#008c8c] px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
+            className="inline-flex items-center gap-2 bg-teal px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
           >
             Request for Proposal
             <ArrowUpRight className="h-4 w-4" />
@@ -333,7 +333,7 @@ export default function Events() {
   const close = () => setLightbox({ venue: null, index: 0 });
 
   return (
-    <main className="text-[#1a1a1a]">
+    <main className="text-charcoal">
       <Hero />
       <Intro />
       {EVENT_VENUES.map((v, i) => (

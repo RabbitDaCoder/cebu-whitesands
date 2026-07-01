@@ -33,9 +33,9 @@ export default function NavDropdown({
               >
                 <Link
                   to={sub.to}
-                  className="group flex items-center gap-3 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500 hover:text-[#008c8c] hover:bg-teal-50/60 transition-all duration-200"
+                  className="group flex items-center gap-3 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500 hover:text-teal hover:bg-teal-50/60 transition-all duration-200"
                 >
-                  <span className="h-px w-0 bg-[#008c8c] transition-all duration-300 group-hover:w-4" />
+                  <span className="h-px w-0 bg-teal transition-all duration-300 group-hover:w-4" />
                   {sub.label}
                 </Link>
               </motion.div>

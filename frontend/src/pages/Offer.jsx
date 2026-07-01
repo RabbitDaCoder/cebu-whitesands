@@ -80,7 +80,7 @@ function CinematicHero({ onExplore }) {
   const opacity = useTransform(scrollY, [0, 500], [1, 0.3]);
 
   return (
-    <section className="relative h-svh min-h-170 w-full overflow-hidden bg-[#111111]">
+    <section className="relative h-svh min-h-170 w-full overflow-hidden bg-ocean">
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src="https://image-tc.galaxy.tf/wijpeg-aeexb9m4bu60ndq3vcdnb7l9o/discovery-samal-08124-2_standard.jpg"
@@ -89,8 +89,8 @@ function CinematicHero({ onExplore }) {
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-linear-to-b from-[#111111]/45 via-[#111111]/35 to-[#111111]/95" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#111111]/60 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-ocean/45 via-ocean/35 to-ocean/95" />
+      <div className="absolute inset-0 bg-linear-to-r from-ocean/60 via-transparent to-transparent" />
 
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -98,10 +98,10 @@ function CinematicHero({ onExplore }) {
         transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
         className="absolute left-1/2 top-28 z-10 -translate-x-1/2"
       >
-        <div className="flex items-center gap-3 border border-[#008c8c]/50 bg-[#111111]/35 px-5 py-2 text-[10px] uppercase tracking-[0.4em] text-[#f7f7f5] backdrop-blur-md">
-          <Star className="h-3 w-3 fill-[#008c8c] text-[#008c8c]" />
+        <div className="flex items-center gap-3 border border-teal/50 bg-ocean/35 px-5 py-2 text-[10px] uppercase tracking-[0.4em] text-ivory backdrop-blur-md">
+          <Star className="h-3 w-3 fill-teal text-teal" />
           <span>Discovery Samal · Limited Time Offers</span>
-          <Star className="h-3 w-3 fill-[#008c8c] text-[#008c8c]" />
+          <Star className="h-3 w-3 fill-teal text-teal" />
         </div>
       </motion.div>
 
@@ -111,11 +111,11 @@ function CinematicHero({ onExplore }) {
       >
         <motion.p
           {...fadeIn(0.6)}
-          className="mb-8 flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.5em] text-[#008c8c]"
+          className="mb-8 flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.5em] text-teal"
         >
-          <span className="h-px w-12 bg-[#008c8c]/60" />
+          <span className="h-px w-12 bg-teal/60" />
           Escape Into Paradise
-          <span className="h-px w-12 bg-[#008c8c]/60" />
+          <span className="h-px w-12 bg-teal/60" />
         </motion.p>
 
         <motion.h1
@@ -126,16 +126,16 @@ function CinematicHero({ onExplore }) {
             duration: 1.1,
             ease: [0.22, 0.61, 0.36, 1],
           }}
-          className="font-serif text-5xl leading-[1.02] text-[#f7f7f5] sm:text-6xl lg:text-[88px]"
+          className="font-serif text-5xl leading-[1.02] text-ivory sm:text-6xl lg:text-[88px]"
         >
           Curated Stays.
           <br />
-          <span className="italic text-[#008c8c]">Unforgettable</span> Moments.
+          <span className="italic text-teal">Unforgettable</span> Moments.
         </motion.h1>
 
         <motion.p
           {...fadeIn(0.9)}
-          className="mt-10 max-w-2xl text-base leading-relaxed text-[#f7f7f5]/75 lg:text-lg"
+          className="mt-10 max-w-2xl text-base leading-relaxed text-ivory/75 lg:text-lg"
         >
           Luxury beachfront experiences hand-crafted by Discovery Samal Resort â€”
           for couples seeking quiet solace, and groups gathering for shared
@@ -149,14 +149,14 @@ function CinematicHero({ onExplore }) {
           <button
             type="button"
             onClick={onExplore}
-            className="group inline-flex items-center gap-3 bg-[#008c8c] px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#111111] transition-all hover:bg-[#006d6d] hover:text-[#f7f7f5] hover:shadow-[0_20px_60px_-15px_rgba(212,133,0,0.6)]"
+            className="group inline-flex items-center gap-3 bg-teal px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-ocean transition-all hover:bg-[#006d6d] hover:text-ivory hover:shadow-[0_20px_60px_-15px_rgba(212,133,0,0.6)]"
           >
             Explore Offers
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </button>
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-3 border border-[#f7f7f5]/30 bg-[#f7f7f5]/5 px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#f7f7f5] backdrop-blur transition hover:border-[#008c8c] hover:bg-[#f7f7f5]/10"
+            className="group inline-flex items-center gap-3 border border-ivory/30 bg-ivory/5 px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-ivory backdrop-blur transition hover:border-teal hover:bg-ivory/10"
           >
             Reserve Experience
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -168,17 +168,17 @@ function CinematicHero({ onExplore }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6, duration: 1 }}
-        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-[#f7f7f5]/55"
+        className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-ivory/55"
       >
         <span>Scroll</span>
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="block h-10 w-px bg-linear-to-b from-[#008c8c] to-transparent"
+          className="block h-10 w-px bg-linear-to-b from-teal to-transparent"
         />
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 h-px bg-linear-to-r from-transparent via-[#008c8c]/60 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-px bg-linear-to-r from-transparent via-teal/60 to-transparent" />
     </section>
   );
 }
@@ -188,26 +188,26 @@ function CinematicHero({ onExplore }) {
 /* ================================================================== */
 function StoryIntro() {
   return (
-    <section className="bg-[#f7f7f5] py-24 lg:py-36">
+    <section className="bg-ivory py-24 lg:py-36">
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
         <motion.p
           {...fadeUp()}
           className="mb-6 flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#006d6d]"
         >
-          <span className="h-px w-10 bg-[#008c8c]" />
+          <span className="h-px w-10 bg-teal" />
           The Sands Collection
-          <span className="h-px w-10 bg-[#008c8c]" />
+          <span className="h-px w-10 bg-teal" />
         </motion.p>
         <motion.h2
           {...fadeUp(0.1)}
-          className="font-serif text-4xl leading-tight text-[#1a1a1a] lg:text-5xl"
+          className="font-serif text-4xl leading-tight text-charcoal lg:text-5xl"
         >
           Beyond a stay.{" "}
-          <span className="italic text-[#008c8c]">An experience.</span>
+          <span className="italic text-teal">An experience.</span>
         </motion.h2>
         <motion.p
           {...fadeUp(0.2)}
-          className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/65 lg:text-lg"
+          className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-charcoal/65 lg:text-lg"
         >
           Each package below is composed with intention â€” from the moment you
           arrive at the jetty port to the final sunset cocktail by the shore.
@@ -232,7 +232,7 @@ function OfferShowcase({ offer, index }) {
 
 function ImageSideOffer({ offer, reverse }) {
   return (
-    <section id={offer.slug} className="relative bg-[#f7f7f5] py-20 lg:py-32">
+    <section id={offer.slug} className="relative bg-ivory py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div
           className={`grid items-center gap-10 lg:gap-16 lg:grid-cols-12 ${
@@ -240,17 +240,17 @@ function ImageSideOffer({ offer, reverse }) {
           }`}
         >
           <motion.div {...fadeUp()} className="relative lg:col-span-7">
-            <div className="relative overflow-hidden bg-[#111111]">
+            <div className="relative overflow-hidden bg-ocean">
               <img
                 src={offer.heroImage}
                 alt={offer.title}
                 className="aspect-4/5 w-full object-cover transition-transform duration-2000 ease-out hover:scale-[1.04] lg:aspect-5/6"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#111111]/45 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-ocean/45 via-transparent to-transparent" />
               {offer.badge && (
-                <div className="absolute left-6 top-6 inline-flex items-center gap-2 border border-[#008c8c]/60 bg-[#111111]/40 px-4 py-2 text-[10px] uppercase tracking-[0.32em] text-[#f7f7f5] backdrop-blur-md">
-                  <Sparkles className="h-3 w-3 text-[#008c8c]" />
+                <div className="absolute left-6 top-6 inline-flex items-center gap-2 border border-teal/60 bg-ocean/40 px-4 py-2 text-[10px] uppercase tracking-[0.32em] text-ivory backdrop-blur-md">
+                  <Sparkles className="h-3 w-3 text-teal" />
                   {offer.badge}
                 </div>
               )}
@@ -261,7 +261,7 @@ function ImageSideOffer({ offer, reverse }) {
                   <motion.div
                     key={src + i}
                     {...fadeUp(0.1 + i * 0.05)}
-                    className="aspect-square overflow-hidden bg-[#111111]"
+                    className="aspect-square overflow-hidden bg-ocean"
                   >
                     <img
                       src={src}
@@ -277,13 +277,13 @@ function ImageSideOffer({ offer, reverse }) {
 
           <motion.div {...fadeUp(0.15)} className="lg:col-span-5">
             <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#006d6d]">
-              <span className="h-px w-10 bg-[#008c8c]" />
+              <span className="h-px w-10 bg-teal" />
               {offer.subtitle}
             </p>
-            <h2 className="font-serif text-4xl leading-tight text-[#1a1a1a] lg:text-5xl">
+            <h2 className="font-serif text-4xl leading-tight text-charcoal lg:text-5xl">
               {offer.title}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/70">
+            <p className="mt-6 text-base leading-relaxed text-charcoal/70">
               {offer.description}
             </p>
 
@@ -300,7 +300,7 @@ function FullscreenFloatingOffer({ offer }) {
   return (
     <section
       id={offer.slug}
-      className="relative overflow-hidden bg-[#111111] py-20 lg:py-32"
+      className="relative overflow-hidden bg-ocean py-20 lg:py-32"
     >
       <img
         src={offer.heroImage}
@@ -308,42 +308,42 @@ function FullscreenFloatingOffer({ offer }) {
         className="absolute inset-0 h-full w-full object-cover opacity-70"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-linear-to-b from-[#111111]/80 via-[#111111]/55 to-[#111111]/90" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#111111]/70 via-transparent to-[#111111]/40" />
+      <div className="absolute inset-0 bg-linear-to-b from-ocean/80 via-ocean/55 to-ocean/90" />
+      <div className="absolute inset-0 bg-linear-to-r from-ocean/70 via-transparent to-ocean/40" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-12 lg:gap-16 lg:px-10">
         <motion.div {...fadeUp()} className="lg:col-span-5 lg:pt-12">
           {offer.badge && (
-            <div className="mb-6 inline-flex items-center gap-2 border border-[#008c8c]/60 bg-[#111111]/40 px-4 py-2 text-[10px] uppercase tracking-[0.32em] text-[#f7f7f5] backdrop-blur-md">
-              <Sparkles className="h-3 w-3 text-[#008c8c]" />
+            <div className="mb-6 inline-flex items-center gap-2 border border-teal/60 bg-ocean/40 px-4 py-2 text-[10px] uppercase tracking-[0.32em] text-ivory backdrop-blur-md">
+              <Sparkles className="h-3 w-3 text-teal" />
               {offer.badge}
             </div>
           )}
-          <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
-            <span className="h-px w-10 bg-[#008c8c]/70" />
+          <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal">
+            <span className="h-px w-10 bg-teal/70" />
             {offer.subtitle}
           </p>
-          <h2 className="font-serif text-4xl leading-tight text-[#f7f7f5] lg:text-6xl">
+          <h2 className="font-serif text-4xl leading-tight text-ivory lg:text-6xl">
             {offer.title}
           </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-[#f7f7f5]/75">
+          <p className="mt-6 max-w-md text-base leading-relaxed text-ivory/75">
             {offer.description}
           </p>
         </motion.div>
 
         <motion.div {...fadeUp(0.2)} className="lg:col-span-7">
-          <div className="border border-[#f7f7f5]/15 bg-[#111111]/40 p-8 backdrop-blur-xl shadow-[0_40px_120px_-40px_rgba(0,0,0,0.8)] lg:p-12">
-            <div className="h-px w-full bg-linear-to-r from-transparent via-[#008c8c] to-transparent" />
-            <p className="mt-7 mb-2 text-[10px] uppercase tracking-[0.4em] text-[#008c8c]">
+          <div className="border border-ivory/15 bg-ocean/40 p-8 backdrop-blur-xl shadow-[0_40px_120px_-40px_rgba(0,0,0,0.8)] lg:p-12">
+            <div className="h-px w-full bg-linear-to-r from-transparent via-teal to-transparent" />
+            <p className="mt-7 mb-2 text-[10px] uppercase tracking-[0.4em] text-teal">
               Included in this experience
             </p>
-            <h3 className="font-serif text-2xl text-[#f7f7f5] lg:text-3xl">
+            <h3 className="font-serif text-2xl text-ivory lg:text-3xl">
               {offer.title.split("·")[0].trim()} Inclusions
             </h3>
 
             <InclusionGrid items={offer.inclusions} dark />
 
-            <div className="mt-8 border-t border-[#f7f7f5]/10 pt-8">
+            <div className="mt-8 border-t border-ivory/10 pt-8">
               <PricingBlock offer={offer} dark />
             </div>
           </div>
@@ -358,7 +358,7 @@ function FullscreenFloatingOffer({ offer }) {
 /* ================================================================== */
 function InclusionGrid({ items, dark = false }) {
   return (
-    <div className="mt-8 grid grid-cols-1 gap-px bg-[#1a1a1a]/10 sm:grid-cols-2">
+    <div className="mt-8 grid grid-cols-1 gap-px bg-charcoal/10 sm:grid-cols-2">
       {items.map((text, i) => {
         const Icon = iconFor(text);
         return (
@@ -370,24 +370,24 @@ function InclusionGrid({ items, dark = false }) {
             transition={{ delay: i * 0.05, duration: 0.6 }}
             className={`group flex items-start gap-3 px-4 py-4 transition-colors ${
               dark
-                ? "bg-[#111111]/60 hover:bg-[#111111]/80"
-                : "bg-white hover:bg-[#f7f7f5]"
+                ? "bg-ocean/60 hover:bg-ocean/80"
+                : "bg-white hover:bg-ivory"
             }`}
           >
             <span
               className={`grid h-9 w-9 shrink-0 place-items-center border transition-colors ${
                 dark
-                  ? "border-[#008c8c]/40 bg-[#008c8c]/10 group-hover:bg-[#008c8c]/20"
-                  : "border-[#008c8c]/30 bg-[#f7f7f5] group-hover:border-[#008c8c]"
+                  ? "border-teal/40 bg-teal/10 group-hover:bg-teal/20"
+                  : "border-teal/30 bg-ivory group-hover:border-teal"
               }`}
             >
               <Icon
-                className={`h-4 w-4 ${dark ? "text-[#008c8c]" : "text-[#006d6d]"}`}
+                className={`h-4 w-4 ${dark ? "text-teal" : "text-[#006d6d]"}`}
               />
             </span>
             <span
               className={`pt-1 text-sm leading-snug ${
-                dark ? "text-[#f7f7f5]/85" : "text-[#1a1a1a]/80"
+                dark ? "text-ivory/85" : "text-charcoal/80"
               }`}
             >
               {text}
@@ -409,7 +409,7 @@ function PricingBlock({ offer, dark = false }) {
         <div>
           <p
             className={`text-[10px] font-semibold uppercase tracking-[0.4em] ${
-              dark ? "text-[#008c8c]" : "text-[#006d6d]"
+              dark ? "text-teal" : "text-[#006d6d]"
             }`}
           >
             {offer.priceLabel}
@@ -417,14 +417,14 @@ function PricingBlock({ offer, dark = false }) {
           <div className="mt-2 flex items-baseline gap-3">
             <span
               className={`font-serif text-5xl leading-none lg:text-6xl ${
-                dark ? "text-[#f7f7f5]" : "text-[#1a1a1a]"
+                dark ? "text-ivory" : "text-charcoal"
               }`}
             >
               {formatPeso(offer.priceAmount)}
             </span>
             <span
               className={`text-sm ${
-                dark ? "text-[#f7f7f5]/55" : "text-[#1a1a1a]/55"
+                dark ? "text-ivory/55" : "text-charcoal/55"
               }`}
             >
               {offer.priceUnit}
@@ -434,8 +434,8 @@ function PricingBlock({ offer, dark = false }) {
         <div
           className={`inline-block border px-3 py-2 text-[10px] uppercase tracking-[0.3em] ${
             dark
-              ? "border-[#f7f7f5]/20 text-[#f7f7f5]/75"
-              : "border-[#1a1a1a]/20 text-[#1a1a1a]/65"
+              ? "border-ivory/20 text-ivory/75"
+              : "border-charcoal/20 text-charcoal/65"
           }`}
         >
           {offer.duration}
@@ -445,7 +445,7 @@ function PricingBlock({ offer, dark = false }) {
       {offer.priceFootnote && (
         <p
           className={`mt-3 text-xs italic ${
-            dark ? "text-[#f7f7f5]/55" : "text-[#1a1a1a]/55"
+            dark ? "text-ivory/55" : "text-charcoal/55"
           }`}
         >
           {offer.priceFootnote}
@@ -455,7 +455,7 @@ function PricingBlock({ offer, dark = false }) {
       <div className="mt-7 flex flex-col gap-3 sm:flex-row">
         <Link
           to={offer.ctaPrimaryLink}
-          className="group inline-flex items-center justify-center gap-2 bg-[#008c8c] px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#111111] transition hover:bg-[#006d6d] hover:text-[#f7f7f5] hover:shadow-[0_18px_50px_-15px_rgba(212,133,0,0.6)]"
+          className="group inline-flex items-center justify-center gap-2 bg-teal px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-ocean transition hover:bg-[#006d6d] hover:text-ivory hover:shadow-[0_18px_50px_-15px_rgba(212,133,0,0.6)]"
         >
           {offer.ctaPrimaryLabel}
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -465,8 +465,8 @@ function PricingBlock({ offer, dark = false }) {
             to={offer.ctaSecondaryLink}
             className={`inline-flex items-center justify-center gap-2 border px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] transition ${
               dark
-                ? "border-[#f7f7f5]/30 text-[#f7f7f5] hover:border-[#008c8c] hover:bg-[#f7f7f5]/5"
-                : "border-[#1a1a1a]/30 text-[#1a1a1a] hover:border-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#f7f7f5]"
+                ? "border-ivory/30 text-ivory hover:border-teal hover:bg-ivory/5"
+                : "border-charcoal/30 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-ivory"
             }`}
           >
             {offer.ctaSecondaryLabel}
@@ -482,25 +482,25 @@ function PricingBlock({ offer, dark = false }) {
 /* ================================================================== */
 function OfferDiscoveryRail({ offers, onJump }) {
   return (
-    <section className="bg-[#111111] py-24 lg:py-32">
+    <section className="bg-ocean py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           {...fadeUp()}
           className="mb-12 flex flex-wrap items-end justify-between gap-6"
         >
           <div>
-            <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
-              <span className="h-px w-10 bg-[#008c8c]" />
+            <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal">
+              <span className="h-px w-10 bg-teal" />
               Discover Offers
             </p>
-            <h2 className="font-serif text-4xl text-[#f7f7f5] lg:text-5xl">
+            <h2 className="font-serif text-4xl text-ivory lg:text-5xl">
               Choose your{" "}
-              <span className="italic text-[#008c8c]">island chapter</span>.
+              <span className="italic text-teal">island chapter</span>.
             </h2>
           </div>
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#f7f7f5]/75 transition hover:text-[#008c8c]"
+            className="group inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-ivory/75 transition hover:text-teal"
           >
             Reserve Now
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
@@ -514,7 +514,7 @@ function OfferDiscoveryRail({ offers, onJump }) {
               key={offer.id}
               onClick={() => onJump(offer.slug)}
               {...fadeUp(i * 0.08)}
-              className="group relative w-[78vw] shrink-0 snap-start overflow-hidden border border-[#f7f7f5]/10 bg-[#111111] text-left transition-colors hover:border-[#008c8c]/50 sm:w-105"
+              className="group relative w-[78vw] shrink-0 snap-start overflow-hidden border border-ivory/10 bg-ocean text-left transition-colors hover:border-teal/50 sm:w-105"
             >
               <div className="relative h-72 overflow-hidden">
                 <img
@@ -523,33 +523,33 @@ function OfferDiscoveryRail({ offers, onJump }) {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-1600 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#111111] via-[#111111]/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-ocean via-ocean/30 to-transparent" />
                 {offer.badge && (
-                  <div className="absolute left-4 top-4 inline-flex items-center gap-2 border border-[#008c8c]/60 bg-[#111111]/50 px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-[#f7f7f5] backdrop-blur-md">
+                  <div className="absolute left-4 top-4 inline-flex items-center gap-2 border border-teal/60 bg-ocean/50 px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-ivory backdrop-blur-md">
                     {offer.badge}
                   </div>
                 )}
               </div>
               <div className="p-6">
-                <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-[#008c8c]">
+                <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-teal">
                   {offer.subtitle}
                 </p>
-                <h3 className="font-serif text-2xl text-[#f7f7f5]">
+                <h3 className="font-serif text-2xl text-ivory">
                   {offer.title}
                 </h3>
                 <div className="mt-5 flex items-end justify-between">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-[#f7f7f5]/55">
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-ivory/55">
                       {offer.priceLabel}
                     </p>
-                    <p className="mt-1 font-serif text-2xl text-[#f7f7f5]">
+                    <p className="mt-1 font-serif text-2xl text-ivory">
                       {formatPeso(offer.priceAmount)}
-                      <span className="ml-1 text-xs text-[#f7f7f5]/55">
+                      <span className="ml-1 text-xs text-ivory/55">
                         {offer.priceUnit}
                       </span>
                     </p>
                   </div>
-                  <span className="grid h-10 w-10 place-items-center border border-[#f7f7f5]/20 text-[#f7f7f5] transition group-hover:border-[#008c8c] group-hover:bg-[#008c8c] group-hover:text-[#111111]">
+                  <span className="grid h-10 w-10 place-items-center border border-ivory/20 text-ivory transition group-hover:border-teal group-hover:bg-teal group-hover:text-ocean">
                     <ChevronRight className="h-4 w-4" />
                   </span>
                 </div>
@@ -574,29 +574,29 @@ function ClosingCTA() {
         className="absolute inset-0 h-full w-full scale-110 object-cover blur-[2px]"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-linear-to-b from-[#111111]/85 via-[#111111]/70 to-[#111111]/95" />
+      <div className="absolute inset-0 bg-linear-to-b from-ocean/85 via-ocean/70 to-ocean/95" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center lg:px-10 lg:py-44">
         <motion.p
           {...fadeUp()}
-          className="mb-6 flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+          className="mb-6 flex items-center justify-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
         >
-          <span className="h-px w-10 bg-[#008c8c]" />
+          <span className="h-px w-10 bg-teal" />
           Your Escape Awaits
-          <span className="h-px w-10 bg-[#008c8c]" />
+          <span className="h-px w-10 bg-teal" />
         </motion.p>
         <motion.h2
           {...fadeUp(0.1)}
-          className="font-serif text-4xl leading-tight text-[#f7f7f5] lg:text-6xl"
+          className="font-serif text-4xl leading-tight text-ivory lg:text-6xl"
         >
           Wake up steps away from
           <br />
           Samal Island's{" "}
-          <span className="italic text-[#008c8c]">white sand paradise</span>.
+          <span className="italic text-teal">white sand paradise</span>.
         </motion.h2>
         <motion.p
           {...fadeUp(0.2)}
-          className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-[#f7f7f5]/75"
+          className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-ivory/75"
         >
           Book direct for our most generous inclusions. Limited rooms, attentive
           service, and an island ready to receive you.
@@ -608,14 +608,14 @@ function ClosingCTA() {
         >
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-3 bg-[#008c8c] px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#111111] transition hover:bg-[#006d6d] hover:text-[#f7f7f5] hover:shadow-[0_20px_60px_-15px_rgba(212,133,0,0.7)]"
+            className="group inline-flex items-center gap-3 bg-teal px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-ocean transition hover:bg-[#006d6d] hover:text-ivory hover:shadow-[0_20px_60px_-15px_rgba(212,133,0,0.7)]"
           >
             Reserve Your Escape
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
           <a
             href={`tel:${(brand.phone || "").replace(/\s/g, "")}`}
-            className="inline-flex items-center gap-3 border border-[#f7f7f5]/30 px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-[#f7f7f5] backdrop-blur transition hover:border-[#008c8c] hover:bg-[#f7f7f5]/5"
+            className="inline-flex items-center gap-3 border border-ivory/30 px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.32em] text-ivory backdrop-blur transition hover:border-teal hover:bg-ivory/5"
           >
             <Phone className="h-3.5 w-3.5" />
             {brand.phone}
@@ -624,14 +624,14 @@ function ClosingCTA() {
 
         <motion.div
           {...fadeUp(0.4)}
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.3em] text-[#f7f7f5]/55"
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.3em] text-ivory/55"
         >
           <span className="flex items-center gap-2">
-            <MapPin className="h-3.5 w-3.5 text-[#008c8c]" />
+            <MapPin className="h-3.5 w-3.5 text-teal" />
             Samal Island, Davao del Norte
           </span>
           <span className="flex items-center gap-2">
-            <Mail className="h-3.5 w-3.5 text-[#008c8c]" />
+            <Mail className="h-3.5 w-3.5 text-teal" />
             {brand.email}
           </span>
         </motion.div>
@@ -652,11 +652,11 @@ function StickyMobileCTA({ visible }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="fixed inset-x-0 bottom-0 z-40 border-t border-[#1a1a1a]/15 bg-[#111111]/95 px-4 py-3 backdrop-blur-xl lg:hidden"
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-charcoal/15 bg-ocean/95 px-4 py-3 backdrop-blur-xl lg:hidden"
         >
           <Link
             to="/booking"
-            className="flex w-full items-center justify-center gap-2 bg-[#008c8c] px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#111111] transition hover:bg-[#006d6d] hover:text-[#f7f7f5]"
+            className="flex w-full items-center justify-center gap-2 bg-teal px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-ocean transition hover:bg-[#006d6d] hover:text-ivory"
           >
             Reserve Now
             <ArrowUpRight className="h-3.5 w-3.5" />
@@ -714,7 +714,7 @@ export default function Offer() {
   };
 
   return (
-    <div className="bg-[#f7f7f5]">
+    <div className="bg-ivory">
       <CinematicHero onExplore={handleExplore} />
       <StoryIntro />
 

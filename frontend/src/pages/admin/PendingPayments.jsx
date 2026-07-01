@@ -128,14 +128,25 @@ export default function PendingPayments() {
 
   return (
     <div>
+      {/* Page header */}
+      <div className="mb-8">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+          Finance
+        </p>
+        <h2 className="font-serif text-2xl text-ocean">Payment Review</h2>
+        <p className="text-ocean/40 text-sm mt-1">
+          Confirm uploaded payment screenshots and manage installments
+        </p>
+      </div>
+
       {/* Tabs */}
-      <div className="flex gap-4 mb-8 border-b border-[#111111]/10">
+      <div className="flex gap-4 mb-8 border-b border-ocean/10">
         <button
           onClick={() => setTab("pending")}
           className={`pb-3 text-sm font-medium transition-colors ${
             tab === "pending"
-              ? "text-[#008c8c] border-b-2 border-[#008c8c]"
-              : "text-[#111111]/40 hover:text-[#111111]/60"
+              ? "text-teal border-b-2 border-teal"
+              : "text-ocean/40 hover:text-ocean/60"
           }`}
         >
           Pending Payments ({bookings.length})
@@ -144,8 +155,8 @@ export default function PendingPayments() {
           onClick={() => setTab("balance")}
           className={`pb-3 text-sm font-medium transition-colors ${
             tab === "balance"
-              ? "text-[#008c8c] border-b-2 border-[#008c8c]"
-              : "text-[#111111]/40 hover:text-[#111111]/60"
+              ? "text-teal border-b-2 border-teal"
+              : "text-ocean/40 hover:text-ocean/60"
           }`}
         >
           Balance Due ({balanceDue.length})
@@ -156,14 +167,14 @@ export default function PendingPayments() {
         <>
           {bookings.length === 0 ? (
             <div className="text-center py-20">
-              <CreditCard size={32} className="text-[#111111]/15 mx-auto mb-4" />
-              <p className="text-sm text-[#111111]/40">
+              <CreditCard size={32} className="text-ocean/15 mx-auto mb-4" />
+              <p className="text-sm text-ocean/40">
                 No pending payments to review
               </p>
             </div>
           ) : (
             <>
-              <p className="text-sm text-[#111111]/40 mb-6">
+              <p className="text-sm text-ocean/40 mb-6">
                 {bookings.length} payment{bookings.length !== 1 ? "s" : ""}{" "}
                 awaiting review
               </p>
@@ -174,16 +185,16 @@ export default function PendingPayments() {
                   return (
                     <div
                       key={b._id}
-                      className="bg-white border border-[#111111]/5 p-6"
+                      className="bg-white border border-ocean/5 p-6"
                     >
                       <div className="grid md:grid-cols-[1fr_280px] gap-6">
                         {/* Guest details */}
                         <div className="space-y-3 text-sm">
                           <div className="flex items-baseline gap-3">
-                            <h4 className="font-serif text-lg text-[#111111]">
+                            <h4 className="font-serif text-lg text-ocean">
                               {b.guestName}
                             </h4>
-                            <span className="text-[10px] font-mono text-[#111111]/30">
+                            <span className="text-[10px] font-mono text-ocean/30">
                               {b.bookingRef}
                             </span>
                             {b.paymentOption === "installment" && (
@@ -195,52 +206,52 @@ export default function PendingPayments() {
 
                           <div className="grid grid-cols-2 gap-x-6 gap-y-2 pt-2">
                             <div>
-                              <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                              <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                 Email
                               </p>
-                              <p className="text-[#111111]/70">{b.guestEmail}</p>
+                              <p className="text-ocean/70">{b.guestEmail}</p>
                             </div>
                             {b.guestPhone && (
                               <div>
-                                <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                                <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                   Phone
                                 </p>
-                                <p className="text-[#111111]/70">
+                                <p className="text-ocean/70">
                                   {b.guestPhone}
                                 </p>
                               </div>
                             )}
                             <div>
-                              <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                              <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                 Room
                               </p>
-                              <p className="text-[#111111]/70">
+                              <p className="text-ocean/70">
                                 {b.room?.name || "\u2014"}
                               </p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                              <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                 Dates
                               </p>
-                              <p className="text-[#111111]/70">
+                              <p className="text-ocean/70">
                                 {new Date(b.checkIn).toLocaleDateString()} -{" "}
                                 {new Date(b.checkOut).toLocaleDateString()}
                               </p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                              <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                 Nights
                               </p>
-                              <p className="text-[#111111]/70">{b.nights}</p>
+                              <p className="text-ocean/70">{b.nights}</p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                              <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                                 Amount
                               </p>
-                              <p className="font-medium text-[#008c8c]">
+                              <p className="font-medium text-teal">
                                 PHP {info.amount?.toLocaleString()}
                                 {b.paymentOption === "installment" && (
-                                  <span className="text-[#111111]/40 font-normal ml-1">
+                                  <span className="text-ocean/40 font-normal ml-1">
                                     / PHP {b.totalAmount?.toLocaleString()}{" "}
                                     total
                                   </span>
@@ -252,7 +263,7 @@ export default function PendingPayments() {
 
                         {/* Screenshot */}
                         <div>
-                          <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-2">
+                          <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-2">
                             Payment Proof
                           </p>
                           <a
@@ -264,9 +275,9 @@ export default function PendingPayments() {
                             <img
                               src={info.screenshot}
                               alt="Payment proof"
-                              className="w-full h-48 object-contain border border-[#111111]/10 bg-[#111111]/3"
+                              className="w-full h-48 object-contain border border-ocean/10 bg-ocean/3"
                             />
-                            <span className="inline-flex items-center gap-1 mt-2 text-[11px] text-[#008c8c] hover:text-[#008c8c] transition-colors">
+                            <span className="inline-flex items-center gap-1 mt-2 text-[11px] text-teal hover:text-teal transition-colors">
                               <ExternalLink size={11} /> View full size
                             </span>
                           </a>
@@ -274,7 +285,7 @@ export default function PendingPayments() {
                       </div>
 
                       {/* Actions */}
-                      <div className="mt-5 pt-5 border-t border-[#111111]/5 flex flex-wrap gap-2">
+                      <div className="mt-5 pt-5 border-t border-ocean/5 flex flex-wrap gap-2">
                         {info.installmentNumber ? (
                           <button
                             onClick={() =>
@@ -283,14 +294,14 @@ export default function PendingPayments() {
                                 info.installmentNumber,
                               )
                             }
-                            className="bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-[#111111] transition-colors flex items-center gap-1.5"
+                            className="bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-ocean transition-colors flex items-center gap-1.5"
                           >
                             <CheckCircle size={13} /> Confirm {info.label}
                           </button>
                         ) : (
                           <button
                             onClick={() => handleAction(b._id, "confirmed")}
-                            className="bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-[#111111] transition-colors flex items-center gap-1.5"
+                            className="bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-ocean transition-colors flex items-center gap-1.5"
                           >
                             <CheckCircle size={13} /> Confirm
                           </button>
@@ -305,7 +316,7 @@ export default function PendingPayments() {
                           onClick={() =>
                             handleDownloadReceipt(b._id, b.bookingRef)
                           }
-                          className="border border-[#008c8c] text-[#008c8c] text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-[#008c8c] hover:text-[#111111] transition-colors flex items-center gap-1.5 ml-auto"
+                          className="border border-teal text-teal text-[11px] font-semibold uppercase tracking-[0.15em] px-6 py-2.5 hover:bg-teal hover:text-ocean transition-colors flex items-center gap-1.5 ml-auto"
                         >
                           <Download size={13} /> Receipt PDF
                         </button>
@@ -323,8 +334,8 @@ export default function PendingPayments() {
         <>
           {balanceDue.length === 0 ? (
             <div className="text-center py-20">
-              <CreditCard size={32} className="text-[#111111]/15 mx-auto mb-4" />
-              <p className="text-sm text-[#111111]/40">
+              <CreditCard size={32} className="text-ocean/15 mx-auto mb-4" />
+              <p className="text-sm text-ocean/40">
                 No installment bookings with balance due
               </p>
             </div>
@@ -333,13 +344,13 @@ export default function PendingPayments() {
               {balanceDue.map((b) => (
                 <div
                   key={b._id}
-                  className="bg-white border border-[#111111]/5 p-6"
+                  className="bg-white border border-ocean/5 p-6"
                 >
                   <div className="flex items-baseline gap-3 mb-4">
-                    <h4 className="font-serif text-lg text-[#111111]">
+                    <h4 className="font-serif text-lg text-ocean">
                       {b.guestName}
                     </h4>
-                    <span className="text-[10px] font-mono text-[#111111]/30">
+                    <span className="text-[10px] font-mono text-ocean/30">
                       {b.bookingRef}
                     </span>
                     <span className="bg-yellow-50 text-yellow-700 px-2 py-0.5 text-[10px] uppercase tracking-wider">
@@ -349,23 +360,23 @@ export default function PendingPayments() {
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm mb-4">
                     <div>
-                      <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                      <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                         Room
                       </p>
-                      <p className="text-[#111111]/70">
+                      <p className="text-ocean/70">
                         {b.room?.name || "\u2014"}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                      <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                         Check-in
                       </p>
-                      <p className="text-[#111111]/70">
+                      <p className="text-ocean/70">
                         {new Date(b.checkIn).toLocaleDateString()}
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                      <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                         Balance Due
                       </p>
                       <p className="font-medium text-red-500">
@@ -374,10 +385,10 @@ export default function PendingPayments() {
                       </p>
                     </div>
                     <div>
-                      <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-0.5">
+                      <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-0.5">
                         Due Date
                       </p>
-                      <p className="text-[#111111]/70">
+                      <p className="text-ocean/70">
                         {b.installment?.secondPaymentDueDate
                           ? new Date(
                               b.installment.secondPaymentDueDate,
@@ -387,8 +398,8 @@ export default function PendingPayments() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 pt-4 border-t border-[#111111]/5">
-                    <span className="text-xs text-[#111111]/40">
+                  <div className="flex items-center gap-3 pt-4 border-t border-ocean/5">
+                    <span className="text-xs text-ocean/40">
                       2nd Payment:{" "}
                       {b.installment?.secondPaymentStatus === "pending"
                         ? "Screenshot uploaded - awaiting review"
@@ -398,7 +409,7 @@ export default function PendingPayments() {
                       <button
                         onClick={() => handleSendReminder(b._id)}
                         disabled={b.installment?.secondPaymentReminderSent}
-                        className="ml-auto border border-[#008c8c] text-[#008c8c] text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-[#008c8c] hover:text-[#111111] transition-colors flex items-center gap-1.5 disabled:opacity-40"
+                        className="ml-auto border border-teal text-teal text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-teal hover:text-ocean transition-colors flex items-center gap-1.5 disabled:opacity-40"
                       >
                         <Bell size={12} />{" "}
                         {b.installment?.secondPaymentReminderSent

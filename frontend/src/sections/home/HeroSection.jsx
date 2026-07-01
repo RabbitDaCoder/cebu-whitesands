@@ -254,7 +254,7 @@ export default function HeroSection() {
                         boxShadow: "0 12px 32px -4px rgba(0,140,140,0.55)",
                       }}
                       whileTap={{ scale: 0.97 }}
-                      className="inline-flex items-center gap-2.5 rounded-full bg-[#008c8c] px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] transition-colors hover:bg-[#007474]"
+                      className="inline-flex items-center gap-2.5 rounded-full bg-teal px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] transition-colors hover:bg-teal-dark"
                     >
                       {slide.cta}
                       <ChevronRight size={13} />
@@ -337,7 +337,7 @@ export default function HeroSection() {
               className="absolute bottom-0 left-6 right-6 h-px bg-white/15 lg:left-10 lg:right-10"
             >
               <motion.div
-                className="h-full bg-[#008c8c]"
+                className="h-full bg-teal"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{
@@ -380,7 +380,7 @@ export default function HeroSection() {
                 value={checkIn}
                 min={defaultCheckIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/40 focus:outline-none focus:border-[#008c8c] transition-colors scheme-dark"
+                className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/40 focus:outline-none focus:border-teal transition-colors scheme-dark"
               />
             </div>
 
@@ -442,7 +442,7 @@ export default function HeroSection() {
                 placeholder="Optional"
                 value={promo}
                 onChange={(e) => setPromo(e.target.value)}
-                className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/30 focus:outline-none focus:border-[#008c8c] transition-colors"
+                className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/30 focus:outline-none focus:border-teal transition-colors"
               />
             </div>
 
@@ -454,7 +454,7 @@ export default function HeroSection() {
               }}
               whileTap={{ scale: 0.97 }}
               onClick={handleBook}
-              className="w-full rounded-2xl bg-[#008c8c] py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] transition-colors hover:bg-[#007474]"
+              className="w-full rounded-2xl bg-teal py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] transition-colors hover:bg-teal-dark"
             >
               Book Now
             </motion.button>
@@ -476,7 +476,7 @@ export default function HeroSection() {
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.94 }}
           onClick={() => setWidgetOpen(true)}
-          className="rounded-full bg-[#008c8c] px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)]"
+          className="rounded-full bg-teal px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)]"
         >
           Book Now
         </motion.button>
@@ -520,7 +520,7 @@ export default function HeroSection() {
                       value={checkIn}
                       min={defaultCheckIn}
                       onChange={(e) => setCheckIn(e.target.value)}
-                      className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#008c8c] scheme-dark"
+                      className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white focus:outline-none focus:border-teal scheme-dark"
                     />
                   </div>
                   <div>
@@ -532,7 +532,7 @@ export default function HeroSection() {
                       value={checkOut}
                       min={checkIn}
                       onChange={(e) => setCheckOut(e.target.value)}
-                      className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white focus:outline-none focus:border-[#008c8c] scheme-dark"
+                      className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white focus:outline-none focus:border-teal scheme-dark"
                     />
                   </div>
                 </div>
@@ -591,13 +591,13 @@ export default function HeroSection() {
                     placeholder="Optional"
                     value={promo}
                     onChange={(e) => setPromo(e.target.value)}
-                    className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/30 focus:outline-none focus:border-[#008c8c]"
+                    className="w-full rounded-xl bg-white/10 border border-white/15 px-3 py-2.5 text-[12px] text-white placeholder-white/30 focus:outline-none focus:border-teal"
                   />
                 </div>
                 <motion.button
                   whileTap={{ scale: 0.97 }}
                   onClick={handleBook}
-                  className="w-full rounded-2xl bg-[#008c8c] py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] hover:bg-[#007474] transition-colors"
+                  className="w-full rounded-2xl bg-teal py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-white shadow-[0_6px_24px_-4px_rgba(0,140,140,0.5)] hover:bg-teal-dark transition-colors"
                 >
                   Book Now
                 </motion.button>
@@ -619,7 +619,7 @@ export default function HeroSection() {
           <button
             key={i}
             onClick={() => go(i, i > current ? 1 : -1)}
-            className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-[#008c8c]" : "w-1.5 bg-white/30"}`}
+            className={`h-1 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-teal" : "w-1.5 bg-white/30"}`}
             aria-label={`Slide ${i + 1}`}
           />
         ))}

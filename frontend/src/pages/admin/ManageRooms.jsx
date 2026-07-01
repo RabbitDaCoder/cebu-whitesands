@@ -39,7 +39,7 @@ const EMPTY_FORM = {
 };
 
 const inputClass =
-  "w-full border border-[#111111]/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#008c8c] transition-colors";
+  "w-full border border-ocean/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-teal transition-colors";
 
 export default function ManageRooms() {
   const MAX_IMAGES = 15;
@@ -180,13 +180,19 @@ export default function ManageRooms() {
     <div>
       {/* Header + add button */}
       {!showForm && (
-        <div className="flex items-center justify-between mb-8">
-          <p className="text-sm text-[#111111]/50">
-            {rooms.length} room{rooms.length !== 1 ? "s" : ""} total
-          </p>
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+              Inventory
+            </p>
+            <h2 className="font-serif text-2xl text-ocean">Room Management</h2>
+            <p className="text-ocean/40 text-sm mt-1">
+              {rooms.length} room{rooms.length !== 1 ? "s" : ""} in your inventory
+            </p>
+          </div>
           <button
             onClick={() => setShowForm(true)}
-            className="bg-[#008c8c] text-[#111111] text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 hover:bg-[#111111] transition-colors flex items-center gap-2"
+            className="bg-teal text-ocean text-[11px] font-semibold uppercase tracking-[0.18em] px-6 py-3 hover:bg-ocean hover:text-ivory transition-colors flex items-center gap-2"
           >
             <Plus size={14} /> Add Room
           </button>
@@ -195,14 +201,19 @@ export default function ManageRooms() {
 
       {/* Form */}
       {showForm && (
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 mb-10">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="font-serif text-xl text-[#111111]">
-              {editing ? "Edit Room" : "New Room"}
-            </h2>
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 mb-10">
+          <div className="flex items-start justify-between mb-6">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+                {editing ? "Edit" : "New"}
+              </p>
+              <h2 className="font-serif text-xl text-ocean">
+                {editing ? "Edit Room" : "New Room"}
+              </h2>
+            </div>
             <button
               onClick={resetForm}
-              className="text-[#111111]/30 hover:text-[#111111]/60 transition-colors"
+              className="text-ocean/30 hover:text-ocean/60 transition-colors mt-1"
             >
               <X size={18} />
             </button>
@@ -211,7 +222,7 @@ export default function ManageRooms() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Room Name
                 </label>
                 <input
@@ -223,7 +234,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Category
                 </label>
                 <select
@@ -243,7 +254,7 @@ export default function ManageRooms() {
             </div>
 
             <div>
-              <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+              <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                 Description
               </label>
               <textarea
@@ -259,7 +270,7 @@ export default function ManageRooms() {
 
             <div className="grid md:grid-cols-3 gap-5">
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Price / Night (PHP)
                 </label>
                 <input
@@ -274,7 +285,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Discount Price
                 </label>
                 <input
@@ -289,7 +300,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Discount Label
                 </label>
                 <input
@@ -306,7 +317,7 @@ export default function ManageRooms() {
 
             <div className="grid md:grid-cols-4 gap-5">
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Weekend Price
                 </label>
                 <input
@@ -321,7 +332,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Good For (Min)
                 </label>
                 <input
@@ -336,7 +347,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Max Capacity
                 </label>
                 <input
@@ -351,7 +362,7 @@ export default function ManageRooms() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                   Room Size
                 </label>
                 <input
@@ -365,7 +376,7 @@ export default function ManageRooms() {
             </div>
 
             <div>
-              <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+              <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                 Bed Type
               </label>
               <input
@@ -378,7 +389,7 @@ export default function ManageRooms() {
             </div>
 
             <div>
-              <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+              <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                 Features (comma-separated)
               </label>
               <input
@@ -391,9 +402,9 @@ export default function ManageRooms() {
             </div>
 
             <div>
-              <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+              <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
                 Room Note
-                <span className="text-[#111111]/30 font-normal ml-1">
+                <span className="text-ocean/30 font-normal ml-1">
                   (shown as green callout on card)
                 </span>
               </label>
@@ -409,7 +420,7 @@ export default function ManageRooms() {
             {/* Existing images */}
             {editing && existingImages.length > 0 && (
               <div>
-                <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-3">
+                <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-3">
                   Current Images
                 </label>
                 <div className="flex gap-3 flex-wrap">
@@ -418,7 +429,7 @@ export default function ManageRooms() {
                       <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-cover border border-[#111111]/10"
+                        className="w-full h-full object-cover border border-ocean/10"
                       />
                       <button
                         type="button"
@@ -435,12 +446,12 @@ export default function ManageRooms() {
 
             {/* Upload */}
             <div>
-              <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-3">
+              <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-3">
                 {editing ? "Add New Images" : "Images"}
               </label>
-              <label className="flex items-center justify-center gap-3 border-2 border-dashed border-[#111111]/10 py-8 cursor-pointer hover:border-[#008c8c]/40 transition-colors">
-                <Upload size={18} className="text-[#111111]/30" />
-                <span className="text-sm text-[#111111]/40">
+              <label className="flex items-center justify-center gap-3 border-2 border-dashed border-ocean/10 py-8 cursor-pointer hover:border-teal/40 transition-colors">
+                <Upload size={18} className="text-ocean/30" />
+                <span className="text-sm text-ocean/40">
                   {files.length > 0
                     ? `${files.length} file${files.length > 1 ? "s" : ""} selected`
                     : `Click to upload images (up to ${MAX_IMAGES})`}
@@ -461,7 +472,7 @@ export default function ManageRooms() {
                 type="button"
                 onClick={() => setForm({ ...form, available: !form.available })}
                 className={`w-10 h-6 flex items-center px-0.5 transition-colors ${
-                  form.available ? "bg-[#008c8c]" : "bg-[#111111]/15"
+                  form.available ? "bg-teal" : "bg-ocean/15"
                 }`}
               >
                 <span
@@ -470,7 +481,7 @@ export default function ManageRooms() {
                   }`}
                 />
               </button>
-              <span className="text-sm text-[#111111]/70">
+              <span className="text-sm text-ocean/70">
                 Available for booking
               </span>
             </div>
@@ -480,7 +491,7 @@ export default function ManageRooms() {
               <button
                 type="submit"
                 disabled={saving}
-                className="bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.18em] px-8 py-3 hover:bg-[#111111] transition-colors disabled:opacity-50 flex items-center gap-2"
+                className="bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.18em] px-8 py-3 hover:bg-ocean transition-colors disabled:opacity-50 flex items-center gap-2"
               >
                 {saving ? (
                   "Saving..."
@@ -497,7 +508,7 @@ export default function ManageRooms() {
               <button
                 type="button"
                 onClick={resetForm}
-                className="border border-[#111111]/10 text-[#111111]/50 text-[11px] font-medium uppercase tracking-[0.18em] px-8 py-3 hover:bg-[#111111]/3 transition-colors"
+                className="border border-ocean/10 text-ocean/50 text-[11px] font-medium uppercase tracking-[0.18em] px-8 py-3 hover:bg-ocean/3 transition-colors"
               >
                 Cancel
               </button>
@@ -509,26 +520,26 @@ export default function ManageRooms() {
       {/* Room list */}
       {rooms.length === 0 ? (
         <div className="text-center py-20">
-          <Image size={32} className="text-[#111111]/15 mx-auto mb-4" />
-          <p className="text-sm text-[#111111]/40">No rooms yet</p>
+          <Image size={32} className="text-ocean/15 mx-auto mb-4" />
+          <p className="text-sm text-ocean/40">No rooms yet</p>
         </div>
       ) : (
         <div className="grid gap-4">
           {rooms.map((room) => (
             <div
               key={room._id}
-              className="bg-white border border-[#111111]/5 p-5 flex items-start gap-5"
+              className="bg-white border border-ocean/10 p-5 flex items-start gap-5 hover:border-teal/30 hover:shadow-[0_8px_24px_-12px_rgba(11,122,138,0.18)] transition-all duration-300"
             >
               {/* Thumbnail */}
               {room.images?.[0] ? (
                 <img
                   src={room.images[0]}
                   alt={room.name}
-                  className="w-20 h-20 object-cover shrink-0 border border-[#111111]/5"
+                  className="w-20 h-20 object-cover shrink-0 border border-ocean/5"
                 />
               ) : (
-                <div className="w-20 h-20 bg-[#111111]/5 flex items-center justify-center shrink-0">
-                  <Image size={18} className="text-[#111111]/20" />
+                <div className="w-20 h-20 bg-ocean/5 flex items-center justify-center shrink-0">
+                  <Image size={18} className="text-ocean/20" />
                 </div>
               )}
 
@@ -536,24 +547,24 @@ export default function ManageRooms() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <h4 className="font-serif text-base text-[#111111] mb-0.5">
+                    <h4 className="font-serif text-base text-ocean mb-0.5">
                       {room.name}
                     </h4>
-                    <p className="text-xs text-[#111111]/40 truncate max-w-md">
+                    <p className="text-xs text-ocean/40 truncate max-w-md">
                       {room.description}
                     </p>
                   </div>
                   <div className="flex gap-1 shrink-0">
                     <button
                       onClick={() => startEdit(room)}
-                      className="p-2 text-[#111111]/30 hover:text-[#008c8c] transition-colors"
+                      className="p-2 text-ocean/30 hover:text-teal transition-colors"
                       title="Edit"
                     >
                       <Pencil size={14} />
                     </button>
                     <button
                       onClick={() => handleDelete(room._id)}
-                      className="p-2 text-[#111111]/30 hover:text-red-500 transition-colors"
+                      className="p-2 text-ocean/30 hover:text-red-500 transition-colors"
                       title="Delete"
                     >
                       <Trash2 size={14} />
@@ -562,12 +573,12 @@ export default function ManageRooms() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-3 text-xs">
-                  <span className="text-[#008c8c] font-medium">
+                  <span className="text-teal font-medium">
                     ₱{room.pricePerNight?.toLocaleString()}
-                    <span className="text-[#111111]/30 font-normal">/night</span>
+                    <span className="text-ocean/30 font-normal">/night</span>
                   </span>
                   {room.weekendPrice && (
-                    <span className="text-[#111111]/50">
+                    <span className="text-ocean/50">
                       Weekend ₱{room.weekendPrice.toLocaleString()}
                     </span>
                   )}
@@ -577,7 +588,7 @@ export default function ManageRooms() {
                       {room.discountPrice.toLocaleString()}
                     </span>
                   )}
-                  <span className="text-[#111111]/40">
+                  <span className="text-ocean/40">
                     Good for{" "}
                     {room.minGuests ||
                       Math.max(
@@ -587,11 +598,11 @@ export default function ManageRooms() {
                       )}{" "}
                     guests
                   </span>
-                  <span className="text-[#111111]/40">
+                  <span className="text-ocean/40">
                     Max {room.maxGuests || room.capacity || room.occupancy || 2}{" "}
                     guests
                   </span>
-                  <span className="bg-[#008c8c]/10 text-[#008c8c] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] font-medium">
+                  <span className="bg-teal/10 text-teal px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] font-medium">
                     {room.category}
                   </span>
                   {!room.available && (

@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   motion,
@@ -37,7 +37,7 @@ import HeroSection from "../sections/home/HeroSection";
 /* --------------------------------------------------------------------- */
 const CDN = "https://image-tc.galaxy.tf";
 const IMG = {
-  // Hero slider — confirmed from live site HTML
+  // Hero slider � confirmed from live site HTML
   hero1: `${CDN}/wijpeg-9fnqmfelaa8mmuxnnfuylk6lr/artboard-31-1.jpg?width=1920`,
   hero2: `${CDN}/wijpeg-ew7qj5pfcn1s7px8nh2opj0hc/discovery-samal-08124.jpg?width=1920`,
   hero3: `${CDN}/wijpeg-555ut0sjmfyvv81wgcfvrcezv/diving-at-samal.jpg?width=1920`,
@@ -81,88 +81,60 @@ const FEATURE_TILES = [
 
 const ROOM_CATALOG = [
   {
-    slug: "grand-signature-suite",
-    name: "Grand Signature Suite",
-    tag: "Pinnacle of opulence",
-    image: `${CDN}/wijpeg-ew7qj5pfcn1s7px8nh2opj0hc/discovery-samal-08124.jpg?width=900`,
-    body: "A sanctuary of sophistication offering an unrivaled fusion of comfort and grandeur.",
+    slug: "deluxe-room",
+    name: "Deluxe Room",
+    tag: "Intimate Luxury � 2 Pax",
+    image: IMG.hero2,
+    body: "A refined sanctuary for two, where curated coastal interiors and premium amenities deliver an unhurried island retreat.",
   },
   {
-    slug: "three-bedroom-villa",
-    name: "Three Bedroom Villa",
-    tag: "Beach Club Crown",
-    image: `${CDN}/wijpeg-3bxkz5nvh6l0wnybzlbjqmlrq/aerial-shot-of-three-bedroom-villa_wide.jpg?width=900`,
-    body: "Perched atop the beach club — the most lavish accommodation in the estate.",
+    slug: "garden-rooms",
+    name: "Garden Rooms",
+    tag: "Garden Paradise � 4 Pax",
+    image: IMG.welcome,
+    body: "Surrounded by lush tropical greenery, these rooms offer natural light, garden views, and a serene connection to the landscape.",
   },
   {
-    slug: "two-bedroom-villa",
-    name: "Two Bedroom Villa",
-    tag: "Stunning Views",
-    image: `${CDN}/wijpeg-aiz03nlmni81qusxjobzuofw2/two-bedrom-villa_wide.jpg?width=900`,
-    body: "Impressive accommodations where comfort and luxury come together.",
+    slug: "sea-rooms",
+    name: "Sea Rooms",
+    tag: "Ocean Horizon � 6 Pax",
+    image: IMG.experiences,
+    body: "Wake to uninterrupted sea vistas. These spacious rooms bring the Davao Gulf inside through generous windows and coastal design.",
   },
   {
-    slug: "one-bedroom-villa",
-    name: "One Bedroom Villa",
-    tag: "Private Pool & Yard",
-    image: `${CDN}/wijpeg-9fnqmfelaa8mmuxnnfuylk6lr/artboard-31-1.jpg?width=900`,
-    body: "An elegant villa with private yard and pool for a tranquil escape.",
+    slug: "deluxe-pool-view-rooms",
+    name: "Deluxe Pool View Rooms",
+    tag: "Pool Terrace � 8 Pax",
+    image: IMG.pavilion,
+    body: "Perched above the resort pool, these deluxe rooms blend indoor comfort with expansive outdoor views of the shimmering waters.",
   },
   {
-    slug: "premiere-one-bedroom-suite",
-    name: "Premiere One Bedroom Suite",
-    tag: "Overlooking Paradise",
-    image: `${CDN}/wijpeg-555ut0sjmfyvv81wgcfvrcezv/diving-at-samal.jpg?width=900`,
-    body: "Begin a tranquil retreat surrounded by lush greenery and crystal clear waters.",
+    slug: "villa-alon",
+    name: "Villa Alon",
+    tag: "Private Villa � 10 Pax",
+    image: IMG.highlights,
+    body: "A generously appointed private villa that accommodates families and groups in complete luxury with exclusive amenities.",
   },
   {
-    slug: "one-bedroom-suite",
-    name: "One Bedroom Suite",
-    tag: "Lush Views",
-    image: `${CDN}/wijpeg-7ag5ej1eccv4jjh3jwhg9mg84/hotel-one-bedroom_wide.jpg?width=900`,
-    body: "Reconnect with your inner wanderer where unforgettable experiences and lush views intertwine.",
+    slug: "villa-hali",
+    name: "Villa Hali",
+    tag: "Estate Villa � 16 Pax",
+    image: IMG.hero3,
+    body: "An expansive estate villa offering grand living spaces, multiple bedrooms, and the full complement of resort services at your doorstep.",
   },
   {
-    slug: "executive-suite-premiere",
-    name: "Executive Suite Premiere",
-    tag: "Quiet & Exclusive",
-    image: `${CDN}/wijpeg-7929zq4qi0e75ubmqvqwx0fyh/dive-spot-ligid-island-in-samal.jpg?width=900`,
-    body: "A peaceful escape creating a truly private and exclusive experience.",
+    slug: "villa-isla",
+    name: "Villa Isla",
+    tag: "Island Villa � 20 Pax",
+    image: IMG.bookDirect,
+    body: "The ultimate island gathering space � a sprawling villa where milestone celebrations and extended family retreats find their perfect setting.",
   },
   {
-    slug: "samal-suite",
-    name: "Samal Suite",
-    tag: "Epitome of Luxury",
-    image: `${CDN}/wijpeg-ew7qj5pfcn1s7px8nh2opj0hc/discovery-samal-08124.jpg?width=900`,
-    body: "Immerse yourself in the beauty of nature with personalized service.",
-  },
-  {
-    slug: "executive-suite-beach",
-    name: "Executive Suite Beach",
-    tag: "Beachfront Marvel",
-    image: `${CDN}/wijpeg-9fnqmfelaa8mmuxnnfuylk6lr/artboard-31-1.jpg?width=900`,
-    body: "Wander in an island getaway with marvelous experiences for all the things you yearn for.",
-  },
-  {
-    slug: "executive-suite-garden",
-    name: "Executive Suite Garden",
-    tag: "Garden Sanctuary",
-    image: `${CDN}/wijpeg-555ut0sjmfyvv81wgcfvrcezv/diving-at-samal.jpg?width=900`,
-    body: "An excellent choice for those looking for an escape away from the bustling city.",
-  },
-  {
-    slug: "premiere-suite",
-    name: "Premiere Suite",
-    tag: "Serene & Intimate",
-    image: `${CDN}/wijpeg-7929zq4qi0e75ubmqvqwx0fyh/dive-spot-ligid-island-in-samal.jpg?width=900`,
-    body: "An exclusive feel for solo travelers or couples seeking a cozy, comfortable haven.",
-  },
-  {
-    slug: "junior-suite",
-    name: "Junior Suite",
-    tag: "Panoramic Vistas",
-    image: `${CDN}/wijpeg-3qsaxg2i3b09o6hcg17w98bao/hotel-twin-bedroom-with-garden-view_wide.jpg?width=900`,
-    body: "Begin your journey with panoramic vistas of the whole estate.",
+    slug: "villa-solana",
+    name: "Villa Solana",
+    tag: "Grand Villa � 30 Pax",
+    image: IMG.cta,
+    body: "Our most prestigious accommodation � Villa Solana commands the resort with commanding views, lavish interiors, and unmatched capacity.",
   },
 ];
 
@@ -176,7 +148,7 @@ const HIGHLIGHTS = [
   },
   {
     tag: "Weekends",
-    title: "Glamping Soirée",
+    title: "Glamping Soir�e",
     body: "Elevate your weekends with Haribar Lounge's weekend barbecue feast. Fridays and Saturdays.",
     image: IMG.hero3,
     href: "/activities",
@@ -184,7 +156,7 @@ const HIGHLIGHTS = [
   {
     tag: "Dining",
     title: "Island Dining Access",
-    body: "Discover an array of culinary delights during your visits — consumable dining access.",
+    body: "Discover an array of culinary delights during your visits � consumable dining access.",
     image: IMG.foodie,
     href: "/restaurants",
   },
@@ -193,7 +165,7 @@ const HIGHLIGHTS = [
 const DINING = [
   {
     name: "The Bistro",
-    body: "Perfectly located by the villa pool — wind down with a sumptuous dish complemented by scenic views.",
+    body: "Perfectly located by the villa pool � wind down with a sumptuous dish complemented by scenic views.",
     image: IMG.highlights,
   },
   {
@@ -203,7 +175,7 @@ const DINING = [
   },
   {
     name: "Haribar Lounge",
-    body: "Spend your days taking in the serene waters while sipping a cocktail or two — nothing but good times.",
+    body: "Spend your days taking in the serene waters while sipping a cocktail or two � nothing but good times.",
     image: IMG.experiences,
   },
 ];
@@ -222,7 +194,7 @@ const TESTIMONIALS = [
     rating: 5,
   },
   {
-    text: "Discovery Samal exceeded every expectation. The private pool, the spa, the food — everything was world-class.",
+    text: "Discovery Samal exceeded every expectation. The private pool, the spa, the food � everything was world-class.",
     name: "Wei L.",
     platform: "Booking.com",
     rating: 5,
@@ -262,9 +234,9 @@ const stagger = {
 function GoldMotif({ className = "" }) {
   return (
     <div className={`flex items-center justify-center gap-3 ${className}`}>
-      <span className="h-px w-10 bg-[#c9a96e]" />
-      <span className="h-1.5 w-1.5 rotate-45 border border-[#c9a96e]" />
-      <span className="h-px w-10 bg-[#c9a96e]" />
+      <span className="h-px w-10 bg-gold-light" />
+      <span className="h-1.5 w-1.5 rotate-45 border border-gold-light" />
+      <span className="h-px w-10 bg-gold-light" />
     </div>
   );
 }
@@ -277,7 +249,7 @@ function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-      className="fixed top-0 left-0 right-0 z-9999 h-0.5 bg-[#c9a96e]"
+      className="fixed top-0 left-0 right-0 z-9999 h-0.5 bg-gold"
     />
   );
 }
@@ -310,9 +282,9 @@ function FloatingWhatsApp() {
 /* --------------------------------------------------------------------- */
 function PromoStrip() {
   return (
-    <div className="bg-[#0a0a0a] py-2.5 text-center text-[11px] uppercase tracking-[0.3em] text-[#c9a96e]">
+    <div className="bg-ocean py-2.5 text-center text-[11px] uppercase tracking-[0.3em] text-gold">
       <span>Happy Summer</span>
-      <span className="mx-3 text-white/30">·</span>
+      <span className="mx-3 text-white/30">�</span>
       <span className="text-white/80">
         Exclusive discounts and delightful perks
       </span>
@@ -338,13 +310,13 @@ function Welcome() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Welcome to {brand.displayName}
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-black sm:text-4xl lg:text-[44px]"
+            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-charcoal sm:text-4xl lg:text-[44px]"
           >
             Your 5-star luxury resort
             <br /> in Davao, Philippines
@@ -354,17 +326,17 @@ function Welcome() {
           </motion.div>
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-10 max-w-3xl text-[15px] font-light leading-loose text-black/70 lg:text-[16px]"
+            className="mx-auto mt-10 max-w-3xl text-[15px] font-light leading-loose text-charcoal/70 lg:text-[16px]"
           >
             Discovery Samal is the first and only Discovery Resort brand in
             Mindanao, offering the most magnificent views of the Davao Gulf. Set
             within a sprawling enclave of curated meeting spaces, dining
-            destinations, and relaxing landscapes — it is a sanctuary built for
+            destinations, and relaxing landscapes � it is a sanctuary built for
             both business and leisure.
           </motion.p>
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-5 max-w-3xl text-[15px] font-light leading-loose text-black/70 lg:text-[16px]"
+            className="mx-auto mt-5 max-w-3xl text-[15px] font-light leading-loose text-charcoal/70 lg:text-[16px]"
           >
             With 153 lavish villas and plush accommodations, four intimate
             meeting rooms, and one opulent convention center for up to 1,000
@@ -374,7 +346,7 @@ function Welcome() {
           <motion.div variants={fadeUp} className="mt-12">
             <Link
               to="/about"
-              className="group inline-flex items-center gap-3 border-b border-black pb-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-black"
+              className="group inline-flex items-center gap-3 border-b border-black pb-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal"
             >
               Discover More{" "}
               <ArrowRight
@@ -390,10 +362,10 @@ function Welcome() {
           >
             {STATS.map((s) => (
               <div key={s.label} className="text-center">
-                <p className="font-serif text-3xl font-light text-black lg:text-[42px]">
+                <p className="font-serif text-3xl font-light text-charcoal lg:text-[42px]">
                   {s.value}
                 </p>
-                <p className="mt-2 text-[10px] font-light uppercase tracking-[0.3em] text-black/55">
+                <p className="mt-2 text-[10px] font-light uppercase tracking-[0.3em] text-charcoal/55">
                   {s.label}
                 </p>
               </div>
@@ -410,7 +382,7 @@ function Welcome() {
 /* --------------------------------------------------------------------- */
 function FeatureTiles() {
   return (
-    <section className="relative bg-[#f5f1ea] py-28 lg:py-36">
+    <section className="relative bg-beige py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial="hidden"
@@ -426,7 +398,7 @@ function FeatureTiles() {
               className="group"
             >
               <Link to={tile.href} className="block">
-                <div className="relative aspect-4/5 overflow-hidden bg-black">
+                <div className="relative aspect-4/5 overflow-hidden bg-charcoal">
                   <img
                     src={tile.image}
                     alt={tile.title}
@@ -435,19 +407,19 @@ function FeatureTiles() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute left-6 top-6 inline-flex items-center gap-2 text-[10px] font-light uppercase tracking-[0.4em] text-white">
-                    <span className="h-px w-6 bg-[#c9a96e]" /> {tile.label}
+                    <span className="h-px w-6 bg-gold" /> {tile.label}
                   </div>
                 </div>
                 <div className="pt-8">
-                  <h3 className="font-serif text-2xl font-light uppercase leading-tight text-black lg:text-[28px]">
+                  <h3 className="font-serif text-2xl font-light uppercase leading-tight text-charcoal lg:text-[28px]">
                     {tile.title}
                   </h3>
-                  <p className="mt-4 text-[14px] font-light leading-[1.85] text-black/65">
+                  <p className="mt-4 text-[14px] font-light leading-[1.85] text-charcoal/65">
                     {tile.body}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-black">
+                  <div className="mt-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal">
                     Learn More
-                    <span className="block h-px w-8 bg-[#c9a96e] transition-all duration-500 group-hover:w-14" />
+                    <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" />
                   </div>
                 </div>
               </Link>
@@ -496,13 +468,13 @@ function Accommodation() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Accommodation
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-black sm:text-4xl lg:text-[44px]"
+            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-charcoal sm:text-4xl lg:text-[44px]"
           >
             Lavishly appointed,
             <br />
@@ -513,7 +485,7 @@ function Accommodation() {
           </motion.div>
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-10 max-w-2xl text-[15px] font-light leading-loose text-black/70"
+            className="mx-auto mt-10 max-w-2xl text-[15px] font-light leading-loose text-charcoal/70"
           >
             Discovery Samal offers a myriad of possibilities with its 153 lush
             villas and suites, each bringing the most distinctive luxury of
@@ -524,7 +496,7 @@ function Accommodation() {
         {isLoading ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((n) => (
-              <div key={n} className="aspect-4/5 animate-pulse bg-[#f5f1ea]" />
+              <div key={n} className="aspect-4/5 animate-pulse bg-beige" />
             ))}
           </div>
         ) : (
@@ -553,7 +525,7 @@ function Accommodation() {
               {merged.map((r) => (
                 <SwiperSlide key={r.slug}>
                   <article className="group">
-                    <div className="relative aspect-4/5 overflow-hidden bg-black">
+                    <div className="relative aspect-4/5 overflow-hidden bg-charcoal">
                       <img
                         src={r.image}
                         alt={r.name}
@@ -565,29 +537,29 @@ function Accommodation() {
                         {r.tag}
                       </div>
                       {r.price && (
-                        <div className="absolute right-5 top-5 bg-white/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-black">
-                          From ₱{Number(r.price).toLocaleString()}
+                        <div className="absolute right-5 top-5 bg-white/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-charcoal">
+                          From ?{Number(r.price).toLocaleString()}
                         </div>
                       )}
                     </div>
                     <div className="pt-6">
-                      <h3 className="font-serif text-xl font-light uppercase leading-tight text-black lg:text-[22px]">
+                      <h3 className="font-serif text-xl font-light uppercase leading-tight text-charcoal lg:text-[22px]">
                         {r.name}
                       </h3>
-                      <p className="mt-3 text-[13.5px] font-light leading-[1.8] text-black/65 line-clamp-3">
+                      <p className="mt-3 text-[13.5px] font-light leading-[1.8] text-charcoal/65 line-clamp-3">
                         {r.body}
                       </p>
                       <div className="mt-5 flex items-center justify-between">
                         <Link
                           to={`/rooms/${r.slug}`}
-                          className="group/btn inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-black"
+                          className="group/btn inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal"
                         >
                           Read More
-                          <span className="block h-px w-6 bg-[#c9a96e] transition-all duration-500 group-hover/btn:w-12" />
+                          <span className="block h-px w-6 bg-gold transition-all duration-500 group-hover/btn:w-12" />
                         </Link>
                         <Link
                           to={r._id ? `/booking?room=${r._id}` : "/booking"}
-                          className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#c9a96e] hover:text-black"
+                          className="text-[10px] font-semibold uppercase tracking-[0.4em] text-gold hover:text-charcoal"
                         >
                           Book Now
                         </Link>
@@ -600,14 +572,14 @@ function Accommodation() {
 
             <div className="mt-12 flex items-center justify-center gap-6">
               <button
-                className="rooms-prev flex h-11 w-11 items-center justify-center border border-black/15 text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+                className="rooms-prev flex h-11 w-11 items-center justify-center border border-black/15 text-charcoal transition-colors hover:border-black hover:bg-black hover:text-white"
                 aria-label="Previous"
               >
                 <ChevronLeft size={16} />
               </button>
-              <div className="rooms-pag flex items-center gap-2 [&_.swiper-pagination-bullet]:h-1.5! [&_.swiper-pagination-bullet]:w-1.5! [&_.swiper-pagination-bullet]:bg-black/20! [&_.swiper-pagination-bullet-active]:bg-[#c9a96e]!" />
+              <div className="rooms-pag flex items-center gap-2 [&_.swiper-pagination-bullet]:h-1.5! [&_.swiper-pagination-bullet]:w-1.5! [&_.swiper-pagination-bullet]:bg-black/20! [&_.swiper-pagination-bullet-active]:bg-gold-light!" />
               <button
-                className="rooms-next flex h-11 w-11 items-center justify-center border border-black/15 text-black transition-colors hover:border-black hover:bg-black hover:text-white"
+                className="rooms-next flex h-11 w-11 items-center justify-center border border-black/15 text-charcoal transition-colors hover:border-black hover:bg-black hover:text-white"
                 aria-label="Next"
               >
                 <ChevronRight size={16} />
@@ -619,7 +591,7 @@ function Accommodation() {
         <div className="mt-16 text-center">
           <Link
             to="/rooms"
-            className="inline-flex items-center justify-center bg-black px-12 py-5 text-[10px] font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:bg-[#c9a96e] hover:text-black"
+            className="inline-flex items-center justify-center bg-ocean px-12 py-5 text-[10px] font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:bg-gold hover:text-white"
           >
             View All Villas & Suites
           </Link>
@@ -634,7 +606,7 @@ function Accommodation() {
 /* --------------------------------------------------------------------- */
 function ResortHighlights() {
   return (
-    <section className="relative overflow-hidden bg-[#0a0a0a] py-28 text-white lg:py-36">
+    <section className="relative overflow-hidden bg-ocean py-28 text-white lg:py-36">
       <img
         src={IMG.highlights}
         alt=""
@@ -650,7 +622,7 @@ function ResortHighlights() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Resort Highlights
           </motion.p>
@@ -677,7 +649,7 @@ function ResortHighlights() {
           {HIGHLIGHTS.map((h) => (
             <motion.article key={h.title} variants={fadeUp} className="group">
               <Link to={h.href} className="block">
-                <div className="relative aspect-4/5 overflow-hidden bg-black">
+                <div className="relative aspect-4/5 overflow-hidden bg-charcoal">
                   <img
                     src={h.image}
                     alt={h.title}
@@ -686,7 +658,7 @@ function ResortHighlights() {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-7">
-                    <p className="text-[10px] font-light uppercase tracking-[0.4em] text-[#c9a96e]">
+                    <p className="text-[10px] font-light uppercase tracking-[0.4em] text-gold-light">
                       {h.tag}
                     </p>
                     <h3 className="mt-3 font-serif text-2xl font-light uppercase leading-tight text-white">
@@ -697,7 +669,7 @@ function ResortHighlights() {
                     </p>
                     <div className="mt-5 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-white">
                       Discover More
-                      <span className="block h-px w-8 bg-[#c9a96e] transition-all duration-500 group-hover:w-14" />
+                      <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover:w-14" />
                     </div>
                   </div>
                 </div>
@@ -725,7 +697,7 @@ function SpaPavilion() {
     {
       tag: "Recreation",
       title: "Mindanao Pavilion",
-      body: "Embrace pure bliss as you enjoy an array of indoor activities at the Mindanao Pavilion — perfect for groups and families.",
+      body: "Embrace pure bliss as you enjoy an array of indoor activities at the Mindanao Pavilion � perfect for groups and families.",
       image: IMG.pavilion,
       href: "/activities",
     },
@@ -740,7 +712,7 @@ function SpaPavilion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1, delay: i * 0.15 }}
-            className="group relative h-150 overflow-hidden bg-black lg:h-180"
+            className="group relative h-150 overflow-hidden bg-charcoal lg:h-180"
           >
             <img
               src={b.image}
@@ -750,7 +722,7 @@ function SpaPavilion() {
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-10 text-white lg:p-14">
-              <p className="text-[10px] font-light uppercase tracking-[0.5em] text-[#c9a96e]">
+              <p className="text-[10px] font-light uppercase tracking-[0.5em] text-gold-light">
                 {b.tag}
               </p>
               <h3 className="mt-4 font-serif text-3xl font-light uppercase leading-tight lg:text-[40px]">
@@ -778,7 +750,7 @@ function SpaPavilion() {
 /* --------------------------------------------------------------------- */
 function Dining() {
   return (
-    <section className="relative bg-[#f5f1ea] py-28 lg:py-36">
+    <section className="relative bg-beige py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial="hidden"
@@ -789,13 +761,13 @@ function Dining() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Dining
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-black sm:text-4xl lg:text-[44px]"
+            className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-charcoal sm:text-4xl lg:text-[44px]"
           >
             A flavorful culinary paradise
           </motion.h2>
@@ -804,9 +776,9 @@ function Dining() {
           </motion.div>
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-10 max-w-3xl text-[15px] font-light leading-loose text-black/70"
+            className="mx-auto mt-10 max-w-3xl text-[15px] font-light leading-loose text-charcoal/70"
           >
-            From seafood specialty restaurants to beachside lounges — every
+            From seafood specialty restaurants to beachside lounges � every
             venue is a haven for fresh, distinctive, and prepared-to-perfection
             dishes.
           </motion.p>
@@ -821,7 +793,7 @@ function Dining() {
         >
           {DINING.map((d) => (
             <motion.article key={d.name} variants={fadeUp} className="group">
-              <div className="relative aspect-square overflow-hidden bg-black">
+              <div className="relative aspect-square overflow-hidden bg-charcoal">
                 <img
                   src={d.image}
                   alt={d.name}
@@ -830,20 +802,20 @@ function Dining() {
                 />
               </div>
               <div className="pt-7">
-                <h3 className="font-serif text-2xl font-light uppercase leading-tight text-black lg:text-[28px]">
+                <h3 className="font-serif text-2xl font-light uppercase leading-tight text-charcoal lg:text-[28px]">
                   {d.name}
                 </h3>
-                <p className="mt-4 text-[14px] font-light leading-[1.85] text-black/65">
+                <p className="mt-4 text-[14px] font-light leading-[1.85] text-charcoal/65">
                   {d.body}
                 </p>
                 <a
                   href="https://forms.gle/JMGjSNEWNrY9UEW96"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-black"
+                  className="mt-6 inline-flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal"
                 >
                   Book A Table
-                  <span className="block h-px w-8 bg-[#c9a96e] transition-all duration-500 group-hover:w-14" />
+                  <span className="block h-px w-8 bg-gold-light transition-all duration-500 group-hover:w-14" />
                 </a>
               </div>
             </motion.article>
@@ -870,7 +842,7 @@ function Testimonials() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Guest Stories
           </motion.p>
@@ -893,17 +865,17 @@ function Testimonials() {
                   <Star
                     key={i}
                     size={14}
-                    className="fill-[#c9a96e] text-[#c9a96e]"
+                    className="fill-gold-light text-gold-light"
                   />
                 ),
               )}
             </div>
-            <blockquote className="mt-8 font-serif text-2xl font-light italic leading-[1.6] text-black sm:text-3xl lg:text-[34px]">
+            <blockquote className="mt-8 font-serif text-2xl font-light italic leading-[1.6] text-charcoal sm:text-3xl lg:text-[34px]">
               "{TESTIMONIALS[active].text}"
             </blockquote>
-            <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.4em] text-black/70">
+            <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal/70">
               {TESTIMONIALS[active].name}{" "}
-              <span className="mx-2 text-[#c9a96e]">·</span>{" "}
+              <span className="mx-2 text-gold-light">�</span>{" "}
               {TESTIMONIALS[active].platform}
             </p>
           </motion.div>
@@ -915,7 +887,7 @@ function Testimonials() {
               key={idx}
               onClick={() => setActive(idx)}
               aria-label={`Testimonial ${idx + 1}`}
-              className={`h-px transition-all ${idx === active ? "w-12 bg-[#c9a96e]" : "w-6 bg-black/20 hover:bg-black/50"}`}
+              className={`h-px transition-all ${idx === active ? "w-12 bg-gold-light" : "w-6 bg-black/20 hover:bg-black/50"}`}
             />
           ))}
         </div>
@@ -929,7 +901,7 @@ function Testimonials() {
 /* --------------------------------------------------------------------- */
 function Location() {
   return (
-    <section className="relative bg-[#f5f1ea] py-28 lg:py-36">
+    <section className="relative bg-beige py-28 lg:py-36">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-6 lg:grid-cols-12 lg:gap-20 lg:px-10">
         <div className="lg:col-span-5">
           <motion.div
@@ -940,24 +912,24 @@ function Location() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+              className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
             >
               Our Location
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-black sm:text-4xl lg:text-[42px]"
+              className="mt-8 font-serif text-3xl font-light uppercase leading-[1.15] text-charcoal sm:text-4xl lg:text-[42px]"
             >
               Conveniently located
               <br />
               on Samal Island
             </motion.h2>
             <motion.div variants={fadeUp}>
-              <span className="mt-8 block h-px w-16 bg-[#c9a96e]" />
+              <span className="mt-8 block h-px w-16 bg-gold-light" />
             </motion.div>
             <motion.p
               variants={fadeUp}
-              className="mt-8 text-[15px] font-light leading-loose text-black/70"
+              className="mt-8 text-[15px] font-light leading-loose text-charcoal/70"
             >
               The resort is conveniently located on Samal Island, just 30
               minutes away from Francisco Bangoy International Airport in Davao
@@ -965,7 +937,7 @@ function Location() {
             </motion.p>
             <motion.p
               variants={fadeUp}
-              className="mt-5 text-[15px] font-light leading-loose text-black/70"
+              className="mt-5 text-[15px] font-light leading-loose text-charcoal/70"
             >
               Book your stay at {brand.displayName} and embark on a journey to
               the ultimate tropical paradise Samal Island has to offer.
@@ -973,26 +945,26 @@ function Location() {
 
             <motion.ul variants={stagger} className="mt-12 space-y-6">
               <motion.li variants={fadeUp} className="flex items-start gap-4">
-                <MapPin size={16} className="mt-1 shrink-0 text-[#c9a96e]" />
+                <MapPin size={16} className="mt-1 shrink-0 text-gold-light" />
                 <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-black/45">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-charcoal/45">
                     Address
                   </p>
-                  <p className="mt-2 text-[14px] font-light leading-[1.8] text-black">
+                  <p className="mt-2 text-[14px] font-light leading-[1.8] text-charcoal">
                     {brand.address}
                   </p>
                 </div>
               </motion.li>
               {brand.phone && (
                 <motion.li variants={fadeUp} className="flex items-start gap-4">
-                  <Phone size={16} className="mt-1 shrink-0 text-[#c9a96e]" />
+                  <Phone size={16} className="mt-1 shrink-0 text-gold-light" />
                   <div>
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-black/45">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-charcoal/45">
                       Reservations
                     </p>
                     <a
                       href={`tel:${brand.phone}`}
-                      className="mt-2 block text-[14px] font-light text-black hover:text-[#c9a96e]"
+                      className="mt-2 block text-[14px] font-light text-charcoal hover:text-gold-light"
                     >
                       {brand.phone}
                     </a>
@@ -1000,14 +972,14 @@ function Location() {
                 </motion.li>
               )}
               <motion.li variants={fadeUp} className="flex items-start gap-4">
-                <Mail size={16} className="mt-1 shrink-0 text-[#c9a96e]" />
+                <Mail size={16} className="mt-1 shrink-0 text-gold-light" />
                 <div>
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-black/45">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-charcoal/45">
                     Email
                   </p>
                   <a
                     href={`mailto:${brand.email}`}
-                    className="mt-2 block text-[14px] font-light text-black hover:text-[#c9a96e]"
+                    className="mt-2 block text-[14px] font-light text-charcoal hover:text-gold-light"
                   >
                     {brand.email}
                   </a>
@@ -1018,7 +990,7 @@ function Location() {
             <motion.div variants={fadeUp} className="mt-12">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center bg-black px-10 py-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:bg-[#c9a96e] hover:text-black"
+                className="inline-flex items-center justify-center bg-ocean px-10 py-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-white transition-colors hover:bg-gold hover:text-white"
               >
                 View Resort Maps
               </Link>
@@ -1053,7 +1025,7 @@ function Location() {
 /* --------------------------------------------------------------------- */
 function CTA() {
   return (
-    <section className="relative h-[75svh] min-h-130 w-full overflow-hidden bg-black text-white">
+    <section className="relative h-[75svh] min-h-130 w-full overflow-hidden bg-charcoal text-white">
       <img
         src={IMG.cta}
         alt=""
@@ -1069,7 +1041,7 @@ function CTA() {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-light uppercase tracking-[0.55em] text-[#c9a96e]"
+            className="text-[11px] font-light uppercase tracking-[0.55em] text-gold-light"
           >
             Begin Your Journey
           </motion.p>
@@ -1088,7 +1060,7 @@ function CTA() {
             variants={fadeUp}
             className="mx-auto mt-10 max-w-xl text-[15px] font-light leading-[1.95] text-white/75"
           >
-            Reserve your villa or suite direct — best rate guaranteed, with a
+            Reserve your villa or suite direct � best rate guaranteed, with a
             personal welcome from the moment you arrive.
           </motion.p>
           <motion.div
@@ -1097,7 +1069,7 @@ function CTA() {
           >
             <Link
               to="/booking"
-              className="inline-flex items-center gap-3 bg-[#c9a96e] px-10 py-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-black transition-all hover:bg-white"
+              className="inline-flex items-center gap-3 bg-gold-light px-10 py-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-charcoal transition-all hover:bg-white"
             >
               Book Now <ArrowRight size={14} />
             </Link>

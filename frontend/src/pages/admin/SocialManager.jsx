@@ -4,10 +4,10 @@ import { Save, Phone, Mail, MessageCircle, Link2, Users } from "lucide-react";
 import { getSocialLinks, updateSocialLinks } from "../../services/api";
 
 const inputClass =
-  "w-full border border-[#111111]/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#008c8c] transition-colors";
+  "w-full border border-ocean/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-teal transition-colors";
 
 const labelClass =
-  "block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2";
+  "block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2";
 
 export default function SocialManager() {
   const [form, setForm] = useState({
@@ -55,14 +55,25 @@ export default function SocialManager() {
 
   return (
     <div>
+      {/* Page header */}
+      <div className="mb-8">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+          Configuration
+        </p>
+        <h2 className="font-serif text-2xl text-ocean">Social & Contact</h2>
+        <p className="text-ocean/40 text-sm mt-1">
+          Contact details and social links shown on public pages
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-8">
         {/* Contact Info */}
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 space-y-6">
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 space-y-6">
           <div>
-            <h3 className="font-serif text-lg text-[#111111] mb-1">
+            <h3 className="font-serif text-lg text-ocean mb-1">
               Contact Information
             </h3>
-            <p className="text-sm text-[#111111]/40">
+            <p className="text-sm text-ocean/40">
               Updates take effect immediately on all public pages.
             </p>
           </div>
@@ -93,7 +104,7 @@ export default function SocialManager() {
               placeholder="+63 912 345 6789"
               className={inputClass}
             />
-            <p className="mt-1.5 text-[11px] text-[#111111]/35">
+            <p className="mt-1.5 text-[11px] text-ocean/35">
               Used for the WhatsApp chat button. Include country code.
             </p>
           </div>
@@ -114,12 +125,12 @@ export default function SocialManager() {
         </div>
 
         {/* Social Links */}
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 space-y-6">
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 space-y-6">
           <div>
-            <h3 className="font-serif text-lg text-[#111111] mb-1">
+            <h3 className="font-serif text-lg text-ocean mb-1">
               Social Links
             </h3>
-            <p className="text-sm text-[#111111]/40">
+            <p className="text-sm text-ocean/40">
               Shown in the footer and contact page.
             </p>
           </div>
@@ -140,12 +151,12 @@ export default function SocialManager() {
         </div>
 
         {/* Booking Settings */}
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 space-y-6">
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 space-y-6">
           <div>
-            <h3 className="font-serif text-lg text-[#111111] mb-1">
+            <h3 className="font-serif text-lg text-ocean mb-1">
               Booking Limits
             </h3>
-            <p className="text-sm text-[#111111]/40">
+            <p className="text-sm text-ocean/40">
               Enforced during the booking flow.
             </p>
           </div>
@@ -174,7 +185,7 @@ export default function SocialManager() {
         <button
           type="submit"
           disabled={saving}
-          className="flex items-center gap-2 bg-[#111111] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-white transition-opacity hover:opacity-80 disabled:opacity-50"
+          className="flex items-center gap-2 bg-ocean px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-white transition-opacity hover:opacity-80 disabled:opacity-50"
         >
           <Save size={13} />
           {saving ? "Saving…" : "Save Changes"}

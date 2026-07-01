@@ -1,52 +1,381 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "Manrope", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  /* ─── Typography ─────────────────────────────────────────────────── */
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-serif:   "Playfair Display", "Georgia", serif;
+  --font-sans:    "DM Sans", "Inter", system-ui, sans-serif;
 
-  /* Discovery Samal Resort Brand Palette */
-  --color-teal: #006d77;
-  --color-teal-light: #0088a9;
-  --color-teal-dark: #0d3b42;
-  --color-teal-deeper: #0a2a30;
-  --color-seafoam: #eaf4f4;
-  --color-warm-white: #fdfdfb;
-  --color-charcoal: #1f2937;
-  --color-charcoal-soft: #374151;
-  --color-gray-soft: #f3f4f6;
+  /* ─── Primary — Deep Ocean Blue / Luxury Teal ────────────────────── */
+  --color-ocean:        #0d3347;
+  --color-ocean-mid:    #1a4f6e;
+  --color-ocean-light:  #265f80;
+  --color-teal:         #0b7a8a;
+  --color-teal-light:   #0e9fb3;
+  --color-teal-dark:    #0a5e6c;
+  --color-teal-deeper:  #073844;
 
-  /* Discovery Samal Resort signature palette */
-  --color-sage: #89baa9;
-  --color-sage-dark: #6fa090;
-  --color-sage-deep: #3c6758;
-  --color-tan: #9b7d4e;
+  /* ─── Secondary — Warm Ivory / Sand / Beige ──────────────────────── */
+  --color-ivory:        #faf6f0;
+  --color-ivory-dark:   #f0e9df;
+  --color-sand:         #e8d9c8;
+  --color-sand-mid:     #d4c0a8;
+  --color-sand-dark:    #b89e82;
+  --color-beige:        #f5efe6;
+  --color-warm-white:   #fdfcfa;
 
-  /* Aliases for backward compat with components using forest/gold names */
-  --color-forest: #006d77;
-  --color-forest-light: #0088a9;
-  --color-forest-dark: #0d3b42;
-  --color-forest-deeper: #061e22;
-  --color-gold: #0088a9;
-  --color-gold-light: #00a8cc;
-  --color-gold-dark: #006d77;
-  --color-cream: #eaf4f4;
-  --color-cream-light: #fdfdfb;
-  --color-cream-dark: #d6ecec;
-  --color-sand: #eaf4f4;
-  --color-sand-light: #fdfdfb;
-  --color-sand-dark: #d6ecec;
-  --color-olive: #0088a9;
-  --color-olive-dark: #006d77;
-  --color-offwhite: #eaf4f4;
+  /* ─── Accent — Gold / Champagne ──────────────────────────────────── */
+  --color-gold:         #b8943c;
+  --color-gold-light:   #d4ae6e;
+  --color-gold-bright:  #e4c47a;
+  --color-gold-dark:    #8a6c28;
+  --color-champagne:    #f2e2c0;
 
-  /* Discovery Samal modern brand palette (rebrand spec) */
-  --color-bs-gold: #d4a017;
-  --color-bs-brown: #5a230e;
-  --color-bs-cream: #f8f1e7;
-  --color-bs-ocean: #3fa7d6;
-  --color-bs-palm: #2f6b3d;
-  --color-bs-deep: #1a0a04;
+  /* ─── Neutral / Text ─────────────────────────────────────────────── */
+  --color-charcoal:     #1c1c1e;
+  --color-charcoal-soft:#2f2f31;
+  --color-gray-mid:     #6b6b6b;
+  --color-gray-light:   #a8a8a8;
+  --color-gray-soft:    #f0f0ee;
+  --color-surface:      #f8f4ef;
+  --color-surface-dark: #1c2a30;
+
+  /* ─── Backward-compat aliases (keep existing components working) ─── */
+  --color-forest:       #0b7a8a;
+  --color-forest-light: #0e9fb3;
+  --color-forest-dark:  #0a5e6c;
+  --color-forest-deeper:#073844;
+  --color-cream:        #f5efe6;
+  --color-cream-light:  #fdfcfa;
+  --color-cream-dark:   #e8d9c8;
+  --color-seafoam:      #e8f4f6;
+  --color-olive:        #0b7a8a;
+  --color-olive-dark:   #0a5e6c;
+  --color-offwhite:     #faf6f0;
+  --color-sage:         #6fa090;
+  --color-sage-dark:    #4f7d6b;
+  --color-sage-deep:    #2e5248;
+  --color-tan:          #b89e82;
+  --color-bs-gold:      #b8943c;
+  --color-bs-brown:     #5a230e;
+  --color-bs-cream:     #faf6f0;
+  --color-bs-ocean:     #1a4f6e;
+  --color-bs-palm:      #2f6b3d;
+  --color-bs-deep:      #0d3347;
 }
+
+/* ─────────────────────────────────────────────────────────────────────
+   Base
+───────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background-color: var(--color-warm-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+a, button {
+  transition-property: color, background-color, border-color, transform, box-shadow, opacity;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Luxury Typography Utilities
+───────────────────────────────────────────────────────────────────── */
+
+/* Large editorial display heading — Cormorant Garamond */
+.luxury-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* Standard luxury heading — Playfair Display */
+.luxury-heading {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* Small uppercase eyebrow / section label */
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Legacy aliases */
+.label-tag,
+.section-pre-title {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Luxury Button System
+───────────────────────────────────────────────────────────────────── */
+
+/* Primary CTA — deep teal fill */
+.btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  background-color: var(--color-teal);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+}
+.btn-luxury:hover {
+  background-color: var(--color-teal-dark);
+}
+
+/* Gold accent button */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  background-color: var(--color-gold);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  background-color: var(--color-gold-dark);
+}
+
+/* Outline / ghost button — teal border */
+.btn-luxury-outline,
+.sv-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  border: 1.5px solid var(--color-teal);
+  color: var(--color-teal);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-luxury-outline:hover,
+.sv-btn-outline:hover {
+  background-color: var(--color-teal);
+  color: #fff;
+}
+
+/* Outline / ghost — gold border */
+.btn-gold-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-gold-outline:hover {
+  background-color: var(--color-gold);
+  color: #fff;
+}
+
+/* Ghost — white border (for dark/hero backgrounds) */
+.btn-ghost-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btn-ghost-white:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+/* Legacy sv-btn alias */
+.sv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2.25rem;
+  background: var(--color-teal);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.sv-btn:hover {
+  background: var(--color-teal-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Luxury Layout Utilities
+───────────────────────────────────────────────────────────────────── */
+
+/* Standard section spacing */
+.luxury-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+@media (max-width: 768px) {
+  .luxury-section { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+/* Thin gold divider */
+.luxury-divider {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 1.25rem 0;
+}
+.luxury-divider-center {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 1.25rem auto;
+}
+
+/* Luxury card */
+.luxury-card {
+  background-color: #fff;
+  border: 1px solid var(--color-sand);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+.luxury-card:hover {
+  box-shadow: 0 12px 40px rgba(13, 51, 71, 0.10);
+  transform: translateY(-2px);
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold-bright) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark overlay for hero/full-bleed images */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 51, 71, 0.30) 0%,
+    rgba(13, 51, 71, 0.55) 60%,
+    rgba(13, 51, 71, 0.75) 100%
+  );
+}
+
+/* Glassmorphism panel (for admin / dark surfaces) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Swiper overrides
+───────────────────────────────────────────────────────────────────── */
+
+.hero-slider .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+.hero-slider .swiper-pagination-bullet-active {
+  width: 28px;
+  border-radius: 9999px;
+  background: #fff;
+}
+
+.food-prev, .food-next {
+  transition: background-color 0.2s;
+}
+
+.rooms-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+.rooms-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--color-ocean);
+  opacity: 0.25;
+  transition: all 0.3s ease;
+}
+.rooms-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 28px;
+  border-radius: 9999px;
+  background: var(--color-gold);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Misc
+───────────────────────────────────────────────────────────────────── */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.6);
+  cursor: pointer;
+}
+
 
 html {
   scroll-behavior: smooth;

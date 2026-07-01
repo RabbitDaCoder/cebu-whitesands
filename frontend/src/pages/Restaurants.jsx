@@ -39,7 +39,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.45em] text-[#008c8c]"
+          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.45em] text-teal"
         >
           Restaurants & Bars
         </motion.p>
@@ -75,13 +75,13 @@ function Intro() {
       <div className="mx-auto max-w-4xl px-6 text-center lg:px-12">
         <motion.p
           {...fadeUp()}
-          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+          className="mb-4 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
         >
           Culinary Experience
         </motion.p>
         <motion.h2
           {...fadeUp(0.1)}
-          className="mb-8 font-serif text-4xl uppercase tracking-wide text-[#1a1a1a]"
+          className="mb-8 font-serif text-4xl uppercase tracking-wide text-charcoal"
         >
           Dine in Paradise
         </motion.h2>
@@ -102,7 +102,7 @@ function Intro() {
 function RestaurantCard({ restaurant, index, onOpenLightbox }) {
   const isEven = index % 2 === 0;
   return (
-    <section className={`py-16 lg:py-24 ${isEven ? "bg-white" : "bg-[#f7f7f5]"}`}>
+    <section className={`py-16 lg:py-24 ${isEven ? "bg-white" : "bg-ivory"}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div
           className={`grid items-center gap-12 lg:grid-cols-2 ${
@@ -126,10 +126,10 @@ function RestaurantCard({ restaurant, index, onOpenLightbox }) {
 
           {/* Content */}
           <motion.div {...fadeUp(0.1)} className="lg:[direction:ltr]">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal">
               {restaurant.cuisine}
             </p>
-            <h2 className="font-serif text-4xl uppercase tracking-wide text-[#1a1a1a] lg:text-5xl">
+            <h2 className="font-serif text-4xl uppercase tracking-wide text-charcoal lg:text-5xl">
               {restaurant.name}
             </h2>
             <p className="mt-3 font-serif text-lg italic text-[#555]">
@@ -146,7 +146,7 @@ function RestaurantCard({ restaurant, index, onOpenLightbox }) {
                   key={h}
                   className="flex items-center gap-2 text-[13px] text-[#555]"
                 >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#008c8c]" />
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
                   {h}
                 </li>
               ))}
@@ -154,11 +154,11 @@ function RestaurantCard({ restaurant, index, onOpenLightbox }) {
 
             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#e5e5e5] pt-5">
               <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-[#666]">
-                <Clock className="h-4 w-4 text-[#008c8c]" />
+                <Clock className="h-4 w-4 text-teal" />
                 {restaurant.hours}
               </span>
               <span className="flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-[#666]">
-                <MapPin className="h-4 w-4 text-[#008c8c]" />
+                <MapPin className="h-4 w-4 text-teal" />
                 {restaurant.location}
               </span>
             </div>
@@ -166,7 +166,7 @@ function RestaurantCard({ restaurant, index, onOpenLightbox }) {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-[#008c8c] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
+                className="inline-flex items-center gap-2 bg-teal px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-colors hover:bg-[#006d6d]"
               >
                 Book A Table
                 <ArrowUpRight className="h-4 w-4" />
@@ -174,7 +174,7 @@ function RestaurantCard({ restaurant, index, onOpenLightbox }) {
               {restaurant.images.length > 1 && (
                 <button
                   onClick={() => onOpenLightbox(restaurant, 0)}
-                  className="inline-flex items-center gap-2 border border-[#008c8c] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#008c8c] transition-colors hover:bg-[#008c8c] hover:text-white"
+                  className="inline-flex items-center gap-2 border border-teal px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.3em] text-teal transition-colors hover:bg-teal hover:text-white"
                 >
                   View Photos
                 </button>
@@ -264,7 +264,7 @@ function Lightbox({ restaurant, startIndex, onClose }) {
 /* ================================================================== */
 function CTA() {
   return (
-    <section className="bg-[#008c8c] py-20">
+    <section className="bg-teal py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <motion.h2
           {...fadeUp()}
@@ -285,7 +285,7 @@ function CTA() {
         >
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-white px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#008c8c] transition-colors hover:bg-white/90"
+            className="inline-flex items-center gap-2 bg-white px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-teal transition-colors hover:bg-white/90"
           >
             Contact Us
             <ArrowUpRight className="h-4 w-4" />
@@ -311,7 +311,7 @@ export default function Restaurants() {
   const close = () => setLightbox({ restaurant: null, index: 0 });
 
   return (
-    <main className="text-[#1a1a1a]">
+    <main className="text-charcoal">
       <Hero />
       <Intro />
       {RESTAURANTS.map((r, i) => (

@@ -106,7 +106,7 @@ function Counter({ value, suffix = "", duration = 2 }) {
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 export default function AboutPage() {
   return (
-    <main className="bg-[#f7f7f5] text-[#111111] selection:bg-[#008c8c]/30">
+    <main className="bg-ivory text-ocean selection:bg-teal/30">
       <HeroSection />
       <IntroductionSection />
       <StorySection />
@@ -172,9 +172,9 @@ function HeroSection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.5em] text-[#008c8c]"
+            className="mb-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.5em] text-teal"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             About the Resort
           </motion.p>
 
@@ -183,7 +183,7 @@ function HeroSection() {
             className="font-serif text-5xl leading-[1.05] text-white sm:text-6xl md:text-7xl lg:text-[88px]"
           >
             About{" "}
-            <em className="font-light italic text-[#008c8c]">discoverysamal</em>{" "}
+            <em className="font-light italic text-teal">{brand.shortName}</em>{" "}
             Resort
           </motion.h1>
 
@@ -265,7 +265,7 @@ function IntroductionSection() {
           {/* Decorative accent */}
           <motion.div
             variants={fadeIn}
-            className="absolute -bottom-6 left-6 hidden h-24 w-24 rotate-12 border border-[#008c8c]/40 lg:block"
+            className="absolute -bottom-6 left-6 hidden h-24 w-24 rotate-12 border border-teal/40 lg:block"
           />
         </motion.div>
 
@@ -279,18 +279,18 @@ function IntroductionSection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#1a1a1a]/70"
+            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-charcoal/70"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             Introduction
           </motion.p>
 
           <motion.h2
             variants={fadeUp}
-            className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]"
+            className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]"
           >
             A refined escape where paradise{" "}
-            <em className="italic text-[#008c8c]">meets</em> modern luxury.
+            <em className="italic text-teal">meets</em> modern luxury.
           </motion.h2>
 
           <motion.div
@@ -311,7 +311,7 @@ function IntroductionSection() {
           <motion.div variants={fadeUp} className="mt-12">
             <Link
               to="/rooms"
-              className="group inline-flex items-center gap-4 border-b border-[#1a1a1a]/30 pb-2 text-[12px] font-medium uppercase tracking-[0.35em] text-[#1a1a1a] transition-colors hover:border-[#008c8c] hover:text-[#008c8c]"
+              className="group inline-flex items-center gap-4 border-b border-charcoal/30 pb-2 text-[12px] font-medium uppercase tracking-[0.35em] text-charcoal transition-colors hover:border-teal hover:text-teal"
             >
               Discover Our Rooms
               <ArrowRight
@@ -340,7 +340,7 @@ function StorySection() {
   return (
     <section
       ref={ref}
-      className="relative isolate overflow-hidden bg-linear-to-b from-[#1a1a1a] via-[#0a2020] to-[#111111] py-32 text-white lg:py-44"
+      className="relative isolate overflow-hidden bg-linear-to-b from-charcoal via-[#0a2020] to-ocean py-32 text-white lg:py-44"
     >
       {/* Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 -z-10 opacity-30">
@@ -350,7 +350,7 @@ function StorySection() {
           className="h-full w-full object-cover"
         />
       </motion.div>
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-transparent via-[#1a1a1a]/40 to-[#111111]" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-b from-transparent via-charcoal/40 to-ocean" />
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-12 lg:px-10">
         <motion.div
@@ -362,9 +362,9 @@ function StorySection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#008c8c]"
+            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-teal"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             Our Story
           </motion.p>
           <motion.h2
@@ -372,7 +372,7 @@ function StorySection() {
             className="font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl"
           >
             A vision born <br />
-            of <em className="italic text-[#008c8c]">island calm</em>.
+            of <em className="italic text-teal">island calm</em>.
           </motion.h2>
         </motion.div>
 
@@ -413,10 +413,10 @@ function StorySection() {
               <motion.li
                 key={t.year}
                 variants={fadeUp}
-                className="relative border-l border-[#008c8c]/40 pl-5"
+                className="relative border-l border-teal/40 pl-5"
               >
-                <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#008c8c]" />
-                <div className="font-serif text-2xl text-[#008c8c]">
+                <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-teal" />
+                <div className="font-serif text-2xl text-teal">
                   {t.year}
                 </div>
                 <div className="mt-1 text-[12px] uppercase tracking-[0.3em] text-white/55">
@@ -447,7 +447,7 @@ const FEATURES = [
 
 function WhyChooseSection() {
   return (
-    <section className="relative bg-[#f7f7f5] py-28 lg:py-36">
+    <section className="relative bg-ivory py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial="hidden"
@@ -458,17 +458,17 @@ function WhyChooseSection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#1a1a1a]/70"
+            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-charcoal/70"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             Why Choose Us
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]"
+            className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]"
           >
             The hallmarks of a{" "}
-            <em className="italic text-[#008c8c]">world-class</em> stay.
+            <em className="italic text-teal">world-class</em> stay.
           </motion.h2>
         </motion.div>
 
@@ -485,20 +485,20 @@ function WhyChooseSection() {
               variants={fadeUp}
               whileHover={{ y: -8 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="group relative overflow-hidden rounded-xl border border-[#1a1a1a]/10 bg-white/60 p-7 backdrop-blur-xl transition-all duration-500 hover:border-[#008c8c]/50 hover:bg-white/90 hover:shadow-[0_25px_60px_-25px_rgba(212,160,23,0.45)]"
+              className="group relative overflow-hidden rounded-xl border border-charcoal/10 bg-white/60 p-7 backdrop-blur-xl transition-all duration-500 hover:border-teal/50 hover:bg-white/90 hover:shadow-[0_25px_60px_-25px_rgba(212,160,23,0.45)]"
             >
               {/* Glow */}
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-[#008c8c]/0 to-[#008c8c]/0 opacity-0 transition-opacity duration-500 group-hover:from-[#008c8c]/10 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-teal/0 to-teal/0 opacity-0 transition-opacity duration-500 group-hover:from-teal/10 group-hover:opacity-100" />
 
               <motion.div
                 whileHover={{ rotate: -6, scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 200 }}
-                className="relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-[#1a1a1a]/5 text-[#1a1a1a] transition-colors group-hover:bg-[#008c8c]/15 group-hover:text-[#008c8c]"
+                className="relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-charcoal/5 text-charcoal transition-colors group-hover:bg-teal/15 group-hover:text-teal"
               >
                 <f.icon size={22} strokeWidth={1.5} />
               </motion.div>
 
-              <h3 className="relative font-serif text-xl text-[#1a1a1a]">
+              <h3 className="relative font-serif text-xl text-charcoal">
                 {f.title}
               </h3>
               <p className="relative mt-2 text-[13.5px] leading-relaxed text-[#111]/60">
@@ -550,9 +550,9 @@ function ExperienceSection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.5em] text-[#008c8c]"
+            className="mb-6 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.5em] text-teal"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             The Experience
           </motion.p>
 
@@ -562,7 +562,7 @@ function ExperienceSection() {
           >
             Breathtaking sunsets, <br />
             ocean breeze mornings, <br />
-            <em className="italic text-[#008c8c]">unforgettable</em> island
+            <em className="italic text-teal">unforgettable</em> island
             moments.
           </motion.h2>
         </motion.div>
@@ -577,7 +577,7 @@ function ExperienceSection() {
         >
           {STATS.map((s) => (
             <motion.div key={s.label} variants={fadeUp} className="text-center">
-              <div className="font-serif text-4xl text-[#008c8c] sm:text-5xl lg:text-6xl">
+              <div className="font-serif text-4xl text-teal sm:text-5xl lg:text-6xl">
                 <Counter value={s.value} suffix={s.suffix} />
               </div>
               <div className="mt-3 text-[10px] uppercase tracking-[0.35em] text-white/65">
@@ -618,7 +618,7 @@ function GallerySection() {
   }, [active]);
 
   return (
-    <section className="relative bg-[#f7f7f5] py-28 lg:py-36">
+    <section className="relative bg-ivory py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial="hidden"
@@ -630,23 +630,23 @@ function GallerySection() {
           <div className="max-w-xl">
             <motion.p
               variants={fadeUp}
-              className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#1a1a1a]/70"
+              className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-charcoal/70"
             >
-              <span className="h-px w-10 bg-[#008c8c]" />
+              <span className="h-px w-10 bg-teal" />
               Image Showcase
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]"
+              className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]"
             >
-              A glimpse of <em className="italic text-[#008c8c]">paradise</em>.
+              A glimpse of <em className="italic text-teal">paradise</em>.
             </motion.h2>
           </div>
           <motion.p
             variants={fadeUp}
             className="max-w-md font-light text-[15px] leading-relaxed text-[#111]/65"
           >
-            Wander through the moments that define a stay at discoverysamal — from
+            Wander through the moments that define a stay at {brand.displayName} — from
             golden mornings on the sand to soft-lit evenings by the pool.
           </motion.p>
         </motion.div>
@@ -774,9 +774,9 @@ function TestimonialSection() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-linear-to-b from-[#111111] to-[#1a1a1a] py-28 text-white lg:py-36">
+    <section className="relative isolate overflow-hidden bg-linear-to-b from-ocean to-charcoal py-28 text-white lg:py-36">
       {/* Decorative glow */}
-      <div className="pointer-events-none absolute -left-40 top-1/3 h-[460px] w-[460px] rounded-full bg-[#008c8c]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-1/3 h-[460px] w-[460px] rounded-full bg-teal/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#3fa7d6]/8 blur-3xl" />
 
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
@@ -784,9 +784,9 @@ function TestimonialSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#008c8c]"
+          className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-teal"
         >
-          <span className="h-px w-10 bg-[#008c8c]" />
+          <span className="h-px w-10 bg-teal" />
           Guest Stories
         </motion.p>
 
@@ -796,7 +796,7 @@ function TestimonialSection() {
           viewport={{ once: true }}
           className="font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl"
         >
-          Words from <em className="italic text-[#008c8c]">our guests</em>.
+          Words from <em className="italic text-teal">our guests</em>.
         </motion.h2>
 
         <div className="relative mt-16 min-h-[320px]">
@@ -811,14 +811,14 @@ function TestimonialSection() {
             >
               <Quote
                 size={40}
-                className="mx-auto mb-6 text-[#008c8c]/60"
+                className="mx-auto mb-6 text-teal/60"
                 strokeWidth={1.2}
               />
               <blockquote className="font-serif text-2xl font-light italic leading-[1.5] text-white/90 sm:text-3xl">
                 â€œ{TESTIMONIALS[idx].quote}â€
               </blockquote>
               <figcaption className="mt-8">
-                <div className="font-serif text-lg text-[#008c8c]">
+                <div className="font-serif text-lg text-teal">
                   {TESTIMONIALS[idx].name}
                 </div>
                 <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/55">
@@ -832,7 +832,7 @@ function TestimonialSection() {
           <div className="mt-10 flex items-center justify-center gap-6">
             <button
               onClick={prev}
-              className="rounded-full border border-white/20 p-2.5 text-white/70 transition hover:border-[#008c8c] hover:text-[#008c8c]"
+              className="rounded-full border border-white/20 p-2.5 text-white/70 transition hover:border-teal hover:text-teal"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={18} />
@@ -843,7 +843,7 @@ function TestimonialSection() {
                   key={i}
                   onClick={() => setIdx(i)}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === idx ? "w-8 bg-[#008c8c]" : "w-2 bg-white/25"
+                    i === idx ? "w-8 bg-teal" : "w-2 bg-white/25"
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
@@ -851,7 +851,7 @@ function TestimonialSection() {
             </div>
             <button
               onClick={next}
-              className="rounded-full border border-white/20 p-2.5 text-white/70 transition hover:border-[#008c8c] hover:text-[#008c8c]"
+              className="rounded-full border border-white/20 p-2.5 text-white/70 transition hover:border-teal hover:text-teal"
               aria-label="Next testimonial"
             >
               <ChevronRight size={18} />
@@ -875,7 +875,7 @@ const NEARBY = [
 
 function LocationSection() {
   return (
-    <section className="relative bg-[#f7f7f5] py-28 lg:py-36">
+    <section className="relative bg-ivory py-28 lg:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial="hidden"
@@ -886,16 +886,16 @@ function LocationSection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-[#1a1a1a]/70"
+            className="mb-5 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-charcoal/70"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             Location
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]"
+            className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]"
           >
-            Find us on <em className="italic text-[#008c8c]">Samal Island</em>.
+            Find us on <em className="italic text-teal">Samal Island</em>.
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -922,7 +922,7 @@ function LocationSection() {
             transition={{ duration: 0.8 }}
             className="absolute bottom-6 left-6 right-6 hidden rounded-xl border border-white/40 bg-white/70 p-6 backdrop-blur-xl sm:block sm:left-8 sm:right-auto sm:max-w-md"
           >
-            <h3 className="font-serif text-xl text-[#1a1a1a]">
+            <h3 className="font-serif text-xl text-charcoal">
               {brand.displayName}
             </h3>
             <p className="mt-2 text-[13px] leading-relaxed text-[#111]/70">
@@ -932,7 +932,7 @@ function LocationSection() {
               href="https://www.google.com/maps?q=Samal+Island+Island+Garden+City+of+Samal+Davao+del+Norte"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-[#008c8c] hover:text-[#1a1a1a]"
+              className="mt-4 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-teal hover:text-charcoal"
             >
               Open in Maps <ArrowRight size={14} />
             </a>
@@ -952,10 +952,10 @@ function LocationSection() {
               key={n.label}
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="rounded-xl border border-[#1a1a1a]/10 bg-white/70 p-5 backdrop-blur-xl"
+              className="rounded-xl border border-charcoal/10 bg-white/70 p-5 backdrop-blur-xl"
             >
-              <n.icon size={20} strokeWidth={1.5} className="text-[#008c8c]" />
-              <div className="mt-3 font-serif text-base text-[#1a1a1a]">
+              <n.icon size={20} strokeWidth={1.5} className="text-teal" />
+              <div className="mt-3 font-serif text-base text-charcoal">
                 {n.label}
               </div>
               <div className="mt-1 text-[11px] uppercase tracking-[0.3em] text-[#111]/55">
@@ -988,7 +988,7 @@ function FinalCTASection() {
           className="h-full w-full object-cover"
         />
       </motion.div>
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-[#111]/55 via-[#1a1a1a]/40 to-[#111]/90" />
+      <div className="absolute inset-0 -z-10 bg-linear-to-b from-[#111]/55 via-charcoal/40 to-[#111]/90" />
 
       <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
         <motion.div
@@ -1000,7 +1000,7 @@ function FinalCTASection() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-6 text-[11px] uppercase tracking-[0.5em] text-[#008c8c]"
+            className="mb-6 text-[11px] uppercase tracking-[0.5em] text-teal"
           >
             Your stay awaits
           </motion.p>
@@ -1008,7 +1008,7 @@ function FinalCTASection() {
             variants={fadeUp}
             className="font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
           >
-            Escape To <em className="italic text-[#008c8c]">Paradise</em>
+            Escape To <em className="italic text-teal">Paradise</em>
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -1024,7 +1024,7 @@ function FinalCTASection() {
           >
             <Link
               to="/booking"
-              className="group inline-flex items-center gap-3 rounded-full border border-[#008c8c] bg-[#008c8c] px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.35em] text-[#111111] transition-all duration-500 hover:bg-transparent hover:text-[#008c8c] hover:shadow-[0_20px_60px_-20px_rgba(212,160,23,0.6)]"
+              className="group inline-flex items-center gap-3 rounded-full border border-teal bg-teal px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.35em] text-ocean transition-all duration-500 hover:bg-transparent hover:text-teal hover:shadow-[0_20px_60px_-20px_rgba(212,160,23,0.6)]"
             >
               Book Now
               <ArrowRight

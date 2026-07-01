@@ -40,7 +40,7 @@ const paymentStatusStyle = (s) => {
     case "cancelled":
       return "bg-red-50 text-red-500";
     default:
-      return "bg-[#111111]/5 text-[#111111]/40";
+      return "bg-ocean/5 text-ocean/40";
   }
 };
 
@@ -73,26 +73,26 @@ function PaymentProgressBar({ booking }) {
 
   return (
     <div className="mt-2">
-      <p className="text-[9px] text-[#111111]/30 uppercase tracking-[0.15em] mb-1">
+      <p className="text-[9px] text-ocean/30 uppercase tracking-[0.15em] mb-1">
         Installment Progress
       </p>
       <div className="flex items-center gap-1">
         <div
-          className={`flex-1 h-1.5 rounded-sm ${step1Done ? "bg-green-500" : step1Pending ? "bg-yellow-400" : "bg-[#111111]/10"}`}
+          className={`flex-1 h-1.5 rounded-sm ${step1Done ? "bg-green-500" : step1Pending ? "bg-yellow-400" : "bg-ocean/10"}`}
         />
         <div
-          className={`flex-1 h-1.5 rounded-sm ${step2Done ? "bg-green-500" : step2Pending ? "bg-yellow-400" : "bg-[#111111]/10"}`}
+          className={`flex-1 h-1.5 rounded-sm ${step2Done ? "bg-green-500" : step2Pending ? "bg-yellow-400" : "bg-ocean/10"}`}
         />
       </div>
       <div className="flex justify-between mt-0.5">
         <span
-          className={`text-[9px] ${step1Done ? "text-green-600" : step1Pending ? "text-yellow-600" : "text-[#111111]/30"}`}
+          className={`text-[9px] ${step1Done ? "text-green-600" : step1Pending ? "text-yellow-600" : "text-ocean/30"}`}
         >
           ₱{inst.firstPaymentAmount?.toLocaleString()}{" "}
           {step1Done ? "✓" : step1Pending ? "…" : ""}
         </span>
         <span
-          className={`text-[9px] ${step2Done ? "text-green-600" : step2Pending ? "text-yellow-600" : "text-[#111111]/30"}`}
+          className={`text-[9px] ${step2Done ? "text-green-600" : step2Pending ? "text-yellow-600" : "text-ocean/30"}`}
         >
           ₱{inst.secondPaymentAmount?.toLocaleString()}{" "}
           {step2Done ? "✓" : step2Pending ? "…" : ""}
@@ -218,11 +218,26 @@ export default function ViewBookings() {
 
   return (
     <div>
+      {/* Page header */}
+      <div className="flex items-end justify-between mb-8">
+        <div>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+            Reservations
+          </p>
+          <h2 className="font-serif text-2xl text-ocean">All Bookings</h2>
+          <p className="text-ocean/40 text-sm mt-1">
+            {bookings.length > 0
+              ? `${bookings.length} booking${bookings.length !== 1 ? "s" : ""} found`
+              : "Review and manage guest reservations"}
+          </p>
+        </div>
+      </div>
+
       {/* Toolbar: filters + search */}
       <div className="flex flex-col gap-4 mb-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
           <div className="flex flex-wrap gap-1.5">
-            <span className="text-[10px] text-[#111111]/35 uppercase tracking-[0.12em] self-center mr-1">
+            <span className="text-[10px] text-ocean/35 uppercase tracking-[0.12em] self-center mr-1">
               Status
             </span>
             {STATUS_FILTERS.map((f) => (
@@ -231,8 +246,8 @@ export default function ViewBookings() {
                 onClick={() => setFilter(f)}
                 className={`text-[11px] font-medium uppercase tracking-[0.15em] px-4 py-2 transition-colors ${
                   filter === f
-                    ? "bg-[#111111] text-[#f7f7f5]"
-                    : "bg-white border border-[#111111]/10 text-[#111111]/50 hover:text-[#111111] hover:border-[#111111]/20"
+                    ? "bg-ocean text-ivory"
+                    : "bg-white border border-ocean/10 text-ocean/50 hover:text-ocean hover:border-ocean/20"
                 }`}
               >
                 {f || "All"}
@@ -244,19 +259,19 @@ export default function ViewBookings() {
             <div className="relative flex-1 lg:w-72">
               <Search
                 size={14}
-                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#111111]/30"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ocean/30"
               />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search name, email, ref..."
-                className="w-full pl-9 pr-4 py-2.5 text-sm border border-[#111111]/10 bg-white focus:outline-none focus:border-[#008c8c] transition-colors"
+                className="w-full pl-9 pr-4 py-2.5 text-sm border border-ocean/10 bg-white focus:outline-none focus:border-teal transition-colors"
               />
             </div>
             <button
               type="submit"
-              className="bg-[#008c8c] text-[#111111] text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 hover:bg-[#111111] transition-colors"
+              className="bg-teal text-ocean text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 hover:bg-ocean transition-colors"
             >
               Search
             </button>
@@ -265,7 +280,7 @@ export default function ViewBookings() {
 
         {/* Payment status filter */}
         <div className="flex flex-wrap gap-1.5 items-center">
-          <span className="text-[10px] text-[#111111]/35 uppercase tracking-[0.12em] mr-1">
+          <span className="text-[10px] text-ocean/35 uppercase tracking-[0.12em] mr-1">
             Payment
           </span>
           {PAYMENT_FILTERS.map((f) => (
@@ -274,8 +289,8 @@ export default function ViewBookings() {
               onClick={() => setPaymentFilter(f)}
               className={`text-[11px] font-medium uppercase tracking-[0.15em] px-4 py-2 transition-colors ${
                 paymentFilter === f
-                  ? "bg-[#111111] text-[#f7f7f5]"
-                  : "bg-white border border-[#111111]/10 text-[#111111]/50 hover:text-[#111111] hover:border-[#111111]/20"
+                  ? "bg-ocean text-ivory"
+                  : "bg-white border border-ocean/10 text-ocean/50 hover:text-ocean hover:border-ocean/20"
               }`}
             >
               {f === "partial"
@@ -293,7 +308,7 @@ export default function ViewBookings() {
         {["Guest", "Room", "Dates", "Amount", "Status"].map((h) => (
           <span
             key={h}
-            className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em]"
+            className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em]"
           >
             {h}
           </span>
@@ -302,59 +317,59 @@ export default function ViewBookings() {
 
       {bookings.length === 0 ? (
         <div className="text-center py-20">
-          <Calendar size={32} className="text-[#111111]/15 mx-auto mb-4" />
-          <p className="text-sm text-[#111111]/40">No bookings found</p>
+          <Calendar size={32} className="text-ocean/15 mx-auto mb-4" />
+          <p className="text-sm text-ocean/40">No bookings found</p>
         </div>
       ) : (
         <div className="grid gap-3">
           {bookings.map((b) => (
-            <div key={b._id} className="bg-white border border-[#111111]/5 p-5">
+            <div key={b._id} className="bg-white border border-ocean/10 p-5">
               <div className="grid md:grid-cols-[1.2fr_1fr_1fr_0.8fr_0.8fr] gap-4 text-sm">
                 {/* Guest */}
                 <div>
-                  <p className="md:hidden text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-1">
+                  <p className="md:hidden text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-1">
                     Guest
                   </p>
-                  <p className="font-medium text-[#111111]">{b.guestName}</p>
-                  <p className="text-xs text-[#111111]/40">{b.guestEmail}</p>
+                  <p className="font-medium text-ocean">{b.guestName}</p>
+                  <p className="text-xs text-ocean/40">{b.guestEmail}</p>
                   {b.guestPhone && (
-                    <p className="text-xs text-[#111111]/40">{b.guestPhone}</p>
+                    <p className="text-xs text-ocean/40">{b.guestPhone}</p>
                   )}
                 </div>
 
                 {/* Room */}
                 <div>
-                  <p className="md:hidden text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-1">
+                  <p className="md:hidden text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-1">
                     Room
                   </p>
-                  <p className="font-medium text-[#111111]">
+                  <p className="font-medium text-ocean">
                     {b.room?.name || "—"}
                   </p>
-                  <p className="text-xs text-[#111111]/40">
+                  <p className="text-xs text-ocean/40">
                     {b.numberOfGuests} guest{b.numberOfGuests > 1 ? "s" : ""}
                   </p>
                 </div>
 
                 {/* Dates */}
                 <div>
-                  <p className="md:hidden text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-1">
+                  <p className="md:hidden text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-1">
                     Dates
                   </p>
-                  <p className="text-[#111111]">
+                  <p className="text-ocean">
                     {new Date(b.checkIn).toLocaleDateString()} –{" "}
                     {new Date(b.checkOut).toLocaleDateString()}
                   </p>
-                  <p className="text-xs text-[#111111]/40">
+                  <p className="text-xs text-ocean/40">
                     {b.nights} night{b.nights > 1 ? "s" : ""}
                   </p>
                 </div>
 
                 {/* Amount */}
                 <div>
-                  <p className="md:hidden text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-1">
+                  <p className="md:hidden text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-1">
                     Amount
                   </p>
-                  <p className="font-medium text-[#008c8c]">
+                  <p className="font-medium text-teal">
                     ₱{b.totalAmount?.toLocaleString()}
                   </p>
                   {b.paymentOption === "installment" && b.amountPaid > 0 && (
@@ -362,14 +377,14 @@ export default function ViewBookings() {
                       ₱{b.amountPaid?.toLocaleString()} paid
                     </p>
                   )}
-                  <p className="text-[10px] text-[#111111]/30 font-mono mt-0.5">
+                  <p className="text-[10px] text-ocean/30 font-mono mt-0.5">
                     {b.bookingRef}
                   </p>
                 </div>
 
                 {/* Status */}
                 <div>
-                  <p className="md:hidden text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-1">
+                  <p className="md:hidden text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-1">
                     Status
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -400,7 +415,7 @@ export default function ViewBookings() {
 
               {/* Special requests */}
               {b.specialRequests && (
-                <p className="mt-3 text-xs text-[#111111]/40 italic border-t border-[#111111]/5 pt-3">
+                <p className="mt-3 text-xs text-ocean/40 italic border-t border-ocean/5 pt-3">
                   "{b.specialRequests}"
                 </p>
               )}
@@ -409,7 +424,7 @@ export default function ViewBookings() {
               {(b.paymentScreenshot || b.paymentStatus !== "unpaid") && (
                 <button
                   onClick={() => setExpanded(expanded === b._id ? null : b._id)}
-                  className="mt-3 pt-3 border-t border-[#111111]/5 flex items-center gap-1.5 text-[11px] text-[#008c8c] hover:text-[#008c8c] transition-colors uppercase tracking-[0.12em] font-medium"
+                  className="mt-3 pt-3 border-t border-ocean/5 flex items-center gap-1.5 text-[11px] text-teal hover:text-teal transition-colors uppercase tracking-[0.12em] font-medium"
                 >
                   {b.paymentScreenshot && <Image size={13} />}
                   {expanded === b._id
@@ -425,18 +440,18 @@ export default function ViewBookings() {
 
               {/* Expanded: screenshot + installment + download receipt */}
               {expanded === b._id && (
-                <div className="mt-4 pt-4 border-t border-[#111111]/5 space-y-6">
+                <div className="mt-4 pt-4 border-t border-ocean/5 space-y-6">
                   {/* Installment screenshots */}
                   {b.paymentOption === "installment" && b.installment && (
                     <div>
-                      <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-3">
+                      <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-3">
                         Installment Screenshots
                       </p>
                       <div className="grid md:grid-cols-2 gap-4">
                         {/* 1st payment */}
-                        <div className="border border-[#111111]/8 p-4">
+                        <div className="border border-ocean/8 p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-[11px] font-medium text-[#111111]/60">
+                            <span className="text-[11px] font-medium text-ocean/60">
                               1st — ₱
                               {b.installment.firstPaymentAmount?.toLocaleString()}
                             </span>
@@ -459,12 +474,12 @@ export default function ViewBookings() {
                               <img
                                 src={b.installment.firstPaymentScreenshot}
                                 alt="1st payment"
-                                className="w-full h-36 object-contain bg-[#111111]/3 border border-[#111111]/8"
+                                className="w-full h-36 object-contain bg-ocean/3 border border-ocean/8"
                               />
                             </a>
                           ) : (
-                            <div className="h-36 flex items-center justify-center border border-dashed border-[#111111]/10">
-                              <span className="text-xs text-[#111111]/30">
+                            <div className="h-36 flex items-center justify-center border border-dashed border-ocean/10">
+                              <span className="text-xs text-ocean/30">
                                 Not uploaded
                               </span>
                             </div>
@@ -472,7 +487,7 @@ export default function ViewBookings() {
                           {b.installment.firstPaymentStatus === "pending" && (
                             <button
                               onClick={() => handleConfirmInstallment(b._id, 1)}
-                              className="mt-2 w-full bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.12em] py-2 hover:bg-[#111111]/90 transition-colors"
+                              className="mt-2 w-full bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.12em] py-2 hover:bg-ocean/90 transition-colors"
                             >
                               <CheckCircle size={11} className="inline mr-1" />
                               Confirm 1st Payment
@@ -481,9 +496,9 @@ export default function ViewBookings() {
                         </div>
 
                         {/* 2nd payment */}
-                        <div className="border border-[#111111]/8 p-4">
+                        <div className="border border-ocean/8 p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-[11px] font-medium text-[#111111]/60">
+                            <span className="text-[11px] font-medium text-ocean/60">
                               2nd — ₱
                               {b.installment.secondPaymentAmount?.toLocaleString()}
                             </span>
@@ -507,12 +522,12 @@ export default function ViewBookings() {
                               <img
                                 src={b.installment.secondPaymentScreenshot}
                                 alt="2nd payment"
-                                className="w-full h-36 object-contain bg-[#111111]/3 border border-[#111111]/8"
+                                className="w-full h-36 object-contain bg-ocean/3 border border-ocean/8"
                               />
                             </a>
                           ) : (
-                            <div className="h-36 flex items-center justify-center border border-dashed border-[#111111]/10">
-                              <span className="text-xs text-[#111111]/30">
+                            <div className="h-36 flex items-center justify-center border border-dashed border-ocean/10">
+                              <span className="text-xs text-ocean/30">
                                 Not uploaded
                               </span>
                             </div>
@@ -520,7 +535,7 @@ export default function ViewBookings() {
                           {b.installment.secondPaymentStatus === "pending" && (
                             <button
                               onClick={() => handleConfirmInstallment(b._id, 2)}
-                              className="mt-2 w-full bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.12em] py-2 hover:bg-[#111111]/90 transition-colors"
+                              className="mt-2 w-full bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.12em] py-2 hover:bg-ocean/90 transition-colors"
                             >
                               <CheckCircle size={11} className="inline mr-1" />
                               Confirm 2nd Payment
@@ -536,7 +551,7 @@ export default function ViewBookings() {
                     <div className="grid md:grid-cols-[280px_1fr] gap-6">
                       {b.paymentScreenshot ? (
                         <div>
-                          <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-2">
+                          <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-2">
                             Payment Screenshot
                           </p>
                           <a
@@ -548,20 +563,20 @@ export default function ViewBookings() {
                             <img
                               src={b.paymentScreenshot}
                               alt="Payment proof"
-                              className="w-full h-52 object-contain border border-[#111111]/10 bg-[#111111]/3"
+                              className="w-full h-52 object-contain border border-ocean/10 bg-ocean/3"
                             />
-                            <span className="inline-flex items-center gap-1 mt-2 text-[11px] text-[#008c8c] hover:text-[#008c8c] transition-colors">
+                            <span className="inline-flex items-center gap-1 mt-2 text-[11px] text-teal hover:text-teal transition-colors">
                               <ExternalLink size={11} /> View full size
                             </span>
                           </a>
                         </div>
                       ) : (
                         <div>
-                          <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em] mb-2">
+                          <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em] mb-2">
                             Payment Screenshot
                           </p>
-                          <div className="flex items-center justify-center h-52 border border-dashed border-[#111111]/10 bg-[#111111]/3">
-                            <p className="text-xs text-[#111111]/30">
+                          <div className="flex items-center justify-center h-52 border border-dashed border-ocean/10 bg-ocean/3">
+                            <p className="text-xs text-ocean/30">
                               No screenshot uploaded
                             </p>
                           </div>
@@ -570,18 +585,18 @@ export default function ViewBookings() {
 
                       {/* Receipt download */}
                       <div className="flex flex-col gap-3">
-                        <p className="text-[10px] font-medium text-[#111111]/35 uppercase tracking-[0.15em]">
+                        <p className="text-[10px] font-medium text-ocean/35 uppercase tracking-[0.15em]">
                           Booking Receipt
                         </p>
                         <button
                           onClick={() =>
                             handleDownloadReceipt(b._id, b.bookingRef)
                           }
-                          className="inline-flex items-center gap-2 bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-[#111111]/90 transition-colors self-start"
+                          className="inline-flex items-center gap-2 bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-ocean/90 transition-colors self-start"
                         >
                           <Download size={13} /> Download Receipt PDF
                         </button>
-                        <p className="text-xs text-[#111111]/40">
+                        <p className="text-xs text-ocean/40">
                           Generates a PDF receipt with all booking details for
                           this reservation.
                         </p>
@@ -596,7 +611,7 @@ export default function ViewBookings() {
                         onClick={() =>
                           handleDownloadReceipt(b._id, b.bookingRef)
                         }
-                        className="inline-flex items-center gap-2 bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-[#111111]/90 transition-colors"
+                        className="inline-flex items-center gap-2 bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-ocean/90 transition-colors"
                       >
                         <Download size={13} /> Download Receipt PDF
                       </button>
@@ -606,12 +621,12 @@ export default function ViewBookings() {
               )}
 
               {/* Actions */}
-              <div className="mt-4 pt-4 border-t border-[#111111]/5 flex flex-wrap gap-2">
+              <div className="mt-4 pt-4 border-t border-ocean/5 flex flex-wrap gap-2">
                 {b.status === "pending" && (
                   <>
                     <button
                       onClick={() => handleStatusChange(b._id, "confirmed")}
-                      className="bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2 hover:bg-[#111111] transition-colors flex items-center gap-1.5"
+                      className="bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2 hover:bg-ocean transition-colors flex items-center gap-1.5"
                     >
                       <CheckCircle size={13} /> Confirm
                     </button>
@@ -630,7 +645,7 @@ export default function ViewBookings() {
                     <>
                       <button
                         onClick={() => handleSendReminder(b._id)}
-                        className="border border-[#008c8c]/30 text-[#008c8c] text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-[#006d6d]/5 transition-colors flex items-center gap-1.5"
+                        className="border border-teal/30 text-teal text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-teal-dark/5 transition-colors flex items-center gap-1.5"
                       >
                         <Bell size={13} />{" "}
                         {b.paymentStatus === "partial"
@@ -640,7 +655,7 @@ export default function ViewBookings() {
                       <button
                         onClick={() => handleGeneratePaymentLink(b._id, false)}
                         disabled={loadingLink[b._id]}
-                        className="border border-[#008c8c]/30 text-[#008c8c] text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-[#111111]/5 transition-colors flex items-center gap-1.5 disabled:opacity-40"
+                        className="border border-teal/30 text-teal text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-ocean/5 transition-colors flex items-center gap-1.5 disabled:opacity-40"
                       >
                         <Link2 size={13} />{" "}
                         {loadingLink[b._id] ? "Copying..." : "Copy Pay Link"}
@@ -661,7 +676,7 @@ export default function ViewBookings() {
                   b.status !== "cancelled" && (
                     <button
                       onClick={() => handleSendReminder(b._id)}
-                      className="border border-[#008c8c]/30 text-[#008c8c] text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-[#006d6d]/5 transition-colors flex items-center gap-1.5"
+                      className="border border-teal/30 text-teal text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-teal-dark/5 transition-colors flex items-center gap-1.5"
                     >
                       <Bell size={13} /> Send Reminder
                     </button>
@@ -670,7 +685,7 @@ export default function ViewBookings() {
                 {/* Resend receipt */}
                 <button
                   onClick={() => handleDownloadReceipt(b._id, b.bookingRef)}
-                  className="border border-[#111111]/10 text-[#111111]/50 text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-[#111111]/5 transition-colors flex items-center gap-1.5"
+                  className="border border-ocean/10 text-ocean/50 text-[11px] font-semibold uppercase tracking-[0.15em] px-4 py-2 hover:bg-ocean/5 transition-colors flex items-center gap-1.5"
                 >
                   <RefreshCw size={13} /> Receipt
                 </button>

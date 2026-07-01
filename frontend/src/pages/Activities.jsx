@@ -46,7 +46,7 @@ const fadeIn = (delay = 0) => ({
 /* ================================================================== */
 function Hero() {
   return (
-    <section className="relative h-[92vh] min-h-[700px] w-full overflow-hidden bg-[#111111] pt-[78px] lg:pt-[118px]">
+    <section className="relative h-[92vh] min-h-[700px] w-full overflow-hidden bg-ocean pt-[78px] lg:pt-[118px]">
       <div className="absolute inset-x-0 bottom-0 top-[78px] overflow-hidden lg:top-[118px]">
         <motion.img
           {...fadeIn()}
@@ -54,8 +54,8 @@ function Hero() {
           alt="Discovery Samal Resort — Activities & Recreation"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#111111]/70 via-[#111111]/15 to-[#111111]/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ocean/70 via-ocean/15 to-ocean/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ocean/70 via-transparent to-transparent" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -67,8 +67,8 @@ function Hero() {
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 lg:px-12 lg:pb-28">
         <motion.div {...fadeUp(0.1)}>
-          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#008c8c]">
-            <span className="h-px w-10 bg-[#008c8c]" />
+          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-teal">
+            <span className="h-px w-10 bg-teal" />
             {ACTIVITIES_INTRO.preTitle}
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ function Hero() {
         >
           Where leisure
           <br />
-          <span className="italic text-[#008c8c]">meets adventure</span>.
+          <span className="italic text-teal">meets adventure</span>.
         </motion.h1>
 
         <motion.p
@@ -97,14 +97,14 @@ function Hero() {
         >
           <a
             href="#activities-collection"
-            className="group inline-flex items-center gap-3 bg-[#008c8c] px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#111111] transition-all hover:bg-[#008c8c]"
+            className="group inline-flex items-center gap-3 bg-teal px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-ocean transition-all hover:bg-teal"
           >
             Explore the Experiences
             <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
           </a>
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-3 border border-white/30 px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-all hover:border-[#008c8c] hover:text-[#008c8c]"
+            className="group inline-flex items-center gap-3 border border-white/30 px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-all hover:border-teal hover:text-teal"
           >
             Plan Your Stay
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -134,23 +134,23 @@ function Hero() {
 /* ================================================================== */
 function Intro() {
   return (
-    <section className="relative bg-[#f7f7f5] py-24 lg:py-32">
+    <section className="relative bg-ivory py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
           <motion.div {...fadeUp()} className="lg:col-span-5">
-            <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#1a1a1a]">
-              <span className="h-px w-10 bg-[#008c8c]" />
+            <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-charcoal">
+              <span className="h-px w-10 bg-teal" />
               The Resort Day
             </p>
-            <h2 className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]">
+            <h2 className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]">
               The unpretentiously
               <br />
-              <span className="italic text-[#008c8c]">luxurious extras</span>.
+              <span className="italic text-teal">luxurious extras</span>.
             </h2>
           </motion.div>
 
           <motion.div {...fadeUp(0.15)} className="lg:col-span-7">
-            <p className="font-serif text-[19px] leading-[1.85] text-[#1a1a1a]/85 lg:text-[21px]">
+            <p className="font-serif text-[19px] leading-[1.85] text-charcoal/85 lg:text-[21px]">
               {ACTIVITIES_INTRO.body}
             </p>
 
@@ -158,12 +158,12 @@ function Intro() {
               {ACTIVITIES_STATS.map((s) => (
                 <div
                   key={s.label}
-                  className="border-l border-[#1a1a1a]/15 pl-5"
+                  className="border-l border-charcoal/15 pl-5"
                 >
-                  <p className="font-serif text-3xl text-[#1a1a1a] lg:text-4xl">
+                  <p className="font-serif text-3xl text-charcoal lg:text-4xl">
                     {s.value}
                   </p>
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#1a1a1a]/60">
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-charcoal/60">
                     {s.label}
                   </p>
                 </div>
@@ -188,7 +188,7 @@ function ActivityCard({ activity, index, onOpenLightbox }) {
     >
       <button
         onClick={() => onOpenLightbox(activity, 0)}
-        className="relative aspect-[4/3] w-full overflow-hidden bg-[#111111]"
+        className="relative aspect-[4/3] w-full overflow-hidden bg-ocean"
       >
         <img
           src={cover}
@@ -196,32 +196,32 @@ function ActivityCard({ activity, index, onOpenLightbox }) {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/55 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ocean/55 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-30" />
         {activity.images.length > 1 && (
-          <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-[#111111]/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-sm">
-            <Sparkles className="h-3 w-3 text-[#008c8c]" />
+          <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-ocean/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-sm">
+            <Sparkles className="h-3 w-3 text-teal" />
             {activity.images.length} Photos
           </div>
         )}
       </button>
 
       <div className="flex flex-1 flex-col px-1 pt-7">
-        <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
-          <span className="h-px w-6 bg-[#008c8c]" />
+        <p className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.4em] text-teal">
+          <span className="h-px w-6 bg-teal" />
           {String(index + 1).padStart(2, "0")}
         </p>
-        <h3 className="font-serif text-2xl leading-[1.15] text-[#1a1a1a] lg:text-[26px]">
+        <h3 className="font-serif text-2xl leading-[1.15] text-charcoal lg:text-[26px]">
           {activity.name}
         </h3>
-        <p className="mt-2 font-serif text-base italic text-[#008c8c]">
+        <p className="mt-2 font-serif text-base italic text-teal">
           {activity.tagline}
         </p>
-        <p className="mt-4 flex-1 text-[14px] leading-[1.85] text-[#1a1a1a]/75">
+        <p className="mt-4 flex-1 text-[14px] leading-[1.85] text-charcoal/75">
           {activity.description}
         </p>
         <button
           onClick={() => onOpenLightbox(activity, 0)}
-          className="group/btn mt-6 inline-flex w-fit items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#1a1a1a] transition-colors hover:text-[#008c8c]"
+          className="group/btn mt-6 inline-flex w-fit items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-charcoal transition-colors hover:text-teal"
         >
           View Gallery
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
@@ -239,16 +239,16 @@ function CategoryBand({ category, indexInPage, onOpenLightbox }) {
   return (
     <section
       className={`relative py-20 lg:py-28 ${
-        tinted ? "bg-white" : "bg-[#f7f7f5]"
+        tinted ? "bg-white" : "bg-ivory"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <motion.div {...fadeUp()} className="max-w-2xl">
-          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#1a1a1a]">
-            <span className="h-px w-10 bg-[#008c8c]" />
+          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-charcoal">
+            <span className="h-px w-10 bg-teal" />
             {category.caption} Ã‚· {String(indexInPage + 1).padStart(2, "0")}
           </p>
-          <h2 className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[52px]">
+          <h2 className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[52px]">
             {category.label}
           </h2>
         </motion.div>
@@ -274,18 +274,18 @@ function CategoryBand({ category, indexInPage, onOpenLightbox }) {
 function CategoriesCollection({ onOpenLightbox }) {
   return (
     <div id="activities-collection" className="relative">
-      <div className="bg-[#f7f7f5] pt-24 lg:pt-32">
+      <div className="bg-ivory pt-24 lg:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <motion.div {...fadeUp()} className="max-w-2xl">
-            <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#1a1a1a]">
-              <span className="h-px w-10 bg-[#008c8c]" />
+            <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-charcoal">
+              <span className="h-px w-10 bg-teal" />
               The Experiences
             </p>
-            <h2 className="font-serif text-4xl leading-[1.1] text-[#1a1a1a] sm:text-5xl lg:text-[56px]">
+            <h2 className="font-serif text-4xl leading-[1.1] text-charcoal sm:text-5xl lg:text-[56px]">
               Four worlds.{" "}
-              <span className="italic text-[#008c8c]">One coastline.</span>
+              <span className="italic text-teal">One coastline.</span>
             </h2>
-            <p className="mt-6 text-[15px] leading-[1.85] text-[#1a1a1a]/70">
+            <p className="mt-6 text-[15px] leading-[1.85] text-charcoal/70">
               Wellness sanctuaries, sea-edged pools, sunlit courts, and luminous
               gardens — the resort opens itself in chapters, each shaped for a
               different mood of the day.
@@ -338,7 +338,7 @@ const TIMELINE = [
 
 function Timeline() {
   return (
-    <section className="relative overflow-hidden bg-[#1a1a1a] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-charcoal py-24 lg:py-32">
       <div
         className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full opacity-20"
         style={{
@@ -356,13 +356,13 @@ function Timeline() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
         <motion.div {...fadeUp()} className="max-w-2xl">
-          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#008c8c]">
-            <span className="h-px w-10 bg-[#008c8c]" />A Day at Discovery Samal
+          <p className="mb-5 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-teal">
+            <span className="h-px w-10 bg-teal" />A Day at Discovery Samal
           </p>
           <h2 className="font-serif text-4xl leading-[1.1] text-white sm:text-5xl lg:text-[52px]">
             From first light to
             <br />
-            <span className="italic text-[#008c8c]">lantern glow</span>.
+            <span className="italic text-teal">lantern glow</span>.
           </h2>
         </motion.div>
 
@@ -375,8 +375,8 @@ function Timeline() {
                 key={t.title}
                 className="border-t border-white/15 pt-6"
               >
-                <Icon className="h-6 w-6 text-[#008c8c]" />
-                <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
+                <Icon className="h-6 w-6 text-teal" />
+                <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.4em] text-teal">
                   {t.time}
                 </p>
                 <h3 className="mt-3 font-serif text-2xl leading-[1.2] text-white">
@@ -433,11 +433,11 @@ function Lightbox({ item, startIndex, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#111111]/96 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-ocean/96 backdrop-blur-sm"
     >
       <div className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between px-6 py-5 lg:px-10">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-teal">
             Experience
           </p>
           <p className="mt-1 font-serif text-xl text-white">{item.name}</p>
@@ -450,7 +450,7 @@ function Lightbox({ item, startIndex, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close gallery"
-            className="flex h-10 w-10 items-center justify-center border border-white/20 text-white transition-colors hover:border-[#008c8c] hover:text-[#008c8c]"
+            className="flex h-10 w-10 items-center justify-center border border-white/20 text-white transition-colors hover:border-teal hover:text-teal"
           >
             <X className="h-5 w-5" />
           </button>
@@ -461,7 +461,7 @@ function Lightbox({ item, startIndex, onClose }) {
         <button
           onClick={prev}
           aria-label="Previous"
-          className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center border border-white/20 text-white transition-colors hover:border-[#008c8c] hover:text-[#008c8c] lg:left-8 lg:h-14 lg:w-14"
+          className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center border border-white/20 text-white transition-colors hover:border-teal hover:text-teal lg:left-8 lg:h-14 lg:w-14"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
@@ -481,7 +481,7 @@ function Lightbox({ item, startIndex, onClose }) {
         <button
           onClick={next}
           aria-label="Next"
-          className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center border border-white/20 text-white transition-colors hover:border-[#008c8c] hover:text-[#008c8c] lg:right-8 lg:h-14 lg:w-14"
+          className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center border border-white/20 text-white transition-colors hover:border-teal hover:text-teal lg:right-8 lg:h-14 lg:w-14"
         >
           <ChevronRight className="h-6 w-6" />
         </button>
@@ -495,7 +495,7 @@ function Lightbox({ item, startIndex, onClose }) {
 /* ================================================================== */
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#111111] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-ocean py-24 lg:py-32">
       <div
         className="pointer-events-none absolute -left-32 top-0 h-[500px] w-[500px] rounded-full opacity-30"
         style={{
@@ -513,15 +513,15 @@ function FinalCTA() {
 
       <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-12">
         <motion.div {...fadeUp()}>
-          <p className="mb-6 flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#008c8c]">
-            <span className="h-px w-10 bg-[#008c8c]" />
+          <p className="mb-6 flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-teal">
+            <span className="h-px w-10 bg-teal" />
             Plan Your Stay
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
           </p>
           <h2 className="font-serif text-4xl leading-[1.1] text-white sm:text-5xl lg:text-6xl">
             The coastline
             <br />
-            <span className="italic text-[#008c8c]">is waiting.</span>
+            <span className="italic text-teal">is waiting.</span>
           </h2>
           <p className="mx-auto mt-7 max-w-xl text-[15px] leading-[1.85] text-white/70">
             Reserve a stay at Discovery Samal Resort and unlock the full
@@ -532,7 +532,7 @@ function FinalCTA() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/booking"
-              className="group inline-flex items-center gap-3 bg-[#008c8c] px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#111111] transition-all hover:bg-[#008c8c]"
+              className="group inline-flex items-center gap-3 bg-teal px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-ocean transition-all hover:bg-teal"
             >
               <Compass className="h-4 w-4" />
               Reserve Your Stay
@@ -540,7 +540,7 @@ function FinalCTA() {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 border border-white/30 px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-all hover:border-[#008c8c] hover:text-[#008c8c]"
+              className="inline-flex items-center gap-2 border border-white/30 px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white transition-all hover:border-teal hover:text-teal"
             >
               Speak with Concierge
             </Link>
@@ -561,7 +561,7 @@ export default function Activities() {
   const close = () => setLightbox({ item: null, index: 0 });
 
   return (
-    <main className="bg-[#f7f7f5] text-[#1a1a1a]">
+    <main className="bg-ivory text-charcoal">
       <Hero />
       <Intro />
       <CategoriesCollection onOpenLightbox={open} />

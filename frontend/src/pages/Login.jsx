@@ -49,9 +49,9 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#f7f7f5]">
+    <div className="min-h-screen flex bg-ivory">
       {/* ─── LEFT: cinematic resort visual ──────────────────── */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-[#111111]">
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-ocean">
         <motion.img
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1.02, opacity: 1 }}
@@ -61,8 +61,8 @@ export default function Login() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Gradient layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#111111]/85 via-[#111111]/55 to-[#111111]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/95 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-ocean/85 via-ocean/55 to-ocean/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ocean/95 via-transparent to-transparent" />
         <div
           className="absolute inset-0 mix-blend-overlay opacity-40"
           style={{
@@ -78,14 +78,14 @@ export default function Login() {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="absolute top-10 left-12 z-10 flex items-center gap-3"
         >
-          <div className="w-10 h-10 bg-[#008c8c] flex items-center justify-center text-[#111111] font-serif font-bold text-sm">
+          <div className="w-10 h-10 bg-teal flex items-center justify-center text-ocean font-serif font-bold text-sm">
             {brand.initials}
           </div>
           <div>
-            <p className="text-[10px] uppercase tracking-[0.32em] text-[#f7f7f5]/60">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-ivory/60">
               Admin Portal
             </p>
-            <p className="font-serif text-sm text-[#f7f7f5] mt-0.5">
+            <p className="font-serif text-sm text-ivory mt-0.5">
               {brand.displayName}
             </p>
           </div>
@@ -96,9 +96,9 @@ export default function Login() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="absolute top-32 right-10 z-10 flex items-center gap-2 border border-[#f7f7f5]/15 bg-[#111111]/40 backdrop-blur-xl px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-[#f7f7f5]/80"
+          className="absolute top-32 right-10 z-10 flex items-center gap-2 border border-ivory/15 bg-ocean/40 backdrop-blur-xl px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-ivory/80"
         >
-          <Sparkles className="w-3 h-3 text-[#008c8c]" />
+          <Sparkles className="w-3 h-3 text-teal" />
           Secure Concierge Access
         </motion.div>
 
@@ -108,9 +108,9 @@ export default function Login() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.7 }}
-            className="text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c] mb-5 flex items-center gap-3"
+            className="text-[11px] font-semibold uppercase tracking-[0.4em] text-teal mb-5 flex items-center gap-3"
           >
-            <span className="h-px w-10 bg-[#008c8c]" />
+            <span className="h-px w-10 bg-teal" />
             Welcome Back
           </motion.p>
           <motion.h1
@@ -121,16 +121,16 @@ export default function Login() {
               duration: 0.9,
               ease: [0.22, 0.61, 0.36, 1],
             }}
-            className="font-serif text-4xl xl:text-5xl text-[#f7f7f5] leading-[1.1]"
+            className="font-serif text-4xl xl:text-5xl text-ivory leading-[1.1]"
           >
             Manage your{" "}
-            <span className="italic text-[#008c8c]">island sanctuary</span>.
+            <span className="italic text-teal">island sanctuary</span>.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.9 }}
-            className="mt-6 text-sm text-[#f7f7f5]/70 leading-relaxed"
+            className="mt-6 text-sm text-ivory/70 leading-relaxed"
           >
             Manage reservations, rooms, special offers, and guest experiences —
             all from a single elegant workspace.
@@ -141,7 +141,7 @@ export default function Login() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-[#f7f7f5]/15"
+            className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-ivory/15"
           >
             {[
               { v: "24/7", l: "Concierge" },
@@ -149,8 +149,8 @@ export default function Login() {
               { v: "5★", l: "Service" },
             ].map((s) => (
               <div key={s.l}>
-                <p className="font-serif text-2xl text-[#f7f7f5]">{s.v}</p>
-                <p className="text-[10px] uppercase tracking-[0.25em] text-[#f7f7f5]/55 mt-1">
+                <p className="font-serif text-2xl text-ivory">{s.v}</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-ivory/55 mt-1">
                   {s.l}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function Login() {
         </div>
 
         {/* Bottom hairline accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#008c8c]/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/60 to-transparent" />
       </div>
 
       {/* ─── RIGHT: login form ──────────────────────────────── */}
@@ -169,7 +169,7 @@ export default function Login() {
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 20%, #0a3a3a 0%, transparent 60%), radial-gradient(circle at 80% 80%, #008c8c 0%, transparent 60%)",
+              "radial-gradient(circle at 30% 20%, var(--color-ocean) 0%, transparent 60%), radial-gradient(circle at 80% 80%, var(--color-teal) 0%, transparent 60%)",
           }}
         />
 
@@ -181,25 +181,25 @@ export default function Login() {
         >
           {/* Mobile brand */}
           <div className="lg:hidden flex items-center gap-3 mb-10 justify-center">
-            <div className="w-10 h-10 bg-[#111111] flex items-center justify-center text-[#f7f7f5] font-serif font-bold text-sm">
+            <div className="w-10 h-10 bg-ocean flex items-center justify-center text-ivory font-serif font-bold text-sm">
               {brand.initials}
             </div>
-            <p className="font-serif text-sm text-[#111111]">
+            <p className="font-serif text-sm text-ocean">
               {brand.displayName}
             </p>
           </div>
 
           {/* Card */}
-          <div className="relative border border-[#111111]/10 bg-white/80 backdrop-blur-xl shadow-[0_30px_80px_-40px_rgba(17,17,17,0.35)] p-8 lg:p-10">
+          <div className="relative border border-ocean/10 bg-white/80 backdrop-blur-xl shadow-[0_30px_80px_-40px_rgba(17,17,17,0.35)] p-8 lg:p-10">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-11 h-11 border border-[#008c8c]/40 bg-[#008c8c]/10 flex items-center justify-center">
+              <div className="w-11 h-11 border border-teal/40 bg-teal/10 flex items-center justify-center">
                 <Lock size={16} className="text-[#006d6d]" />
               </div>
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#006d6d]">
                   Sign In
                 </p>
-                <h2 className="font-serif text-2xl text-[#111111] mt-1 leading-none">
+                <h2 className="font-serif text-2xl text-ocean mt-1 leading-none">
                   Admin Access
                 </h2>
               </div>
@@ -224,7 +224,7 @@ export default function Login() {
               <div className="group relative">
                 <Mail
                   size={15}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-[#111111]/40 group-focus-within:text-[#008c8c] transition-colors"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-ocean/40 group-focus-within:text-teal transition-colors"
                 />
                 <input
                   type="email"
@@ -232,7 +232,7 @@ export default function Login() {
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
                   placeholder="Email address"
-                  className="w-full border border-[#111111]/15 bg-white pl-11 pr-4 py-3.5 text-sm text-[#111111] placeholder-[#111111]/35 focus:outline-none focus:border-[#008c8c] focus:ring-4 focus:ring-[#008c8c]/10 transition-all"
+                  className="w-full border border-ocean/15 bg-white pl-11 pr-4 py-3.5 text-sm text-ocean placeholder-ocean/35 focus:outline-none focus:border-teal focus:ring-4 focus:ring-teal/10 transition-all"
                 />
               </div>
 
@@ -240,7 +240,7 @@ export default function Login() {
               <div className="group relative">
                 <Lock
                   size={15}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-[#111111]/40 group-focus-within:text-[#008c8c] transition-colors"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-ocean/40 group-focus-within:text-teal transition-colors"
                 />
                 <input
                   type={showPassword ? "text" : "password"}
@@ -250,13 +250,13 @@ export default function Login() {
                   }
                   required
                   placeholder="Password"
-                  className="w-full border border-[#111111]/15 bg-white pl-11 pr-12 py-3.5 text-sm text-[#111111] placeholder-[#111111]/35 focus:outline-none focus:border-[#008c8c] focus:ring-4 focus:ring-[#008c8c]/10 transition-all"
+                  className="w-full border border-ocean/15 bg-white pl-11 pr-12 py-3.5 text-sm text-ocean placeholder-ocean/35 focus:outline-none focus:border-teal focus:ring-4 focus:ring-teal/10 transition-all"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((v) => !v)}
                   aria-label={showPassword ? "Hide password" : "Show password"}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-[#111111]/45 hover:text-[#008c8c] transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 text-ocean/45 hover:text-teal transition-colors"
                 >
                   {showPassword ? <EyeOff size={15} /> : <Eye size={15} />}
                 </button>
@@ -264,7 +264,7 @@ export default function Login() {
 
               {/* Remember */}
               <div className="flex items-center justify-between text-xs">
-                <label className="flex items-center gap-2 cursor-pointer text-[#111111]/70 select-none">
+                <label className="flex items-center gap-2 cursor-pointer text-ocean/70 select-none">
                   <span className="relative inline-flex items-center">
                     <input
                       type="checkbox"
@@ -274,10 +274,10 @@ export default function Login() {
                       }
                       className="peer absolute opacity-0 w-4 h-4"
                     />
-                    <span className="w-4 h-4 border border-[#111111]/25 bg-white peer-checked:bg-[#008c8c] peer-checked:border-[#008c8c] flex items-center justify-center transition-colors">
+                    <span className="w-4 h-4 border border-ocean/25 bg-white peer-checked:bg-teal peer-checked:border-teal flex items-center justify-center transition-colors">
                       <svg
                         viewBox="0 0 12 12"
-                        className="w-2.5 h-2.5 text-[#111111] opacity-0 peer-checked:opacity-100 transition-opacity"
+                        className="w-2.5 h-2.5 text-ocean opacity-0 peer-checked:opacity-100 transition-opacity"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2.5"
@@ -290,7 +290,7 @@ export default function Login() {
                   </span>
                   Keep me signed in
                 </label>
-                <span className="flex items-center gap-1 text-[#111111]/50">
+                <span className="flex items-center gap-1 text-ocean/50">
                   <Shield size={11} /> Encrypted
                 </span>
               </div>
@@ -299,10 +299,10 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full overflow-hidden bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.28em] py-4 hover:bg-[#111111] transition-all disabled:opacity-60 flex items-center justify-center gap-3 mt-2"
+                className="group relative w-full overflow-hidden bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.28em] py-4 hover:bg-ocean transition-all disabled:opacity-60 flex items-center justify-center gap-3 mt-2"
               >
                 <span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#008c8c]/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-teal/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
                   aria-hidden
                 />
                 <span className="relative flex items-center gap-3">
@@ -326,7 +326,7 @@ export default function Login() {
           </div>
 
           {/* Footer */}
-          <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-[#111111]/40">
+          <p className="mt-8 text-center text-[10px] uppercase tracking-[0.3em] text-ocean/40">
             {brand.displayName} · Concierge Suite
           </p>
         </motion.div>

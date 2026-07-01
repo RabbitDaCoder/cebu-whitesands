@@ -47,7 +47,7 @@ export default function BookingWidget({ isOpen, onClose }) {
             {/* Top bar */}
             <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-slate-100">
               <div>
-                <p className="text-[10px] uppercase tracking-[0.28em] text-[#008c8c] font-semibold">
+                <p className="text-[10px] uppercase tracking-[0.28em] text-teal font-semibold">
                   Make a Reservation
                 </p>
                 <p className="text-[13px] font-light text-slate-400 tracking-wide mt-0.5">
@@ -67,26 +67,26 @@ export default function BookingWidget({ isOpen, onClose }) {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-medium">
-                    <CalendarDays size={11} className="text-[#008c8c]" />
+                    <CalendarDays size={11} className="text-teal" />
                     Check In
                   </label>
                   <input
                     type="date"
                     value={form.checkIn}
                     onChange={handle("checkIn")}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 focus:outline-none focus:border-[#008c8c] focus:ring-1 focus:ring-[#008c8c]/30 transition-all"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal/30 transition-all"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-medium">
-                    <CalendarDays size={11} className="text-[#008c8c]" />
+                    <CalendarDays size={11} className="text-teal" />
                     Check Out
                   </label>
                   <input
                     type="date"
                     value={form.checkOut}
                     onChange={handle("checkOut")}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 focus:outline-none focus:border-[#008c8c] focus:ring-1 focus:ring-[#008c8c]/30 transition-all"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal/30 transition-all"
                   />
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function BookingWidget({ isOpen, onClose }) {
               {/* Occupancy */}
               <div className="space-y-1.5">
                 <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-medium">
-                  <Users size={11} className="text-[#008c8c]" />
+                  <Users size={11} className="text-teal" />
                   Occupancy
                 </label>
                 <div className="grid grid-cols-2 gap-3">
@@ -108,7 +108,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                             rooms: Math.max(1, p.rooms - 1),
                           }))
                         }
-                        className="w-5 h-5 rounded-full bg-[#008c8c]/10 text-[#008c8c] text-[14px] leading-none flex items-center justify-center hover:bg-[#008c8c]/20 transition-colors font-medium"
+                        className="w-5 h-5 rounded-full bg-teal/10 text-teal text-[14px] leading-none flex items-center justify-center hover:bg-teal/20 transition-colors font-medium"
                       >
                         −
                       </button>
@@ -122,7 +122,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                             rooms: Math.min(10, p.rooms + 1),
                           }))
                         }
-                        className="w-5 h-5 rounded-full bg-[#008c8c]/10 text-[#008c8c] text-[14px] leading-none flex items-center justify-center hover:bg-[#008c8c]/20 transition-colors font-medium"
+                        className="w-5 h-5 rounded-full bg-teal/10 text-teal text-[14px] leading-none flex items-center justify-center hover:bg-teal/20 transition-colors font-medium"
                       >
                         +
                       </button>
@@ -138,7 +138,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                             adults: Math.max(1, p.adults - 1),
                           }))
                         }
-                        className="w-5 h-5 rounded-full bg-[#008c8c]/10 text-[#008c8c] text-[14px] leading-none flex items-center justify-center hover:bg-[#008c8c]/20 transition-colors font-medium"
+                        className="w-5 h-5 rounded-full bg-teal/10 text-teal text-[14px] leading-none flex items-center justify-center hover:bg-teal/20 transition-colors font-medium"
                       >
                         −
                       </button>
@@ -152,7 +152,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                             adults: Math.min(10, p.adults + 1),
                           }))
                         }
-                        className="w-5 h-5 rounded-full bg-[#008c8c]/10 text-[#008c8c] text-[14px] leading-none flex items-center justify-center hover:bg-[#008c8c]/20 transition-colors font-medium"
+                        className="w-5 h-5 rounded-full bg-teal/10 text-teal text-[14px] leading-none flex items-center justify-center hover:bg-teal/20 transition-colors font-medium"
                       >
                         +
                       </button>
@@ -164,7 +164,7 @@ export default function BookingWidget({ isOpen, onClose }) {
               {/* Promo */}
               <div className="space-y-1.5">
                 <label className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.18em] text-slate-400 font-medium">
-                  <Tag size={11} className="text-[#008c8c]" />
+                  <Tag size={11} className="text-teal" />
                   Promo Code
                 </label>
                 <input
@@ -172,7 +172,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                   placeholder="Enter promo code"
                   value={form.promo}
                   onChange={handle("promo")}
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 placeholder:text-slate-300 focus:outline-none focus:border-[#008c8c] focus:ring-1 focus:ring-[#008c8c]/30 transition-all"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-[12px] text-slate-700 placeholder:text-slate-300 focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal/30 transition-all"
                 />
               </div>
 
@@ -185,7 +185,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full rounded-2xl bg-[#008c8c] py-3.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white shadow-[0_8px_24px_-4px_rgba(0,140,140,0.45)] hover:bg-[#007474] hover:shadow-[0_12px_32px_-4px_rgba(0,140,140,0.55)] transition-all duration-300"
+                  className="w-full rounded-2xl bg-teal py-3.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white shadow-[0_8px_24px_-4px_rgba(0,140,140,0.45)] hover:bg-teal-dark hover:shadow-[0_12px_32px_-4px_rgba(0,140,140,0.55)] transition-all duration-300"
                 >
                   Check Availability
                 </motion.button>
@@ -196,7 +196,7 @@ export default function BookingWidget({ isOpen, onClose }) {
                 <Link
                   to="/booking/modify"
                   onClick={onClose}
-                  className="text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-[#008c8c] transition-colors underline-offset-2 hover:underline"
+                  className="text-[10px] uppercase tracking-[0.18em] text-slate-400 hover:text-teal transition-colors underline-offset-2 hover:underline"
                 >
                   Modify an Existing Booking
                 </Link>

@@ -208,7 +208,7 @@ const fadeUp = {
 
 export default function AmenitiesPage() {
   return (
-    <main className="bg-[#f7f7f5] text-[#111111] overflow-x-hidden">
+    <main className="bg-ivory text-ocean overflow-x-hidden">
       <Hero />
       <Intro />
       <Showcases />
@@ -260,7 +260,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-6 text-[11px] font-semibold uppercase tracking-[0.5em] text-[#008c8c]"
+          className="mb-6 text-[11px] font-semibold uppercase tracking-[0.5em] text-teal"
         >
           Discovery Samal · Samal Island
         </motion.p>
@@ -272,7 +272,7 @@ function Hero() {
           className="font-serif text-[44px] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[88px]"
         >
           <span className="block">Luxury</span>
-          <span className="block italic text-[#008c8c]">Amenities</span>
+          <span className="block italic text-teal">Amenities</span>
         </motion.h1>
 
         <motion.p
@@ -293,7 +293,7 @@ function Hero() {
         >
           <a
             href="#amenities"
-            className="group relative inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-md transition hover:border-[#008c8c] hover:bg-[#008c8c] hover:text-[#111111]"
+            className="group relative inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-md transition hover:border-teal hover:bg-teal hover:text-ocean"
           >
             Explore Amenities
             <ArrowRight
@@ -303,7 +303,7 @@ function Hero() {
           </a>
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#008c8c] px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_60px_-15px_rgba(212,133,0,0.6)] transition hover:bg-[#006d6d]"
+            className="group inline-flex items-center gap-2 rounded-full bg-teal px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_60px_-15px_rgba(212,133,0,0.6)] transition hover:bg-[#006d6d]"
           >
             Book Your Stay
             <ArrowRight
@@ -358,7 +358,7 @@ function Particles() {
               width: size,
               height: size,
             }}
-            className="absolute rounded-full bg-[#008c8c]/70 shadow-[0_0_8px_rgba(232,194,107,0.8)]"
+            className="absolute rounded-full bg-teal/70 shadow-[0_0_8px_rgba(232,194,107,0.8)]"
           />
         );
       })}
@@ -372,7 +372,7 @@ function Intro() {
   return (
     <section
       id="amenities"
-      className="relative py-28 sm:py-36 lg:py-44 bg-[#f7f7f5]"
+      className="relative py-28 sm:py-36 lg:py-44 bg-ivory"
     >
       <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:gap-24 lg:items-center">
         <motion.div
@@ -395,7 +395,7 @@ function Intro() {
           <motion.div
             variants={fadeUp}
             custom={1}
-            className="absolute right-0 top-[20%] h-[55%] w-[55%] overflow-hidden rounded-[2px] border-8 border-[#f7f7f5] shadow-2xl"
+            className="absolute right-0 top-[20%] h-[55%] w-[55%] overflow-hidden rounded-[2px] border-8 border-ivory shadow-2xl"
           >
             <img
               src={INTRO_COLLAGE[1]}
@@ -406,7 +406,7 @@ function Intro() {
           <motion.div
             variants={fadeUp}
             custom={2}
-            className="absolute bottom-0 left-[15%] h-[40%] w-[45%] overflow-hidden rounded-[2px] border-8 border-[#f7f7f5] shadow-2xl"
+            className="absolute bottom-0 left-[15%] h-[40%] w-[45%] overflow-hidden rounded-[2px] border-8 border-ivory shadow-2xl"
           >
             <img
               src={INTRO_COLLAGE[2]}
@@ -420,12 +420,12 @@ function Intro() {
             whileInView={{ opacity: 1, scale: 1, rotate: -8 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="absolute -right-2 bottom-8 z-10 flex h-28 w-28 flex-col items-center justify-center rounded-full bg-[#111111] text-center text-white shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)]"
+            className="absolute -right-2 bottom-8 z-10 flex h-28 w-28 flex-col items-center justify-center rounded-full bg-ocean text-center text-white shadow-[0_20px_50px_-10px_rgba(0,0,0,0.4)]"
           >
-            <span className="text-[9px] uppercase tracking-[0.25em] text-[#008c8c]">
+            <span className="text-[9px] uppercase tracking-[0.25em] text-teal">
               Since
             </span>
-            <span className="font-serif text-3xl text-[#008c8c]">2008</span>
+            <span className="font-serif text-3xl text-teal">2008</span>
           </motion.div>
         </motion.div>
 
@@ -436,24 +436,24 @@ function Intro() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-6 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+            className="mb-6 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
           >
             The Sands Experience
           </motion.p>
           <motion.h2
             variants={fadeUp}
             custom={1}
-            className="font-serif text-4xl leading-[1.1] text-[#111111] sm:text-5xl lg:text-6xl"
+            className="font-serif text-4xl leading-[1.1] text-ocean sm:text-5xl lg:text-6xl"
           >
             Every detail, <br />
-            <span className="italic text-[#1a1a1a]">
+            <span className="italic text-charcoal">
               designed for serenity.
             </span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mt-8 text-lg leading-relaxed text-[#111111]/75"
+            className="mt-8 text-lg leading-relaxed text-ocean/75"
           >
             At {brand.displayName}, every detail is designed to invite stillness
             — from sun-soaked lounges and infinity waters to candle-lit spa
@@ -462,7 +462,7 @@ function Intro() {
           <motion.p
             variants={fadeUp}
             custom={3}
-            className="mt-6 text-lg leading-relaxed text-[#111111]/75"
+            className="mt-6 text-lg leading-relaxed text-ocean/75"
           >
             Step into a private corner of Samal where time slows, hospitality
             is intuitive, and the rhythm of the sea sets the pace of your day.
@@ -472,8 +472,8 @@ function Intro() {
             custom={4}
             className="mt-10 flex items-center gap-6"
           >
-            <div className="h-px w-16 bg-[#008c8c]" />
-            <span className="text-[11px] uppercase tracking-[0.35em] text-[#1a1a1a]">
+            <div className="h-px w-16 bg-teal" />
+            <span className="text-[11px] uppercase tracking-[0.35em] text-charcoal">
               {brand.tagline}
             </span>
           </motion.div>
@@ -487,7 +487,7 @@ function Intro() {
 
 function Showcases() {
   return (
-    <div className="bg-[#f7f7f5]">
+    <div className="bg-ivory">
       {SHOWCASES.map((s, i) => (
         <ShowcaseBlock key={s.id} item={s} index={i} />
       ))}
@@ -509,12 +509,12 @@ function ShowcaseBlock({ item, index }) {
     <section
       ref={ref}
       className={`relative overflow-hidden py-24 sm:py-32 lg:py-40 ${
-        dark ? "bg-[#111111] text-white" : "bg-[#f7f7f5] text-[#111111]"
+        dark ? "bg-ocean text-white" : "bg-ivory text-ocean"
       }`}
     >
       <div
         className={`pointer-events-none absolute -z-0 h-[600px] w-[600px] rounded-full blur-[120px] ${
-          dark ? "bg-[#008c8c]/10" : "bg-[#008c8c]/15"
+          dark ? "bg-teal/10" : "bg-teal/15"
         } ${isRight ? "-left-40 top-20" : "-right-40 top-20"}`}
       />
 
@@ -547,7 +547,7 @@ function ShowcaseBlock({ item, index }) {
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 1 }}
             className={`absolute hidden h-48 w-64 overflow-hidden rounded-[2px] border-[6px] shadow-2xl md:block ${
-              dark ? "border-[#111111]" : "border-[#f7f7f5]"
+              dark ? "border-ocean" : "border-ivory"
             } ${
               isRight
                 ? "-right-6 -bottom-10 lg:-right-12"
@@ -566,7 +566,7 @@ function ShowcaseBlock({ item, index }) {
             className={`absolute left-6 top-6 rounded-full border px-4 py-2 backdrop-blur-md ${
               dark
                 ? "border-white/20 bg-white/10 text-white"
-                : "border-white/40 bg-white/30 text-[#111111]"
+                : "border-white/40 bg-white/30 text-ocean"
             }`}
           >
             <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">
@@ -583,7 +583,7 @@ function ShowcaseBlock({ item, index }) {
           <motion.p
             variants={fadeUp}
             className={`mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] ${
-              dark ? "text-[#008c8c]" : "text-[#008c8c]"
+              dark ? "text-teal" : "text-teal"
             }`}
           >
             {item.eyebrow}
@@ -592,12 +592,12 @@ function ShowcaseBlock({ item, index }) {
             variants={fadeUp}
             custom={1}
             className={`font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl ${
-              dark ? "text-white" : "text-[#111111]"
+              dark ? "text-white" : "text-ocean"
             }`}
           >
             {item.title.split(" ").slice(0, -1).join(" ")}{" "}
             <span
-              className={`italic ${dark ? "text-[#008c8c]" : "text-[#1a1a1a]"}`}
+              className={`italic ${dark ? "text-teal" : "text-charcoal"}`}
             >
               {item.title.split(" ").slice(-1)}
             </span>
@@ -606,7 +606,7 @@ function ShowcaseBlock({ item, index }) {
             variants={fadeUp}
             custom={2}
             className={`mt-7 text-lg leading-relaxed ${
-              dark ? "text-white/75" : "text-[#111111]/75"
+              dark ? "text-white/75" : "text-ocean/75"
             }`}
           >
             {item.description}
@@ -617,12 +617,12 @@ function ShowcaseBlock({ item, index }) {
               <li key={b} className="flex items-start gap-4">
                 <span
                   className={`mt-2 h-px w-8 flex-none ${
-                    dark ? "bg-[#008c8c]" : "bg-[#008c8c]"
+                    dark ? "bg-teal" : "bg-teal"
                   }`}
                 />
                 <span
                   className={`text-base ${
-                    dark ? "text-white/85" : "text-[#111111]/80"
+                    dark ? "text-white/85" : "text-ocean/80"
                   }`}
                 >
                   {b}
@@ -636,8 +636,8 @@ function ShowcaseBlock({ item, index }) {
               to="/booking"
               className={`group inline-flex items-center gap-3 border-b pb-2 text-[11px] font-semibold uppercase tracking-[0.35em] transition ${
                 dark
-                  ? "border-[#008c8c] text-[#008c8c] hover:text-white"
-                  : "border-[#008c8c] text-[#008c8c] hover:text-[#111111]"
+                  ? "border-teal text-teal hover:text-white"
+                  : "border-teal text-teal hover:text-ocean"
               }`}
             >
               Reserve Your Experience
@@ -675,7 +675,7 @@ function Highlights() {
         >
           <motion.p
             variants={fadeUp}
-            className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+            className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
           >
             Experience Highlights
           </motion.p>
@@ -684,7 +684,7 @@ function Highlights() {
             custom={1}
             className="font-serif text-4xl leading-[1.1] sm:text-5xl"
           >
-            Curated for <span className="italic text-[#008c8c]">comfort.</span>
+            Curated for <span className="italic text-teal">comfort.</span>
           </motion.h2>
         </motion.div>
 
@@ -701,11 +701,11 @@ function Highlights() {
                 ease: [0.22, 1, 0.36, 1],
               }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl transition hover:border-[#008c8c]/40 hover:bg-white/[0.07]"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-xl transition hover:border-teal/40 hover:bg-white/[0.07]"
             >
-              <div className="absolute inset-x-0 -top-px h-px bg-linear-to-r from-transparent via-[#008c8c]/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-x-0 -top-px h-px bg-linear-to-r from-transparent via-teal/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-[#008c8c]/30 bg-[#008c8c]/10 text-[#008c8c] transition group-hover:scale-110 group-hover:bg-[#008c8c] group-hover:text-[#111111]">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-teal/30 bg-teal/10 text-teal transition group-hover:scale-110 group-hover:bg-teal group-hover:text-ocean">
                 <Icon size={22} strokeWidth={1.4} />
               </div>
               <h4 className="font-serif text-xl text-white">{label}</h4>
@@ -725,7 +725,7 @@ function Highlights() {
 function Gallery() {
   const [open, setOpen] = useState(null);
   return (
-    <section className="bg-[#f7f7f5] py-28 sm:py-36">
+    <section className="bg-ivory py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial="hidden"
@@ -736,23 +736,23 @@ function Gallery() {
           <div>
             <motion.p
               variants={fadeUp}
-              className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+              className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
             >
               Visual Journey
             </motion.p>
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="font-serif text-4xl leading-[1.1] text-[#111111] sm:text-5xl lg:text-6xl"
+              className="font-serif text-4xl leading-[1.1] text-ocean sm:text-5xl lg:text-6xl"
             >
               A taste of{" "}
-              <span className="italic text-[#1a1a1a]">paradise.</span>
+              <span className="italic text-charcoal">paradise.</span>
             </motion.h2>
           </div>
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="max-w-sm text-[15px] leading-relaxed text-[#111111]/70"
+            className="max-w-sm text-[15px] leading-relaxed text-ocean/70"
           >
             Wander through frames of warm afternoons, quiet corners, and
             unhurried indulgence at Discovery Samal.
@@ -879,7 +879,7 @@ function Testimonials() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#1a1a1a] py-28 text-white sm:py-36">
+    <section className="relative overflow-hidden bg-charcoal py-28 text-white sm:py-36">
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -888,7 +888,7 @@ function Testimonials() {
           backgroundPosition: "center",
         }}
       />
-      <div className="absolute inset-0 bg-linear-to-b from-[#1a1a1a]/95 via-[#1a1a1a]/85 to-[#111111]" />
+      <div className="absolute inset-0 bg-linear-to-b from-charcoal/95 via-charcoal/85 to-ocean" />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <motion.p
@@ -896,7 +896,7 @@ function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#008c8c]"
+          className="mb-5 text-[11px] font-semibold uppercase tracking-[0.4em] text-teal"
         >
           Whispered Praise
         </motion.p>
@@ -908,7 +908,7 @@ function Testimonials() {
           className="mb-16 font-serif text-4xl leading-[1.1] sm:text-5xl"
         >
           Stories from{" "}
-          <span className="italic text-[#008c8c]">our guests.</span>
+          <span className="italic text-teal">our guests.</span>
         </motion.h2>
 
         <div className="relative min-h-[280px]">
@@ -921,7 +921,7 @@ function Testimonials() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="rounded-2xl border border-white/15 bg-white/[0.06] p-10 backdrop-blur-xl sm:p-14"
             >
-              <div className="mb-6 flex justify-center gap-1 text-[#008c8c]">
+              <div className="mb-6 flex justify-center gap-1 text-teal">
                 {Array.from({ length: TESTIMONIALS[i].rating }).map((_, k) => (
                   <Star key={k} size={16} fill="currentColor" strokeWidth={0} />
                 ))}
@@ -930,7 +930,7 @@ function Testimonials() {
                 &ldquo;{TESTIMONIALS[i].quote}&rdquo;
               </p>
               <div className="mt-10">
-                <p className="font-serif text-lg text-[#008c8c]">
+                <p className="font-serif text-lg text-teal">
                   {TESTIMONIALS[i].name}
                 </p>
                 <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-white/60">
@@ -949,7 +949,7 @@ function Testimonials() {
               aria-label={`Show testimonial ${k + 1}`}
               className={`h-px transition-all ${
                 k === i
-                  ? "w-12 bg-[#008c8c]"
+                  ? "w-12 bg-teal"
                   : "w-6 bg-white/30 hover:bg-white/60"
               }`}
             />
@@ -967,7 +967,7 @@ function Stats() {
   const inView = useInView(ref, { once: true, amount: 0.4 });
 
   return (
-    <section ref={ref} className="bg-[#f7f7f5] py-24 sm:py-32">
+    <section ref={ref} className="bg-ivory py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4">
           {STATS.map((s, i) => (
@@ -988,12 +988,12 @@ function StatItem({ stat, inView, delay }) {
       transition={{ delay, duration: 0.8 }}
       className="text-center"
     >
-      <div className="font-serif text-5xl text-[#1a1a1a] sm:text-6xl lg:text-7xl">
+      <div className="font-serif text-5xl text-charcoal sm:text-6xl lg:text-7xl">
         {value}
-        <span className="text-[#008c8c]">{stat.suffix}</span>
+        <span className="text-teal">{stat.suffix}</span>
       </div>
-      <div className="mx-auto mt-4 h-px w-10 bg-[#008c8c]" />
-      <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#111111]/70">
+      <div className="mx-auto mt-4 h-px w-10 bg-teal" />
+      <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-ocean/70">
         {stat.label}
       </p>
     </motion.div>
@@ -1023,7 +1023,7 @@ function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
-          className="mb-6 text-[11px] font-semibold uppercase tracking-[0.5em] text-[#008c8c]"
+          className="mb-6 text-[11px] font-semibold uppercase tracking-[0.5em] text-teal"
         >
           Your Invitation
         </motion.p>
@@ -1034,7 +1034,7 @@ function FinalCTA() {
           transition={{ duration: 1.2, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-7xl"
         >
-          Escape into <span className="italic text-[#008c8c]">paradise.</span>
+          Escape into <span className="italic text-teal">paradise.</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -1056,7 +1056,7 @@ function FinalCTA() {
         >
           <Link
             to="/booking"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#008c8c] px-10 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_60px_-15px_rgba(212,133,0,0.7)] transition hover:bg-[#006d6d]"
+            className="group inline-flex items-center gap-2 rounded-full bg-teal px-10 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_60px_-15px_rgba(212,133,0,0.7)] transition hover:bg-[#006d6d]"
           >
             Book Now
             <ArrowRight
@@ -1066,7 +1066,7 @@ function FinalCTA() {
           </Link>
           <Link
             to="/rooms"
-            className="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-10 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-md transition hover:border-[#008c8c] hover:bg-[#008c8c] hover:text-[#111111]"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-10 py-4 text-[12px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-md transition hover:border-teal hover:bg-teal hover:text-ocean"
           >
             Explore Rooms
             <ArrowRight

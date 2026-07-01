@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Save } from "lucide-react";
 
 const inputClass =
-  "w-full border border-[#111111]/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-[#008c8c] transition-colors";
+  "w-full border border-ocean/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-teal transition-colors";
 
 export default function PaymentSettingsPage() {
   const [form, setForm] = useState({
@@ -49,20 +49,31 @@ export default function PaymentSettingsPage() {
 
   return (
     <div>
+      {/* Page header */}
+      <div className="mb-8">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-teal-dark font-semibold mb-1">
+          Configuration
+        </p>
+        <h2 className="font-serif text-2xl text-ocean">Payment Settings</h2>
+        <p className="text-ocean/40 text-sm mt-1">
+          Bank and GCash details shown to guests at checkout
+        </p>
+      </div>
+
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-8">
         {/* Online Transfer Section */}
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 space-y-6">
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 space-y-6">
           <div>
-            <h3 className="font-serif text-lg text-[#111111] mb-1">
+            <h3 className="font-serif text-lg text-ocean mb-1">
               Online Transfer
             </h3>
-            <p className="text-sm text-[#111111]/40">
+            <p className="text-sm text-ocean/40">
               Bank details shown to guests who choose online transfer.
             </p>
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               Bank Name
             </label>
             <input
@@ -75,7 +86,7 @@ export default function PaymentSettingsPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               Account Name
             </label>
             <input
@@ -90,7 +101,7 @@ export default function PaymentSettingsPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               Account Number
             </label>
             <input
@@ -105,7 +116,7 @@ export default function PaymentSettingsPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               Payment Instructions
             </label>
             <textarea
@@ -121,17 +132,17 @@ export default function PaymentSettingsPage() {
         </div>
 
         {/* GCash Section */}
-        <div className="bg-white border border-[#111111]/5 p-6 lg:p-8 space-y-6">
+        <div className="bg-white border border-ocean/10 p-6 lg:p-8 space-y-6">
           <div>
-            <h3 className="font-serif text-lg text-[#111111] mb-1">GCash</h3>
-            <p className="text-sm text-[#111111]/40">
+            <h3 className="font-serif text-lg text-ocean mb-1">GCash</h3>
+            <p className="text-sm text-ocean/40">
               GCash details shown to guests who choose GCash. Leave blank to
               hide this option from guests.
             </p>
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               GCash Name
             </label>
             <input
@@ -144,7 +155,7 @@ export default function PaymentSettingsPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               GCash Number
             </label>
             <input
@@ -159,7 +170,7 @@ export default function PaymentSettingsPage() {
           </div>
 
           <div>
-            <label className="block text-[11px] font-medium text-[#111111]/50 uppercase tracking-[0.12em] mb-2">
+            <label className="block text-[11px] font-medium text-ocean/50 uppercase tracking-[0.12em] mb-2">
               GCash Instructions
             </label>
             <textarea
@@ -177,7 +188,7 @@ export default function PaymentSettingsPage() {
         <button
           type="submit"
           disabled={saving}
-          className="bg-[#111111] text-[#f7f7f5] text-[11px] font-semibold uppercase tracking-[0.18em] px-8 py-3 hover:bg-[#111111] transition-colors disabled:opacity-50 flex items-center gap-2"
+          className="bg-ocean text-ivory text-[11px] font-semibold uppercase tracking-[0.18em] px-8 py-3 hover:bg-teal transition-colors disabled:opacity-50 flex items-center gap-2"
         >
           <Save size={13} />
           {saving ? "Saving..." : "Save Settings"}

@@ -335,7 +335,7 @@ export default function BookingSuccess() {
           </p>
           <div className="mt-10 inline-flex items-center gap-2 text-sm text-charcoal/60">
             <Mail size={14} className="text-tan" />
-            concierge@discoverysamal-resort.org
+            {brand.email}
           </div>
         </div>
       </section>

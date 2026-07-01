@@ -75,7 +75,7 @@ export default function Navbar() {
           backdropFilter: isTransparent ? "blur(0px)" : "blur(24px)",
           boxShadow: isTransparent
             ? "0 0 0 0 rgba(0,0,0,0)"
-            : "0 4px 32px -8px rgba(0,140,140,0.12), 0 1px 0 rgba(0,140,140,0.06)",
+            : "0 4px 32px -8px rgba(13,51,71,0.14), 0 1px 0 rgba(13,51,71,0.06)",
         }}
         transition={{ duration: 0.45, ease: "easeInOut" }}
         className="fixed inset-x-0 top-0 z-50"
@@ -117,8 +117,8 @@ export default function Navbar() {
                           ? "text-white"
                           : "text-white/75 hover:text-white"
                         : isActive
-                          ? "text-[#008c8c]"
-                          : "text-slate-500 hover:text-[#008c8c]"
+                          ? "text-teal"
+                          : "text-slate-500 hover:text-teal"
                     }`}
                   >
                     {item.label}
@@ -134,7 +134,7 @@ export default function Navbar() {
                     )}
                     {/* Active underline */}
                     <span
-                      className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-[#008c8c] transition-all duration-300 ${
+                      className={`absolute bottom-0 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-gold transition-all duration-300 ${
                         isActive ? "w-5" : "w-0 group-hover:w-5"
                       }`}
                     />
@@ -159,12 +159,12 @@ export default function Navbar() {
             <Link to="/booking" className="hidden lg:block">
               <motion.div
                 whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 12px 32px -4px rgba(0,140,140,0.5)",
+                  scale: 1.04,
+                  boxShadow: "0 12px 32px -4px rgba(184,148,60,0.45)",
                 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
-                className="inline-flex items-center rounded-full bg-[#008c8c] px-6 py-2.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_6px_20px_-4px_rgba(0,140,140,0.4)] transition-colors duration-300 hover:bg-[#007474]"
+                className="inline-flex items-center rounded-full bg-gold px-6 py-2.5 text-[10.5px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_6px_20px_-4px_rgba(184,148,60,0.3)] transition-colors duration-300 hover:bg-gold-dark"
               >
                 Book Now
               </motion.div>
@@ -192,7 +192,7 @@ export default function Navbar() {
         <motion.div
           animate={{ opacity: isTransparent ? 0 : 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-[#008c8c]/20 to-transparent"
+          className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-gold/20 to-transparent"
         />
       </motion.header>
 

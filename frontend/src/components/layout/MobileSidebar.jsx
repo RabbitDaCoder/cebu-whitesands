@@ -121,7 +121,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
             </div>
 
             {/* Teal accent line */}
-            <div className="h-0.5 w-full bg-linear-to-r from-[#008c8c] via-teal-300 to-transparent" />
+            <div className="h-0.5 w-full bg-linear-to-r from-teal via-teal-300 to-transparent" />
 
             {/* Nav links */}
             <nav className="flex-1 overflow-y-auto px-7 py-6">
@@ -143,8 +143,8 @@ export default function MobileSidebar({ isOpen, onClose }) {
                           onClick={() => toggleExpand(item.label)}
                           className={`w-full flex items-center justify-between border-b border-slate-100 py-4 text-left font-medium tracking-wide transition-colors ${
                             pathname.startsWith(item.to)
-                              ? "text-[#008c8c]"
-                              : "text-slate-700 hover:text-[#008c8c]"
+                              ? "text-teal"
+                              : "text-slate-700 hover:text-teal"
                           }`}
                         >
                           <span className="text-[18px] font-light">
@@ -173,9 +173,9 @@ export default function MobileSidebar({ isOpen, onClose }) {
                                   <Link
                                     to={sub.to}
                                     onClick={onClose}
-                                    className="flex items-center gap-2.5 py-2.5 pl-3 text-[12px] uppercase tracking-[0.15em] text-slate-400 hover:text-[#008c8c] transition-colors border-b border-slate-50"
+                                    className="flex items-center gap-2.5 py-2.5 pl-3 text-[12px] uppercase tracking-[0.15em] text-slate-400 hover:text-teal transition-colors border-b border-slate-50"
                                   >
-                                    <span className="w-4 h-px bg-[#008c8c]/30" />
+                                    <span className="w-4 h-px bg-teal/30" />
                                     {sub.label}
                                   </Link>
                                 </li>
@@ -190,7 +190,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={onClose}
-                        className="block border-b border-slate-100 py-4 text-[18px] font-light tracking-wide text-slate-700 hover:text-[#008c8c] transition-colors"
+                        className="block border-b border-slate-100 py-4 text-[18px] font-light tracking-wide text-slate-700 hover:text-teal transition-colors"
                       >
                         {item.label}
                       </a>
@@ -200,8 +200,8 @@ export default function MobileSidebar({ isOpen, onClose }) {
                         onClick={onClose}
                         className={`block border-b border-slate-100 py-4 text-[18px] font-light tracking-wide transition-colors ${
                           pathname === item.to
-                            ? "text-[#008c8c]"
-                            : "text-slate-700 hover:text-[#008c8c]"
+                            ? "text-teal"
+                            : "text-slate-700 hover:text-teal"
                         }`}
                       >
                         {item.label}
@@ -222,7 +222,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
-                    className="flex items-center justify-center rounded-2xl bg-[#008c8c] py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_8px_24px_-4px_rgba(0,140,140,0.4)] hover:bg-[#007474] transition-all duration-300"
+                    className="flex items-center justify-center rounded-2xl bg-teal py-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_8px_24px_-4px_rgba(0,140,140,0.4)] hover:bg-teal-dark transition-all duration-300"
                   >
                     Book Now
                   </motion.div>
@@ -243,7 +243,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
                   href={brand.facebookPageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-[#008c8c] hover:text-white transition-all duration-200"
+                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-teal hover:text-white transition-all duration-200"
                 >
                   <FacebookIcon />
                 </a>
@@ -251,7 +251,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
                   href="https://www.instagram.com/discoverysamal/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-[#008c8c] hover:text-white transition-all duration-200"
+                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-teal hover:text-white transition-all duration-200"
                 >
                   <InstagramIcon />
                 </a>
@@ -259,7 +259,7 @@ export default function MobileSidebar({ isOpen, onClose }) {
                   href="https://www.youtube.com/channel/UC56wQWVq1prM15Df7dHir-Q"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-[#008c8c] hover:text-white transition-all duration-200"
+                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-teal hover:text-white transition-all duration-200"
                 >
                   <YoutubeIcon />
                 </a>
@@ -268,22 +268,22 @@ export default function MobileSidebar({ isOpen, onClose }) {
                 <div className="flex items-start gap-2 text-[11px] text-slate-400">
                   <MapPin
                     size={11}
-                    className="mt-0.5 shrink-0 text-[#008c8c]"
+                    className="mt-0.5 shrink-0 text-teal"
                   />
                   <span>Samal Island, Davao del Norte, Philippines</span>
                 </div>
                 <a
                   href={`tel:${brand.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-2 text-[11px] text-slate-400 hover:text-[#008c8c] transition-colors"
+                  className="flex items-center gap-2 text-[11px] text-slate-400 hover:text-teal transition-colors"
                 >
-                  <Phone size={11} className="text-[#008c8c]" />
+                  <Phone size={11} className="text-teal" />
                   {brand.phone}
                 </a>
                 <a
                   href={`mailto:${brand.email}`}
-                  className="flex items-center gap-2 text-[11px] text-slate-400 hover:text-[#008c8c] transition-colors"
+                  className="flex items-center gap-2 text-[11px] text-slate-400 hover:text-teal transition-colors"
                 >
-                  <Mail size={11} className="text-[#008c8c]" />
+                  <Mail size={11} className="text-teal" />
                   {brand.email}
                 </a>
               </div>
