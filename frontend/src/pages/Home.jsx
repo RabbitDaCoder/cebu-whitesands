@@ -379,20 +379,7 @@ function Welcome() {
 }
 
 function RoomsGrid() {
-  const { data: dbRooms = [], isLoading } = useRooms({ available: true });
-  const rooms = ROOM_CATALOG.map((cat) => {
-    const found = dbRooms.find(
-      (r) =>
-        r.slug?.toLowerCase() === cat.slug ||
-        r.name?.toLowerCase() === cat.name.toLowerCase(),
-    );
-    return {
-      _id: found?._id,
-      slug: found?.slug || cat.slug,
-      name: cat.name,
-      image: found?.images?.[0] || cat.image || FALLBACK,
-    };
-  });
+  const { data: rooms = [], isLoading } = useRooms({ available: true });
 
   return (
     <section className="bg-white pb-20 lg:pb-28">
@@ -406,25 +393,24 @@ function RoomsGrid() {
         {isLoading ? (
           <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="aspect-square animate-pulse bg-gray-100"
-              />
+              <div key={n} className="aspect-square animate-pulse bg-gray-100" />
             ))}
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3">
             {rooms.map((r) => (
               <article
-                key={r.slug}
+                key={r._id || r.slug}
                 className="group relative aspect-square cursor-pointer overflow-hidden bg-gray-900"
               >
-                <img
-                  src={r.image}
-                  alt={r.name}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                {r.images?.[0] && (
+                  <img
+                    src={r.images[0]}
+                    alt={r.name}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/60" />
                 <div className="absolute inset-x-0 top-0 -translate-y-full p-5 transition-all duration-500 group-hover:translate-y-0">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white">
@@ -457,7 +443,7 @@ function RoomsGrid() {
             to="/rooms"
             className="inline-flex items-center justify-center border border-[#651D4C] px-10 py-3.5 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#651D4C] transition-colors hover:bg-[#651D4C] hover:text-white"
           >
-            View All Villas & Suites
+            View All Rooms
           </Link>
         </div>
       </div>

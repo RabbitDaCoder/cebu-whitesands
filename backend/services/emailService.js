@@ -1,14 +1,16 @@
 const logger = require("../config/logger");
 const generateReceipt = require("../utils/generateReceipt");
 
-const EMAIL_SERVICE_URL = process.env.EMAIL_SERVICE_URL;
-const EMAIL_SERVICE_API_KEY = process.env.EMAIL_SERVICE_API_KEY;
-
 /**
  * POST to the email service.
+ * Env vars are read inside the function (never at module-load time)
+ * so they're always current after dotenv has loaded.
  * Never throws — email failures are logged and swallowed.
  */
 async function callEmailService(payload) {
+  const EMAIL_SERVICE_URL = process.env.EMAIL_SERVICE_URL;
+  const EMAIL_SERVICE_API_KEY = process.env.EMAIL_SERVICE_API_KEY;
+
   if (!EMAIL_SERVICE_URL || !EMAIL_SERVICE_API_KEY) {
     logger.warn({
       message:
