@@ -449,64 +449,154 @@ function SpecItem({ label, value, icon: Icon }) {
 
 /* ================================================================== */
 /*  GALLERY GRID + LIGHTBOX                                            */
+/* Shows ALL images uploaded from admin — beautiful editorial layout  */
 /* ================================================================== */
 function GallerySection({ images, onOpen }) {
+  const [showAll, setShowAll] = useState(false);
+
   if (!Array.isArray(images) || images.length < 2) return null;
-  const display = images.slice(0, 7);
+
+  // Layout: first 3 in feature row, rest in uniform grid (max 12 visible before "show more")
+  const [feature, ...rest] = images;
+  const secondary = rest.slice(0, 2);           // 2 stacked beside feature
+  const overflow = rest.slice(2);               // all remaining
+  const GRID_LIMIT = 6;
+  const gridVisible = showAll ? overflow : overflow.slice(0, GRID_LIMIT);
+  const hiddenCount = overflow.length - GRID_LIMIT;
+
   return (
-    <section className="bg-[#f5f1e8] py-24 lg:py-32">
+    <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <motion.div {...fadeUp()} className="mb-12">
-          <p className="mb-4 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#5a9bbf]">
-            <span className="h-px w-10 bg-[#c9a36b]" />
-            Gallery
-          </p>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="font-serif text-4xl text-[#0a1f3d] lg:text-5xl">
-              In <span className="italic text-[#c9a36b]">moments</span>.
+
+        {/* Header */}
+        <motion.div {...fadeUp()} className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="mb-2 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#651D4C]">
+              <span className="h-px w-8 bg-[#651D4C]" />
+              Photo Gallery
+            </p>
+            <h2 className="font-serif text-3xl text-[#1a1a1a] lg:text-4xl">
+              Inside your <span className="italic text-[#c9a36b]">room</span>
             </h2>
-            <button
-              type="button"
-              onClick={() => onOpen(0)}
-              className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#0a1f3d] underline-offset-8 transition hover:underline"
-            >
-              View all {images.length} →
-            </button>
           </div>
+          <button
+            type="button"
+            onClick={() => onOpen(0)}
+            className="flex items-center gap-2 border border-[#1a1a1a]/20 px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#1a1a1a]/70 transition hover:border-[#651D4C] hover:text-[#651D4C]"
+          >
+            <ArrowUpRight className="h-3.5 w-3.5" />
+            View all {images.length} photo{images.length !== 1 ? "s" : ""}
+          </button>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
-          {display.map((src, i) => {
-            const isFeature = i === 0;
-            return (
+        {/* ── ROW 1: Feature + 2 stacked ── */}
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-3">
+          {/* Feature — spans 2 cols */}
+          <motion.button
+            {...fadeUp(0)}
+            type="button"
+            onClick={() => onOpen(0)}
+            className="group relative overflow-hidden lg:col-span-2"
+          >
+            <img
+              src={feature}
+              alt="Room — feature photo"
+              loading="lazy"
+              className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] sm:h-80 lg:h-[520px]"
+            />
+            <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
+            <span className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-black/50 px-3 py-1.5 text-[10px] font-medium uppercase tracking-widest text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+              <ArrowUpRight className="h-3 w-3" /> Expand
+            </span>
+          </motion.button>
+
+          {/* 2 stacked thumbnails */}
+          <div className="grid grid-cols-2 gap-2 lg:grid-cols-1 lg:gap-3">
+            {secondary.map((src, i) => (
               <motion.button
-                {...fadeUp(i * 0.05)}
+                {...fadeUp((i + 1) * 0.08)}
                 key={src + i}
                 type="button"
-                onClick={() => onOpen(i)}
-                className={`group relative overflow-hidden ${
-                  isFeature
-                    ? "col-span-2 row-span-2 lg:col-span-2 lg:row-span-2"
-                    : ""
-                }`}
+                onClick={() => onOpen(i + 1)}
+                className="group relative overflow-hidden"
               >
                 <img
                   src={src}
-                  alt={`Gallery ${i + 1}`}
-                  className={`w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.06] ${
-                    isFeature ? "h-72 lg:h-[480px]" : "h-44 lg:h-[232px]"
-                  }`}
+                  alt={`Room photo ${i + 2}`}
                   loading="lazy"
+                  className="h-32 w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] sm:h-40 lg:h-[252px]"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-[#050d1f]/0 transition group-hover:bg-[#050d1f]/20" />
+                <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
               </motion.button>
-            );
-          })}
+            ))}
+          </div>
         </div>
+
+        {/* ── ROW 2+: Uniform 3-col grid for all remaining ── */}
+        {overflow.length > 0 && (
+          <div className="mt-2 lg:mt-3">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:gap-3">
+              {gridVisible.map((src, i) => (
+                <motion.button
+                  {...fadeUp(i * 0.05)}
+                  key={src + i}
+                  type="button"
+                  onClick={() => onOpen(i + 3)}
+                  className="group relative overflow-hidden"
+                >
+                  <img
+                    src={src}
+                    alt={`Room photo ${i + 4}`}
+                    loading="lazy"
+                    className="h-44 w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] sm:h-52"
+                  />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
+                  {/* Show counter overlay on last visible tile if more hidden */}
+                  {!showAll && i === gridVisible.length - 1 && hiddenCount > 0 && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/55">
+                      <span className="font-serif text-3xl font-light text-white">+{hiddenCount}</span>
+                      <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/80">more photos</span>
+                    </div>
+                  )}
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Show more / show less toggle */}
+            {!showAll && hiddenCount > 0 && (
+              <motion.div {...fadeUp(0.2)} className="mt-8 text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAll(true)}
+                  className="inline-flex items-center gap-2 border border-[#651D4C] px-8 py-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#651D4C] transition hover:bg-[#651D4C] hover:text-white"
+                >
+                  Show all {images.length} photos
+                </button>
+              </motion.div>
+            )}
+            {showAll && overflow.length > GRID_LIMIT && (
+              <motion.div {...fadeUp(0.1)} className="mt-8 text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowAll(false)}
+                  className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#1a1a1a]/45 underline-offset-4 hover:underline"
+                >
+                  Show less
+                </button>
+              </motion.div>
+            )}
+          </div>
+        )}
+
+        {/* Total count label */}
+        <p className="mt-6 text-right text-[10px] uppercase tracking-[0.3em] text-[#1a1a1a]/30">
+          {images.length} photo{images.length !== 1 ? "s" : ""} · Click to expand
+        </p>
       </div>
     </section>
   );
 }
+
 
 function Lightbox({ images, index, onClose, onPrev, onNext }) {
   useEffect(() => {
