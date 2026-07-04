@@ -458,8 +458,8 @@ function GallerySection({ images, onOpen }) {
 
   // Layout: first 3 in feature row, rest in uniform grid (max 12 visible before "show more")
   const [feature, ...rest] = images;
-  const secondary = rest.slice(0, 2);           // 2 stacked beside feature
-  const overflow = rest.slice(2);               // all remaining
+  const secondary = rest.slice(0, 2); // 2 stacked beside feature
+  const overflow = rest.slice(2); // all remaining
   const GRID_LIMIT = 6;
   const gridVisible = showAll ? overflow : overflow.slice(0, GRID_LIMIT);
   const hiddenCount = overflow.length - GRID_LIMIT;
@@ -467,9 +467,11 @@ function GallerySection({ images, onOpen }) {
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-
         {/* Header */}
-        <motion.div {...fadeUp()} className="mb-10 flex flex-wrap items-end justify-between gap-4">
+        <motion.div
+          {...fadeUp()}
+          className="mb-10 flex flex-wrap items-end justify-between gap-4"
+        >
           <div>
             <p className="mb-2 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.45em] text-[#651D4C]">
               <span className="h-px w-8 bg-[#651D4C]" />
@@ -552,12 +554,18 @@ function GallerySection({ images, onOpen }) {
                   />
                   <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
                   {/* Show counter overlay on last visible tile if more hidden */}
-                  {!showAll && i === gridVisible.length - 1 && hiddenCount > 0 && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/55">
-                      <span className="font-serif text-3xl font-light text-white">+{hiddenCount}</span>
-                      <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/80">more photos</span>
-                    </div>
-                  )}
+                  {!showAll &&
+                    i === gridVisible.length - 1 &&
+                    hiddenCount > 0 && (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/55">
+                        <span className="font-serif text-3xl font-light text-white">
+                          +{hiddenCount}
+                        </span>
+                        <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/80">
+                          more photos
+                        </span>
+                      </div>
+                    )}
                 </motion.button>
               ))}
             </div>
@@ -590,13 +598,13 @@ function GallerySection({ images, onOpen }) {
 
         {/* Total count label */}
         <p className="mt-6 text-right text-[10px] uppercase tracking-[0.3em] text-[#1a1a1a]/30">
-          {images.length} photo{images.length !== 1 ? "s" : ""} · Click to expand
+          {images.length} photo{images.length !== 1 ? "s" : ""} · Click to
+          expand
         </p>
       </div>
     </section>
   );
 }
-
 
 function Lightbox({ images, index, onClose, onPrev, onNext }) {
   useEffect(() => {
