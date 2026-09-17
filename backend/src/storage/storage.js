@@ -29,6 +29,7 @@ const FOLDERS = {
   LOGOS: "cebu-whitesand-resort/logos",
   DOCUMENTS: "cebu-whitesand-resort/documents",
   OG_ROOMS: "cebu-whitesand-resort/og/rooms",
+  OG_PAYMENT_METHODS: "cebu-whitesand-resort/og/payment-methods",
 };
 
 /**

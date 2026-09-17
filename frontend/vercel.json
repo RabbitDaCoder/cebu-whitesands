@@ -11,6 +11,17 @@
       ],
       "destination": "/api/og/rooms/:slug"
     },
+    {
+      "source": "/payment/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|TelegramBot|Slackbot|Slack-ImgProxy|Discordbot|SkypeUriPreview|Pinterest|redditbot|vkShare|W3C_Validator|Googlebot|Applebot|Iframely|Embedly).*"
+        }
+      ],
+      "destination": "/api/og/payment/:slug"
+    },
     { "source": "/((?!api/).*)", "destination": "/" }
   ]
 }

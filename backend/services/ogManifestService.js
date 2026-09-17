@@ -26,6 +26,31 @@ const ogManifestService = {
     if (!slug) return;
     await storage.deleteFile(`${storage.FOLDERS.OG_ROOMS}/${slug}.json`);
   },
+
+  async writePaymentMethodManifest(method) {
+    if (!method?.slug) return;
+    try {
+      await storage.putJson(
+        `${storage.FOLDERS.OG_PAYMENT_METHODS}/${method.slug}.json`,
+        {
+          name: method.name,
+          image: method.logoUrl || null,
+          active: method.isActive !== false,
+        },
+      );
+    } catch (err) {
+      console.warn(
+        `ogManifestService: failed to write manifest for payment method "${method.slug}": ${err.message}`,
+      );
+    }
+  },
+
+  async deletePaymentMethodManifest(slug) {
+    if (!slug) return;
+    await storage.deleteFile(
+      `${storage.FOLDERS.OG_PAYMENT_METHODS}/${slug}.json`,
+    );
+  },
 };
 
 module.exports = ogManifestService;

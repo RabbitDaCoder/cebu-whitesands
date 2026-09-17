@@ -3,6 +3,7 @@ const storage = require("../src/storage/storage");
 const AppError = require("../utils/AppError");
 const { detailFieldSchema } = require("../validators/paymentMethod.validator");
 const { z } = require("zod");
+const ogManifestService = require("./ogManifestService");
 
 function slugify(value) {
   return value
@@ -59,7 +60,7 @@ const paymentMethodService = {
       logoKey = result.key;
     }
 
-    return PaymentMethod.create({
+    const method = await PaymentMethod.create({
       name: data.name,
       slug,
       logoUrl,
@@ -69,6 +70,9 @@ const paymentMethodService = {
       isActive: data.isActive !== "false",
       sortOrder: data.sortOrder || 0,
     });
+
+    await ogManifestService.writePaymentMethodManifest(method);
+    return method;
   },
 
   async update(id, data, file) {
@@ -91,6 +95,7 @@ const paymentMethodService = {
     }
 
     await method.save();
+    await ogManifestService.writePaymentMethodManifest(method);
     return method;
   },
 
@@ -99,6 +104,7 @@ const paymentMethodService = {
     if (!method) throw new AppError("Payment method not found", 404);
     method.isActive = !method.isActive;
     await method.save();
+    await ogManifestService.writePaymentMethodManifest(method);
     return method;
   },
 };
