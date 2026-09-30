@@ -25,8 +25,6 @@ const app = express();
 // Trust first proxy (Render, etc.) so express-rate-limit reads real client IP
 app.set("trust proxy", 1);
 
-connectDB();
-
 // Security middleware
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
 // express-mongo-sanitize sets req.query which is read-only in Express 5,
@@ -66,6 +64,16 @@ app.get("/api/health", (_req, res) =>
   res.json({ status: "ok", uptime: process.uptime() }),
 );
 
+app.use(async (_req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    logger.error({ message: "Database connection failed", error: error.message });
+    res.status(503).json({ success: false, message: "Database unavailable" });
+  }
+});
+
 // Routes
 app.use("/api/rooms", roomRoutes);
 app.use("/api/bookings", bookingRoutes);
@@ -80,8 +88,19 @@ app.use("/api/payment-submissions", paymentSubmissionRoutes);
 // Centralized error handler (must be last)
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  logger.info(`Server running on port http://localhost:${PORT}`);
-  startReminderJob();
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  connectDB()
+    .then(() => {
+      app.listen(PORT, () => {
+        logger.info(`Server running on port http://localhost:${PORT}`);
+        startReminderJob();
+      });
+    })
+    .catch((error) => {
+      logger.error({ message: "Database connection failed", error: error.message });
+      process.exit(1);
+    });
+}
+
+module.exports = app;
