@@ -4,7 +4,7 @@ const {
   HeadObjectCommand,
 } = require("@aws-sdk/client-s3");
 const mime = require("mime-types");
-const { v4: uuidv4 } = require("uuid");
+const { randomUUID: uuidv4 } = require("node:crypto");
 const path = require("path");
 const { r2Client, R2_BUCKET_NAME, R2_PUBLIC_URL } = require("./providers/r2");
 
